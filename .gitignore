@@ -34,3 +34,9 @@ dist-ssr
 !.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
+
+# Captured evidence behind the docs in .knowledge/. These are genuinely log files
+# (concatenated JSON objects, CLI console output), so the *.log rule above would
+# otherwise drop them. Nested un-ignore, since a bare directory rule does not
+# re-include files a pattern already excluded.
+!evidence/**/*.log

@@ -1,0 +1,7020 @@
+  -------------------------------------
+[04/09 11:54:07] [INFO] Fetching initial nodes at / in uol project 'universityDemo'
+[04/09 11:54:07] [OK] [universityDemo] Site view nodes at: / to a depth of 3
+
+
+[
+  {
+    "id": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "parentId": null,
+    "projectId": "universityDemo",
+    "slug": "",
+    "displayName": "Home",
+    "language": "en-GB",
+    "path": "/",
+    "childCount": 30,
+    "entry": {
+      "sys": {
+        "id": "8de402d6-574f-4786-8eb0-23628a0a8da5",
+        "language": "en-GB",
+        "contentTypeId": "personalisedLandingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "5.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "603cc1d2-75d0-4311-ad37-f146708c65e2",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "about",
+    "displayName": "About",
+    "language": "en-GB",
+    "path": "/about",
+    "childCount": 5,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "78d5d85e-0d27-45df-8e79-50fde7a26fbc",
+    "parentId": "603cc1d2-75d0-4311-ad37-f146708c65e2",
+    "projectId": "universityDemo",
+    "slug": "external-engagements",
+    "displayName": "External engagements",
+    "language": "en-GB",
+    "path": "/about/external-engagements",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "be3f7a43-3e7e-4d83-b28a-026bbd401caf",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "71618c7b-e7f7-459f-99aa-0438b55aca98",
+    "parentId": "603cc1d2-75d0-4311-ad37-f146708c65e2",
+    "projectId": "universityDemo",
+    "slug": "governance",
+    "displayName": "Governance",
+    "language": "en-GB",
+    "path": "/about/governance",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2cb80527-f897-40ba-832d-8ed0402e54e9",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ce0e43c6-1883-4d26-bd55-d74182df482d",
+    "parentId": "603cc1d2-75d0-4311-ad37-f146708c65e2",
+    "projectId": "universityDemo",
+    "slug": "how-to-find-us",
+    "displayName": "How to find us",
+    "language": "en-GB",
+    "path": "/about/how-to-find-us",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "1a60043c-94ad-4d06-994b-d513413f3871",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f034785c-d85f-411d-8b45-e9311a9a6900",
+    "parentId": "603cc1d2-75d0-4311-ad37-f146708c65e2",
+    "projectId": "universityDemo",
+    "slug": "our-history",
+    "displayName": "Our history",
+    "language": "en-GB",
+    "path": "/about/our-history",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "662cc017-dd14-4821-9034-94d6c899b610",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1be4de2e-bc2c-481e-9400-0050e897ddd8",
+    "parentId": "603cc1d2-75d0-4311-ad37-f146708c65e2",
+    "projectId": "universityDemo",
+    "slug": "our-staff",
+    "displayName": "Our staff",
+    "language": "en-GB",
+    "path": "/about/our-staff",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "da9d3599-6c1f-4180-b2c0-3327089f4837",
+        "language": "en-GB",
+        "contentTypeId": "staffListing",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b36fcb8a-5817-444e-b3f5-d361ba041ae6",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "accessibility",
+    "displayName": "Accessibility",
+    "language": "en-GB",
+    "path": "/accessibility",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5ba49eef-cff1-46b7-9767-1665f19257c2",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "cf997eee-814b-45a8-9bc5-c35d2510b4a9",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "admissions",
+    "displayName": "Admissions",
+    "language": "en-GB",
+    "path": "/admissions",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c6f406e7-1499-4d2b-bf9e-4bf781eb4571",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c1fde7fb-3c58-47a8-b2d6-46a93a95ecbf",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "apply-now",
+    "displayName": "Apply now",
+    "language": "en-GB",
+    "path": "/apply-now",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d40fac43-cad2-4f5e-96ce-854293f3a116",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "35d88de8-17aa-4868-9a5c-6fc5a8fd4cf7",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "campus-facilities",
+    "displayName": "Campus facilities",
+    "language": "en-GB",
+    "path": "/campus-facilities",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "00000001-4000-0000-0000-001418706745",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "cd8c205b-85da-4c8f-92fc-4fa80a08c423",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "chat-to-a-student",
+    "displayName": "Chat to a student",
+    "language": "en-GB",
+    "path": "/chat-to-a-student",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "cfc68f04-fe52-4bcd-addc-f361024c87f0",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d76a7b85-583c-4523-9956-f669f58d5ebf",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "computer-labs",
+    "displayName": "Computer labs",
+    "language": "en-GB",
+    "path": "/computer-labs",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8c87f1ce-918d-446b-9623-ebbd07d951c4",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d620ad6a-04da-4bb1-92f4-60c6ade2de04",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "contact-us",
+    "displayName": "Contact us",
+    "language": "en-GB",
+    "path": "/contact-us",
+    "childCount": 1,
+    "entry": {
+      "sys": {
+        "id": "fa695b0b-2bf4-4ae4-acec-9de2dd9c27eb",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6282c738-21df-48ec-943a-ffb68ed297b7",
+    "parentId": "d620ad6a-04da-4bb1-92f4-60c6ade2de04",
+    "projectId": "universityDemo",
+    "slug": "what-to-expect-on-an-open-day",
+    "displayName": "What to expect on an Open Day",
+    "language": "en-GB",
+    "path": "/contact-us/what-to-expect-on-an-open-day",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0e160e62-c290-453f-b21e-9fd0d7a66bbc",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "14316765-0fe1-4691-a6f0-bd6feb5d9956",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "contact-us-1",
+    "displayName": "contact us",
+    "language": "en-GB",
+    "path": "/contact-us-1",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3b3604aa-7cf0-4a11-9130-951b790737fc",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "3.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "dc526e9f-d58d-4624-b12a-0b47b090586a",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "cookies",
+    "displayName": "Cookies",
+    "language": "en-GB",
+    "path": "/cookies",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5a427e17-c965-4023-90e5-40ba6fcf35cc",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "38cde68e-438b-4fdf-b647-326621f09bae",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "courses",
+    "displayName": "courses",
+    "language": "en-GB",
+    "path": "/courses",
+    "childCount": 2,
+    "entry": {
+      "sys": {
+        "id": "7df46ce2-a230-493c-b4c0-af7d5d925662",
+        "language": "en-GB",
+        "contentTypeId": "courseListing",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "parentId": "38cde68e-438b-4fdf-b647-326621f09bae",
+    "projectId": "universityDemo",
+    "slug": "postgraduate",
+    "displayName": "Postgraduate",
+    "language": "en-GB",
+    "path": "/courses/postgraduate",
+    "childCount": 36,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "0f262069-b5fc-4a64-8030-8113a078d0cb",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "accountancy-msc",
+    "displayName": "Accountancy MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/accountancy-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0e307434-3851-4d3e-a590-25d5676acd20",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "16a91961-a875-4a0e-8d8f-8204e5c1b120",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "aerospace-engineering-meng",
+    "displayName": "Aerospace Engineering MEng",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/aerospace-engineering-meng",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "606f566e-b35e-4ad9-987f-85e1c1a48aa4",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "fef19799-e034-4482-b916-320ef26b4a7b",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "anthropology-msc",
+    "displayName": "Anthropology MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/anthropology-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "52b5989a-bfa4-4505-bfad-99127604439a",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c0280502-6637-4bb8-9c0f-dccd1312733c",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "artificial-intelligence-msc",
+    "displayName": "Artificial Intelligence MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/artificial-intelligence-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0d9d5da6-f8d2-4ad3-b7f4-8a2c2fa4c409",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "cca9484e-553b-4307-8374-c7b828e610f6",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "automotive-engineering-meng",
+    "displayName": "Automotive Engineering MEng",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/automotive-engineering-meng",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "012e4bd9-8f35-40d2-90b6-19e10e09f136",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7f438e5f-0cb5-41d2-9801-53084fd63f8e",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "biology-msc",
+    "displayName": "Biology MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/biology-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "1638b022-10ac-4491-ad34-9456bfccde69",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "746b1e98-dd5d-46bf-b6ae-d98b819b7c38",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "biomedical-sciences-phd",
+    "displayName": "Biomedical Sciences PhD",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/biomedical-sciences-phd",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "ae255041-0e9b-45d6-ad8b-957182c006ec",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2923783a-29c1-4154-8db6-b439a43071bc",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "business-studies-msc",
+    "displayName": "Business Studies MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/business-studies-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3a6e2585-ddc1-47f2-a1cc-f664998c9da0",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "17d0093a-d2ec-47cb-98e0-219bdb65b4f4",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "computer-science-msc",
+    "displayName": "Computer Science MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/computer-science-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3b861edb-f224-465a-b30b-dfa517b9e24e",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "07c9ad5d-8ee9-44ca-ba1d-52c996d798ca",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "design-ma",
+    "displayName": "Design MA",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/design-ma",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "b8dd648e-d120-43ef-9f67-b148914a391f",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "11f8d4de-97db-4a1f-aa05-6b2fd2dfd325",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "engineering-foundation",
+    "displayName": "Engineering Foundation",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/engineering-foundation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5a006919-1529-43dd-b1ec-a99feb67c14f",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "65d76744-9562-416a-aacc-90399604e082",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "english-ma",
+    "displayName": "English MA",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/english-ma",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0b4efe79-34b7-4439-adae-16ed4c347f67",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "3bfba94f-d1e3-4418-804e-14e9d9391cd1",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "environmental-science-msc",
+    "displayName": "Environmental Science MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/environmental-science-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e4a89985-fa57-4b18-bab6-7d9ec7089a6d",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d8799ffd-eba2-4362-80c8-ba4584f9db4c",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "film-studies-ma",
+    "displayName": "Film Studies MA",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/film-studies-ma",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9eedba1a-64b9-4153-8adc-446bd4491e78",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "21cabf29-23b5-4ff4-9080-d5885a3aa1e2",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "fine-art-ma",
+    "displayName": "Fine Art MA",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/fine-art-ma",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3266b149-9908-411d-be66-1bc18e2ebfde",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a9786fb0-3607-4477-b140-1c90b270af82",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "food-sciences-msc",
+    "displayName": "Food Sciences MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/food-sciences-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "cbf827ba-a764-48ca-b7ac-bd4e86f558c9",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7c9783b0-3896-48ea-a0ca-807f24c32735",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "game-design-msc",
+    "displayName": "Game Design MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/game-design-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "ca68eb6c-ab5a-412c-a0db-32c96bc359a5",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ca471609-50c2-4c24-a1ea-995804f30170",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "genetics-msc",
+    "displayName": "Genetics MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/genetics-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "183c3e67-7cd2-4d53-b322-6bc2b2b355de",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "34896e8e-62eb-44a4-8356-8eb73043bf13",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "geography-msc",
+    "displayName": "Geography MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/geography-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8c7981dd-064e-4391-a0a4-93bdff50b901",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "021c4f92-4fef-4b51-8fac-66ce8fbcdde9",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "geology-msc",
+    "displayName": "Geology MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/geology-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "1e7dcd22-1f4c-4ef4-9cf4-bdfef819fb28",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "838a5ea0-bef0-4816-8819-13816758acf6",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "health-and-social-care-foundation",
+    "displayName": "Health and Social Care Foundation",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/health-and-social-care-foundation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a72312a4-1d38-4d20-b2f3-069202da394c",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8e6ef926-e629-47df-ba6b-e1c07a6ec763",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "history-ma",
+    "displayName": "History MA",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/history-ma",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "73f33376-1442-4912-bab9-42c2c7674353",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8adc96bd-1ec2-4137-afd1-087031736800",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "humanities-foundation",
+    "displayName": "Humanities Foundation",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/humanities-foundation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e2d4b55a-2f14-4e41-8452-3c6a31c4ddb7",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "3059a23c-5813-426d-9df0-d33ebd7c8d0b",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "illustration-ma",
+    "displayName": "Illustration MA",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/illustration-ma",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c00f8548-e17f-40a1-8d9c-08f1286a1e7b",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "31bcccd3-5947-477e-9f60-643b4018a6fd",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "law-llm",
+    "displayName": "Law LLM",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/law-llm",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c2fe79b0-2818-4b6e-9a0c-2bcca80bc868",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "77d507b9-e10a-4fa2-9bd0-977e56d30817",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "law-phd",
+    "displayName": "Law PhD",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/law-phd",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "bc877b3c-999f-4ccf-9362-3bfd30071e62",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f18108a0-c66f-4fe9-9251-f88dab6b117a",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "life-sciences-msc",
+    "displayName": "Life Sciences MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/life-sciences-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "297e0d24-9536-4a6a-bd2b-f40355d9b7b6",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6c15bfab-dcab-4fdd-a1be-6a36a8e304e3",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "management-phd",
+    "displayName": "Management PhD",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/management-phd",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0fbe6dab-6ade-4a13-8f41-7fab2c149178",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "73ab1057-b44e-4847-8177-2dcad6133fae",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "marketing-msc",
+    "displayName": "Marketing MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/marketing-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a4fd2b9c-ff7a-4778-becd-f65330ef9cdb",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f7783ac8-4600-43bb-bac0-3a6d5e706eb3",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "mechanical-engineering-meng",
+    "displayName": "Mechanical Engineering MEng",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/mechanical-engineering-meng",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8659ec60-099b-4ca6-8828-1bcbccc58f91",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ee696df7-5888-482e-83bc-d2b45214b586",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "mechanical-engineering-phd",
+    "displayName": "Mechanical Engineering PhD",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/mechanical-engineering-phd",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4858991d-386e-49b7-bd57-4ab01964ed38",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0b0474c8-06b2-4dd5-a464-73630818b05d",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "music-phd",
+    "displayName": "Music PhD",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/music-phd",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5563e59a-fe52-4383-a3c7-694005536baa",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "644868fd-e3ed-4507-9e48-b8d352f52649",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "occupational-therapy-msc",
+    "displayName": "Occupational Therapy MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/occupational-therapy-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "f8553142-baf4-4ce5-8cc8-5b7ed9cc3f0c",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "afc81f20-c5ea-4f9b-be0f-b461fca672bb",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "occupational-therapy-phd",
+    "displayName": "Occupational Therapy PhD",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/occupational-therapy-phd",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "53bcedf4-4850-4731-a430-ebcee136c415",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "3b13d0f3-bd96-4931-bb94-a548b37b8dc7",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "physiotherapy-msc",
+    "displayName": "Physiotherapy MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/physiotherapy-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "267be378-b3ac-499f-9317-77dd709eb382",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "518ee334-2331-4132-80ed-5e2303992acd",
+    "parentId": "ebb5fb2c-f82a-4ce7-846f-17a1deb1eca2",
+    "projectId": "universityDemo",
+    "slug": "social-work-msc",
+    "displayName": "Social Work MSc",
+    "language": "en-GB",
+    "path": "/courses/postgraduate/social-work-msc",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "b5232a4e-d1ea-4264-8f31-26b078637263",
+        "language": "en-GB",
+        "contentTypeId": "course",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "parentId": "38cde68e-438b-4fdf-b647-326621f09bae",
+    "projectId": "universityDemo",
+    "slug": "undergraduate",
+    "displayName": "Undergraduate",
+    "language": "en-GB",
+    "path": "/courses/undergraduate",
+    "childCount": 8,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "4ba4bba8-c217-4b68-845c-3b0707b43ebe",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "biological-sciences",
+    "displayName": "Biological Sciences",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/biological-sciences",
+    "childCount": 3,
+    "entry": {
+      "sys": {
+        "id": "1197123e-c735-4acc-a784-6a80ad6e45de",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "e61cdfb9-6930-42b8-ab9b-bab846592390",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "business-and-law",
+    "displayName": "Business and Law",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/business-and-law",
+    "childCount": 4,
+    "entry": {
+      "sys": {
+        "id": "741242d5-741a-464a-831e-91cc590653b9",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "0728f7cb-3881-4b08-aecf-e815a3bbc011",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "computing",
+    "displayName": "Computing",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/computing",
+    "childCount": 3,
+    "entry": {
+      "sys": {
+        "id": "0a0b0494-35f1-46ea-b706-a11eb0eaee9b",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "614e7780-9e65-4d6d-9549-7a2bfb1bb635",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "engineering",
+    "displayName": "Engineering",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/engineering",
+    "childCount": 3,
+    "entry": {
+      "sys": {
+        "id": "f3dfb427-8f96-453e-852e-9060f0e8b7e1",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "75bcb492-d3e7-49d1-a557-d8257f64194e",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "geography-and-environmental-sciences",
+    "displayName": "Geography and Environmental Sciences",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/geography-and-environmental-sciences",
+    "childCount": 3,
+    "entry": {
+      "sys": {
+        "id": "45d483b5-d757-46d9-afc2-10ac68c53635",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "a9411279-840b-41d2-a547-699e2d28acd2",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "health-and-social-care",
+    "displayName": "Health and Social Care",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/health-and-social-care",
+    "childCount": 4,
+    "entry": {
+      "sys": {
+        "id": "5cd5ed22-7b32-4a16-81c2-64e2cd081e1d",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "cf373f3f-b4a9-4a1c-924d-ccab8bd6f362",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "humanities",
+    "displayName": "Humanities",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/humanities",
+    "childCount": 5,
+    "entry": {
+      "sys": {
+        "id": "002882f5-d49f-41e8-8012-72d1136d2032",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "44945294-5947-4dac-ac73-29eec0e78e81",
+    "parentId": "94a9306b-70fe-4ffb-86dd-ef7a11a17633",
+    "projectId": "universityDemo",
+    "slug": "the-arts",
+    "displayName": "The Arts",
+    "language": "en-GB",
+    "path": "/courses/undergraduate/the-arts",
+    "childCount": 3,
+    "entry": {
+      "sys": {
+        "id": "c95773fe-46c6-400c-8efc-bdd32f0dc9b5",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "a163268b-1b60-4b83-ab2e-c5aa33e93352",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "disclaimer",
+    "displayName": "Disclaimer",
+    "language": "en-GB",
+    "path": "/disclaimer",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3bd551c5-87b9-49fb-8e81-9d2afd3b0e35",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "events",
+    "displayName": "events",
+    "language": "en-GB",
+    "path": "/events",
+    "childCount": 53,
+    "entry": {
+      "sys": {
+        "id": "f299d0b0-9d3c-41d8-8c00-f3e13f380aba",
+        "language": "en-GB",
+        "contentTypeId": "listingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "3edb7f86-4bf5-42f2-90cb-0f656dfed49a",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "a-history-of-fine-art-by-dr-amrit-singh",
+    "displayName": "A History of Fine Art by Dr. Amrit Singh",
+    "language": "en-GB",
+    "path": "/events/a-history-of-fine-art-by-dr-amrit-singh",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3e12025e-cc8a-4632-a439-35c1e3a26774",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b7acdd9b-c8a2-4413-b3b4-aad14fd45c0b",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "ai-innovation-workshop-unwrapping-intelligent-solutions",
+    "displayName": "AI Innovation Workshop: Unwrapping Intelligent Solutions",
+    "language": "en-GB",
+    "path": "/events/ai-innovation-workshop-unwrapping-intelligent-solutions",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "99a85369-9de3-4012-85d3-bf6692983018",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6bc90ff9-4d0b-4458-8ac8-f9bacfba957b",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "an-evening-with-celeste-dubois",
+    "displayName": "An Evening with Celeste Dubois",
+    "language": "en-GB",
+    "path": "/events/an-evening-with-celeste-dubois",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "acd2a78a-335d-4c55-965a-7d413eff2f38",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8fd45c98-0a49-41ad-8658-664aa31842bb",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "art-department-open-day",
+    "displayName": "Art department Open Day",
+    "language": "en-GB",
+    "path": "/events/art-department-open-day",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2d99a6ce-ba42-4d0c-9f8a-326e1fddba3c",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "56d11659-f8b4-4160-a13b-b514ba32c183",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "biodiversity-in-focus-conservation-and-research-forum",
+    "displayName": "Biodiversity in Focus: Conservation and Research Forum",
+    "language": "en-GB",
+    "path": "/events/biodiversity-in-focus-conservation-and-research-forum",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "77e796c5-10cd-47a9-81cc-f5044567d118",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c5263774-4234-4db9-a093-3d21ae4f47e3",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "biomedical-discovery-evening-the-science-behind-tomorrows-medicine",
+    "displayName": "Biomedical Discovery Evening: The Science Behind Tomorrow’s Medicine",
+    "language": "en-GB",
+    "path": "/events/biomedical-discovery-evening-the-science-behind-tomorrows-medicine",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2848e838-d84e-48c0-85d6-6b7afee8698b",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "9f949db1-e6c6-4a35-a866-b3f5cdf87273",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "book-writing-workshop-with-celeste-dubois",
+    "displayName": "Book Writing Workshop with Celeste Dubois",
+    "language": "en-GB",
+    "path": "/events/book-writing-workshop-with-celeste-dubois",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "93b7947b-f470-44c2-86fe-4bf417b01257",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "770e3477-3afe-48ef-ace7-82d85a91ded4",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "campus-open-day",
+    "displayName": "Campus open day",
+    "language": "en-GB",
+    "path": "/events/campus-open-day",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5dc3b002-8b00-4f25-8035-15cf4e59acec",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7cfa7f6d-ae4e-4194-bc8d-e3056150590e",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "changing-landscapes-fieldwork-and-research-conference",
+    "displayName": "Changing Landscapes: Fieldwork and Research Conference",
+    "language": "en-GB",
+    "path": "/events/changing-landscapes-fieldwork-and-research-conference",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9bcec4e9-a193-4149-82f4-99c35ea8a77f",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "958e3078-b5f3-4dcd-a4e6-8f8bb99c1da4",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "christmas-wont-be-christmas-without-any-presents.-or-die-hard",
+    "displayName": "Christmas Won't be Christmas Without Any Presents. Or Die Hard.",
+    "language": "en-GB",
+    "path": "/events/christmas-wont-be-christmas-without-any-presents.-or-die-hard",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a9adf8cf-6d90-4883-af08-b2747d80e529",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f0b903b9-2f96-4cd2-8ae2-7b6a81a2b501",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "cybersecurity-awareness-week-2026",
+    "displayName": "Cybersecurity Awareness Week 2026",
+    "language": "en-GB",
+    "path": "/events/cybersecurity-awareness-week-2026",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9875a172-0cee-4540-bc1f-02f85b8480b5",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f9ff4a76-5499-4ff0-9b38-0595c0a60b23",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "digital-forensics-in-action-industry-workshop-and-networking-event",
+    "displayName": "Digital Forensics in Action: Industry Workshop and Networking Event",
+    "language": "en-GB",
+    "path": "/events/digital-forensics-in-action-industry-workshop-and-networking-event",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "bfab8598-dfcf-425f-a231-0a13e46e263f",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "bb567d5b-34b7-40b1-89bb-b581643fd089",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "dont-believe-everything-you-hear-on-the-radio-watch-the-film-instead",
+    "displayName": "Don't believe everything you hear on the radio - Watch the film instead!",
+    "language": "en-GB",
+    "path": "/events/dont-believe-everything-you-hear-on-the-radio-watch-the-film-instead",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "596b7eb9-3839-4c85-8022-0a8242a90a2c",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "3d250fb6-cafb-4163-afb5-900422823df4",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "dreaming-of-electronic-sheep-a-talk-by-dr.-siti-nur",
+    "displayName": "Dreaming of Electronic Sheep - a Talk by Dr. Siti Nur",
+    "language": "en-GB",
+    "path": "/events/dreaming-of-electronic-sheep-a-talk-by-dr.-siti-nur",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9f919e4a-b2b3-41dd-bb83-10f47b1e8ebb",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f0f542e4-1151-46c7-a38e-38be3507aa7c",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "earth-and-environment-week-2026",
+    "displayName": "Earth and Environment Week 2026",
+    "language": "en-GB",
+    "path": "/events/earth-and-environment-week-2026",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "894913a9-a7dc-448d-89c7-2ce0a0babde4",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7bc40f2d-04ed-42f6-bc17-7620718829cc",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "engineering-futures-expo-2026",
+    "displayName": "Engineering Futures Expo 2026",
+    "language": "en-GB",
+    "path": "/events/engineering-futures-expo-2026",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "7b921341-a408-44e8-93dc-36d63132fadc",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "82da947b-e3c6-4afe-bed4-d4224738ff34",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "entrepreneurship-and-start-up-bootcamp",
+    "displayName": "Entrepreneurship and Start-up Bootcamp",
+    "language": "en-GB",
+    "path": "/events/entrepreneurship-and-start-up-bootcamp",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "aecba532-d060-4ed7-aeeb-a854cb8f3f3b",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "df625c46-0ee0-4d66-ab71-b353484c65ae",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "everything-you-wanted-to-know-about-accounting-but-were-afraid-to-ask-with-professor-james-smith",
+    "displayName": "Everything You Wanted to Know About Accounting but Were Afraid to Ask with Professor James Smith",
+    "language": "en-GB",
+    "path": "/events/everything-you-wanted-to-know-about-accounting-but-were-afraid-to-ask-with-professor-james-smith",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e5d60e2c-30b9-4928-9b05-3d4118b4de8f",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "4da4beab-ccf4-458a-94cc-c41768eae5e2",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "exploring-the-microbial-world-a-family-science-day",
+    "displayName": "Exploring the Microbial World: A Family Science Day",
+    "language": "en-GB",
+    "path": "/events/exploring-the-microbial-world-a-family-science-day",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "67528ea8-0b2d-4c4b-a107-f8c71018e119",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "365d83c0-7a76-475e-91f1-f18519421086",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "feeling-hungry-come-take-a-bite-if-you-dare",
+    "displayName": "Feeling Hungry? Come take a bite - if you Dare!",
+    "language": "en-GB",
+    "path": "/events/feeling-hungry-come-take-a-bite-if-you-dare",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "66874151-9341-4482-9a42-ac3ff5c1d56d",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "5cec6a8f-b7af-4d0a-a471-b91d03da26e0",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "fieldwork-showcase-exploring-landscapes-and-data",
+    "displayName": "Fieldwork Showcase: Exploring Landscapes and Data",
+    "language": "en-GB",
+    "path": "/events/fieldwork-showcase-exploring-landscapes-and-data",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "743fedbf-793c-4649-8327-ddb5068743a1",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "43478c7d-9187-43c9-a672-10e7a2377e23",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "flying-high-aerospace-engineering-departments-design-wins",
+    "displayName": "Flying High - Aerospace Engineering Department's Design Wins!",
+    "language": "en-GB",
+    "path": "/events/flying-high-aerospace-engineering-departments-design-wins",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8facfcd5-ad99-43c3-a34d-0987e5039278",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1e98c0c0-4709-4cea-901a-3ade113bfd26",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "from-genes-to-health-advances-in-biomedical-research",
+    "displayName": "From Genes to Health: Advances in Biomedical Research",
+    "language": "en-GB",
+    "path": "/events/from-genes-to-health-advances-in-biomedical-research",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c3c3daa6-37b7-4e37-8d52-5d61913abda7",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "585444c5-2c6e-4849-8e16-ec19ce4d0fd1",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "future-skills-in-health-and-care-careers-and-innovation-fair",
+    "displayName": "Future Skills in Health and Care: Careers and Innovation Fair",
+    "language": "en-GB",
+    "path": "/events/future-skills-in-health-and-care-careers-and-innovation-fair",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "42ca066d-b3ce-4594-be42-a64c8681afb7",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "286b1626-4c90-4a3e-8d5a-7e011918db33",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "game-design-open-day",
+    "displayName": "Game Design Open Day",
+    "language": "en-GB",
+    "path": "/events/game-design-open-day",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "40311ad1-b529-4d46-89d3-13318328576e",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d1584ee2-d860-42e3-8644-8fe9e86619cc",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "global-development-and-sustainability-forum",
+    "displayName": "Global Development and Sustainability Forum",
+    "language": "en-GB",
+    "path": "/events/global-development-and-sustainability-forum",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5a5f24f6-7a7b-49c5-aeff-a7b599096e2b",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7dbf3f70-ddfc-451a-bcd8-c6e5f4e99cde",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "health-futures-symposium-2026",
+    "displayName": "Health Futures Symposium 2026",
+    "language": "en-GB",
+    "path": "/events/health-futures-symposium-2026",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "cbd60d7f-1998-4382-9ae8-f767cfc03f63",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "fc505b9e-304f-42dc-9ce2-0edc21b08057",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "healthy-communities-public-health-and-wellbeing-fair",
+    "displayName": "Healthy Communities: Public Health and Wellbeing Fair",
+    "language": "en-GB",
+    "path": "/events/healthy-communities-public-health-and-wellbeing-fair",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "109372df-3f73-4a65-ab30-68ca36dddc2c",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "db82dac0-ca07-4356-bf50-7f00051a2152",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "in-ludlow-everyone-will-hear-you-scream",
+    "displayName": "In Ludlow, Everyone Will Hear You Scream!",
+    "language": "en-GB",
+    "path": "/events/in-ludlow-everyone-will-hear-you-scream",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "80edfe39-3e3c-49cf-ae40-9326a6103f45",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8930fef7-6039-4b2e-bd6e-2b4488c7e8d8",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "ludlow-life-sciences-research-symposium",
+    "displayName": "Ludlow Life Sciences Research Symposium",
+    "language": "en-GB",
+    "path": "/events/ludlow-life-sciences-research-symposium",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "7444ec2b-e505-4685-b39f-d40c4c7b405a",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e9d655f6-65e1-425d-b99f-14cf93657ba3",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "ludlow-literature-festival",
+    "displayName": "Ludlow Literature Festival",
+    "language": "en-GB",
+    "path": "/events/ludlow-literature-festival",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4c068dfd-b5c2-452e-bfb4-b48101e684a4",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "dab1ca71-5407-4702-9b06-8e4db239d917",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "ludlow-short-film-showcase",
+    "displayName": "Ludlow Short Film Showcase",
+    "language": "en-GB",
+    "path": "/events/ludlow-short-film-showcase",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "47c41330-0291-4089-8b4d-29077e60bdf4",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "09b1e7a4-3caa-4c48-a22b-b842475c2c9c",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "ludlow-university-hosts-annual-artificial-intelligence-futures-conference",
+    "displayName": "Ludlow University hosts annual Artificial Intelligence Futures Conference",
+    "language": "en-GB",
+    "path": "/events/ludlow-university-hosts-annual-artificial-intelligence-futures-conference",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "15aa8e7f-99e7-4c5b-8225-0f4dcbf8e7eb",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "dc339e9d-001a-4f85-b973-0fc6b963c67a",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "mapping-the-future-gis-and-environmental-data-workshop",
+    "displayName": "Mapping the Future: GIS and Environmental Data Workshop",
+    "language": "en-GB",
+    "path": "/events/mapping-the-future-gis-and-environmental-data-workshop",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "acf75eaa-cb7f-4438-8864-bc659b408364",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f5827e8c-1208-403c-97c5-1ca775e8f5c8",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "mental-health-awareness-and-wellbeing-day",
+    "displayName": "Mental Health Awareness and Wellbeing Day",
+    "language": "en-GB",
+    "path": "/events/mental-health-awareness-and-wellbeing-day",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3e053250-e292-406e-bb01-bb599b4cf049",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "86bc06d8-f59e-4553-8718-8f1554afd848",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "moot-court-challenge-the-ludlow-law-cup",
+    "displayName": "Moot Court Challenge: The Ludlow Law Cup",
+    "language": "en-GB",
+    "path": "/events/moot-court-challenge-the-ludlow-law-cup",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3cdf4616-1fa5-484b-b180-448d7f6966c3",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "14cc8a34-7672-40ca-8f73-2574eb5719ab",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "riverwatch-2026-community-field-day-on-water-and",
+    "displayName": "Riverwatch 2026: Community Field Day on Water and",
+    "language": "en-GB",
+    "path": "/events/riverwatch-2026-community-field-day-on-water-and",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5897c7bd-2e5f-4c00-b3ef-00f42cf2448d",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d8cd3e16-6edb-486c-83cb-6ec15c25b916",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "robotics-and-automation-expo",
+    "displayName": "Robotics and Automation Expo",
+    "language": "en-GB",
+    "path": "/events/robotics-and-automation-expo",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8967a86e-d824-4188-b373-3fa254680f8f",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "391102f7-6953-4616-9372-d57cdaa40359",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "science-in-action-public-research-open-day",
+    "displayName": "Science in Action: Public Research Open Day",
+    "language": "en-GB",
+    "path": "/events/science-in-action-public-research-open-day",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "1097fb54-18cc-420b-bbd1-384172dc9a66",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b50fed6a-d426-49d5-b18c-e97676a3bb5b",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "see-our-new-developments-at-science-open-day-2026",
+    "displayName": "See Our New Developments at Science Open Day 2026",
+    "language": "en-GB",
+    "path": "/events/see-our-new-developments-at-science-open-day-2026",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e20cec17-1a6a-44fc-a9cc-cd2facd12750",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "451526db-b251-44a9-bc24-4324b1fbd834",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "social-work-in-practice-community-partnerships-conference",
+    "displayName": "Social Work in Practice: Community Partnerships Conference",
+    "language": "en-GB",
+    "path": "/events/social-work-in-practice-community-partnerships-conference",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "62a7b76b-a9c0-4b37-8e5c-6a006d656b42",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e2b922e3-791b-465a-b94f-e280c041af79",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "sounds-of-ludlow-summer-concert-series",
+    "displayName": "Sounds of Ludlow: Summer Concert Series",
+    "language": "en-GB",
+    "path": "/events/sounds-of-ludlow-summer-concert-series",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "40b0beb4-1f81-4650-ae03-ec1a869daba2",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c61d13ab-e377-4c0b-98cc-a03c416665d9",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "summer-graduation-is-around-the-corner",
+    "displayName": "Summer Graduation is Around the Corner",
+    "language": "en-GB",
+    "path": "/events/summer-graduation-is-around-the-corner",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "cf6f86c2-c2e6-4213-889c-f4cd5cfc2a85",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "676f8acc-598d-4c28-aa58-bece26549a27",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "the-future-for-long-covid-a-lecture-by-dr.-elizabeth-smith",
+    "displayName": "The future for Long-COVID - A Lecture by Dr. Elizabeth Smith",
+    "language": "en-GB",
+    "path": "/events/the-future-for-long-covid-a-lecture-by-dr.-elizabeth-smith",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8dbcda51-2c1b-469c-b8d0-406adcc4bd92",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "220acc7a-bf18-459f-bfea-18d213b64a6a",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "the-future-of-work-conference",
+    "displayName": "The Future of Work Conference",
+    "language": "en-GB",
+    "path": "/events/the-future-of-work-conference",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "b44cc8c4-c646-49c3-b625-6640a4d3ac1c",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0bfd79a8-615a-4cca-a792-c2029766977d",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "the-green-engineering-challenge-designing-for-a-sustainable-future",
+    "displayName": "The Green Engineering Challenge: Designing for a Sustainable Future",
+    "language": "en-GB",
+    "path": "/events/the-green-engineering-challenge-designing-for-a-sustainable-future",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0c8556d5-01da-41b0-9ba4-c535eab6f37f",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6cde73f3-004c-425a-b4a7-71c99a7eae0e",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "the-ludlow-business-forum-2026",
+    "displayName": "The Ludlow Business Forum 2026",
+    "language": "en-GB",
+    "path": "/events/the-ludlow-business-forum-2026",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "ba2239cf-5327-4547-adf7-93b7208f2427",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f0877de4-db12-46e8-9303-970d03de41f0",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "the-past-in-practice-conference",
+    "displayName": "The Past in Practice Conference",
+    "language": "en-GB",
+    "path": "/events/the-past-in-practice-conference",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0799f537-ec8f-41a9-99f6-8b464627cfc6",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "81c6b92a-52b9-429d-9f5f-dbb14bece49b",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "voices-and-identities-symposium",
+    "displayName": "Voices and Identities Symposium",
+    "language": "en-GB",
+    "path": "/events/voices-and-identities-symposium",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "80402e5f-44bd-4447-8248-913962ff5b41",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "32845168-cf85-43b6-ae4a-0808d395bdbf",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "winter-gala-concert-a-celebration-of-music-and-community",
+    "displayName": "Winter Gala Concert: A Celebration of Music and Community",
+    "language": "en-GB",
+    "path": "/events/winter-gala-concert-a-celebration-of-music-and-community",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "46f746ff-fa33-4be6-b87b-baef570ba412",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "5cc8865d-b630-4f95-beca-850f5f803aa7",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "women-in-engineering-networking-evening",
+    "displayName": "Women in Engineering Networking Evening",
+    "language": "en-GB",
+    "path": "/events/women-in-engineering-networking-evening",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "67644c0c-3174-455f-b230-2c380cff41bc",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f4a88b0c-d181-49e4-8147-fce9a985eed0",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "women-in-leadership-shaping-the-future-of-business",
+    "displayName": "Women in Leadership: Shaping the Future of Business",
+    "language": "en-GB",
+    "path": "/events/women-in-leadership-shaping-the-future-of-business",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5aa42570-9328-40d4-a765-110c7a9d727a",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "cb531424-eab7-41a6-89e8-f0a651d66cc9",
+    "parentId": "24cffd7a-6dde-45b4-828c-40ab46ac45e7",
+    "projectId": "universityDemo",
+    "slug": "your-technique-is-magnificent",
+    "displayName": "Your technique is... ...magnificent!",
+    "language": "en-GB",
+    "path": "/events/your-technique-is-magnificent",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a4598b2a-d43d-473b-aa15-b46492e785e1",
+        "language": "en-GB",
+        "contentTypeId": "event",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "99fe5141-90ed-432d-ae02-10eb18637fa2",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "form-page",
+    "displayName": "Form page",
+    "language": "en-GB",
+    "path": "/form-page",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "dc5047f6-f3a9-4088-be62-df0355071131",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "3.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b0b1d3a2-2c6a-4607-82eb-e43d8b0eba28",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "form-page-2",
+    "displayName": "Form page 2",
+    "language": "en-GB",
+    "path": "/form-page-2",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "af87dc3d-3ee5-4b5d-8137-bf3fdb598076",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "3.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "11b3f37d-8df1-4cd0-9a2b-a934714ba9e2",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "form-page-ug-booking-form",
+    "displayName": "Form page UG Booking form",
+    "language": "en-GB",
+    "path": "/form-page-ug-booking-form",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3b3604aa-7cf0-4a11-9130-951b790737fc",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "3.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "eeee4c3c-ec2e-47ef-aed7-159bb4b839ec",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "foundation-year",
+    "displayName": "Foundation year",
+    "language": "en-GB",
+    "path": "/foundation-year",
+    "childCount": 4,
+    "entry": {
+      "sys": {
+        "id": "a248bc3f-2bc2-46e1-9bc0-298516a9bbc1",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6007bf3c-f08d-41d2-a947-5f9dbad02cec",
+    "parentId": "eeee4c3c-ec2e-47ef-aed7-159bb4b839ec",
+    "projectId": "universityDemo",
+    "slug": "personal-support",
+    "displayName": "Personal support",
+    "language": "en-GB",
+    "path": "/foundation-year/personal-support",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e9987ca5-3651-4072-b6d6-de288d2875f8",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "55c45eec-1208-4ac3-a938-0c6e3797c325",
+    "parentId": "eeee4c3c-ec2e-47ef-aed7-159bb4b839ec",
+    "projectId": "universityDemo",
+    "slug": "personalised-learning",
+    "displayName": "Personalised learning",
+    "language": "en-GB",
+    "path": "/foundation-year/personalised-learning",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c550df39-fc74-4219-93aa-52f6082f1e27",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "856fa046-f40c-4929-9568-aa568039b75d",
+    "parentId": "eeee4c3c-ec2e-47ef-aed7-159bb4b839ec",
+    "projectId": "universityDemo",
+    "slug": "progression-to-your-degree",
+    "displayName": "Progression to your degree",
+    "language": "en-GB",
+    "path": "/foundation-year/progression-to-your-degree",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e65b99c5-92cd-4d3c-8590-cb30e1ec6ca5",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2dae26f5-2900-4ac8-9c3a-4ec92311011c",
+    "parentId": "eeee4c3c-ec2e-47ef-aed7-159bb4b839ec",
+    "projectId": "universityDemo",
+    "slug": "supportive-start",
+    "displayName": "Supportive start",
+    "language": "en-GB",
+    "path": "/foundation-year/supportive-start",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d0dd1704-4fad-4317-a17e-3faa0b498fba",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e1411511-804f-4dc6-9965-f444ade13f23",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "home",
+    "displayName": "Home",
+    "language": "en-GB",
+    "path": "/home",
+    "childCount": 0,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7c341280-9530-4d2c-8376-ecd29493fae7",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "international-study",
+    "displayName": "International study",
+    "language": "en-GB",
+    "path": "/international-study",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "5f4aca30-37d6-43be-b8ef-0597ff2ab99f",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c67e28d5-3b8d-4f88-8e22-37fc88509275",
+    "parentId": "7c341280-9530-4d2c-8376-ecd29493fae7",
+    "projectId": "universityDemo",
+    "slug": "accepting-your-offer",
+    "displayName": "Accepting your offer",
+    "language": "en-GB",
+    "path": "/international-study/accepting-your-offer",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a1f4f4b1-0fa8-41e6-ab3a-2320635fac2d",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8066d0d6-4759-4331-8834-c94802aa57f7",
+    "parentId": "7c341280-9530-4d2c-8376-ecd29493fae7",
+    "projectId": "universityDemo",
+    "slug": "arrival-and-orientation",
+    "displayName": "Arrival and orientation",
+    "language": "en-GB",
+    "path": "/international-study/arrival-and-orientation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6e4b4f58-253b-430e-9a39-7a61e9c66803",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a66f666f-9c3c-4bbc-b10c-bf84fa14f8d5",
+    "parentId": "7c341280-9530-4d2c-8376-ecd29493fae7",
+    "projectId": "universityDemo",
+    "slug": "life-after-graduation",
+    "displayName": "Life after graduation",
+    "language": "en-GB",
+    "path": "/international-study/life-after-graduation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "b71455ea-2a64-4c64-8c21-86113ebde444",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "66aaaa5d-72e9-4612-a254-6b228a19398e",
+    "parentId": "7c341280-9530-4d2c-8376-ecd29493fae7",
+    "projectId": "universityDemo",
+    "slug": "support-throughout-your-studies",
+    "displayName": "Support throughout your studies",
+    "language": "en-GB",
+    "path": "/international-study/support-throughout-your-studies",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "98b220cf-28ec-44ce-8396-4beb4051dc88",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f2f8596f-1a9d-4e23-b27d-bc845f485a8b",
+    "parentId": "7c341280-9530-4d2c-8376-ecd29493fae7",
+    "projectId": "universityDemo",
+    "slug": "visa-immigration-requirements",
+    "displayName": "Visa & Immigration Requirements",
+    "language": "en-GB",
+    "path": "/international-study/visa-immigration-requirements",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a077f687-abd7-4e03-ad86-d4a7bb1d977e",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "198ad32d-aff4-4e36-88c9-7c8fc8ff7459",
+    "parentId": "7c341280-9530-4d2c-8376-ecd29493fae7",
+    "projectId": "universityDemo",
+    "slug": "working-while-you-study",
+    "displayName": "Working while you study",
+    "language": "en-GB",
+    "path": "/international-study/working-while-you-study",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "47abaaa4-9e93-48d0-b43f-65afb21ebcef",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "9ff72f45-588a-4af6-ada1-37d797028166",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "modern-slavery-statement",
+    "displayName": "Modern Slavery Statement",
+    "language": "en-GB",
+    "path": "/modern-slavery-statement",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "061cf92f-5d2e-4913-a88b-71c509812b9a",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "news",
+    "displayName": "news",
+    "language": "en-GB",
+    "path": "/news",
+    "childCount": 27,
+    "entry": {
+      "sys": {
+        "id": "736d89cb-cd75-4acf-9c91-370e2438e615",
+        "language": "en-GB",
+        "contentTypeId": "listingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "1eb9efc5-9491-4207-a5ff-8dd1b91c8872",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "alum-wins-prestigious-national-art-prize",
+    "displayName": "Alum wins prestigious national art prize",
+    "language": "en-GB",
+    "path": "/news/alum-wins-prestigious-national-art-prize",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6438a7b7-f767-4ebd-819e-827354647760",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "28df6c45-b6bc-4aac-8c57-ba15b3835182",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "author-celestine-dubois-receives-honorary-degree-at-ludlow-university",
+    "displayName": "Author Celestine Dubois receives honorary degree at Ludlow University",
+    "language": "en-GB",
+    "path": "/news/author-celestine-dubois-receives-honorary-degree-at-ludlow-university",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9540c6db-9c4f-4567-a57e-6e4cfe6b031f",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "52916fa3-3642-4f25-8644-73ede567d388",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "climate-change-a-new-model-for-the-future",
+    "displayName": "Climate change - A new model for the future",
+    "language": "en-GB",
+    "path": "/news/climate-change-a-new-model-for-the-future",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4533b833-062a-49cc-8e36-9f6478194c5d",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c5e5bcb5-6464-4055-aae8-097d62d04938",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "engineering-students-win-national-design-challenge",
+    "displayName": "Engineering students win national design challenge",
+    "language": "en-GB",
+    "path": "/news/engineering-students-win-national-design-challenge",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "ace0a8dc-7f55-439e-866f-35eea64e28d1",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "247e6d1b-3324-41b6-b37b-d68df88d25dd",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "future-poets-come-together-at-ludlow-university",
+    "displayName": "Future poets come together at Ludlow University",
+    "language": "en-GB",
+    "path": "/news/future-poets-come-together-at-ludlow-university",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9f6f0d34-fd79-437b-bec0-b53301c90ade",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2b741e15-88b3-46ba-9464-accc4590cc34",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "hang-on-to-your-taste-buds",
+    "displayName": "Hang on to your taste buds",
+    "language": "en-GB",
+    "path": "/news/hang-on-to-your-taste-buds",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2ee1cbcf-d7de-4ead-9580-17f56d5674fc",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ffd7b89f-d1b2-4143-9d89-cef13d35e041",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-castle-hosts-the-summer-graduation-ceremony",
+    "displayName": "Ludlow castle hosts the summer graduation ceremony",
+    "language": "en-GB",
+    "path": "/news/ludlow-castle-hosts-the-summer-graduation-ceremony",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4d1f8acc-73b3-438b-8f60-2966e30a94b5",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "afec750f-071c-48fd-8db6-e0d09a5f11d7",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-mechanical-engineering-degrees-earn-prestigious-accreditation",
+    "displayName": "Ludlow Mechanical Engineering degrees earn prestigious accreditation",
+    "language": "en-GB",
+    "path": "/news/ludlow-mechanical-engineering-degrees-earn-prestigious-accreditation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2daeba00-e8ff-4670-9ba1-4ce7fe9cada8",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a7e9c168-19fb-4f5a-9091-0f93693336da",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-university-history-and-anthropology-students-visit-skara-brae-in-scotland",
+    "displayName": "Ludlow University history and anthropology students visit Skara Brae in Scotland",
+    "language": "en-GB",
+    "path": "/news/ludlow-university-history-and-anthropology-students-visit-skara-brae-in-scotland",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "09eeb0ff-0ba2-45b5-8e5c-6999afeb28ad",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6807458e-2f55-44f7-80fd-13715790b6fa",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-university-launches-new-interdisciplinary-arts-initiative",
+    "displayName": "Ludlow University launches new interdisciplinary arts initiative",
+    "language": "en-GB",
+    "path": "/news/ludlow-university-launches-new-interdisciplinary-arts-initiative",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3bc30082-19a6-447e-83c1-543784cc2b24",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1b642cb1-78b7-41a3-8ad9-f93e6bebe624",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-university-leading-the-way-in-biodiversity",
+    "displayName": "Ludlow University leading the way in biodiversity",
+    "language": "en-GB",
+    "path": "/news/ludlow-university-leading-the-way-in-biodiversity",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "f1157a1a-43c8-4dd6-b56b-f944e8bebf5b",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c72dc200-0013-442a-a31d-afafe75b8ab3",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-university-opens-advanced-robotics-and-automation-lab",
+    "displayName": "Ludlow University opens advanced robotics and automation lab",
+    "language": "en-GB",
+    "path": "/news/ludlow-university-opens-advanced-robotics-and-automation-lab",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a16ed8dc-4560-4b53-b868-fc6e29dae081",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "209ce4c5-1b13-4555-8286-24e57484157c",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-university-opens-new-centre-for-creative-futures",
+    "displayName": "Ludlow University opens new centre for creative futures",
+    "language": "en-GB",
+    "path": "/news/ludlow-university-opens-new-centre-for-creative-futures",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "06e3647e-ce49-44a5-b224-cc087057e071",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0cf9f583-6954-4171-b369-c3c022e4bd8f",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-university-partners-with-industry-on-sustainable-transport",
+    "displayName": "Ludlow University partners with industry on sustainable transport",
+    "language": "en-GB",
+    "path": "/news/ludlow-university-partners-with-industry-on-sustainable-transport",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "432ae83a-1da8-494a-b3ed-e4bffa1a662c",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "9b7d8026-ac6e-4cd7-b773-a6a5a81b494c",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "ludlow-universitys-9th-annual-science-open-day-a-resounding-success",
+    "displayName": "Ludlow University's 9th annual Science Open Day a resounding success",
+    "language": "en-GB",
+    "path": "/news/ludlow-universitys-9th-annual-science-open-day-a-resounding-success",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "84ced934-96f8-4369-990d-16ae6bef2485",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c6c3b222-d3e2-4543-b005-d64d33bc4afa",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "new-artist-in-residence-programme-announced",
+    "displayName": "New artist-in-residence programme announced",
+    "language": "en-GB",
+    "path": "/news/new-artist-in-residence-programme-announced",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3c9fc5d7-78fb-4460-8319-b1c4e1045ef8",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "9c5e31e9-7b69-4d15-8bea-9a6a0750b7ad",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "new-library-building-opened-by-vice-chancellor",
+    "displayName": "New library building opened by Vice-Chancellor",
+    "language": "en-GB",
+    "path": "/news/new-library-building-opened-by-vice-chancellor",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5d76815e-0af6-42a3-a001-df72f45f5dcd",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "208d8296-b666-425a-aaef-b0339ddd2cbf",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "new-skin-cell-behaviour-discovered-at-ludlow-university",
+    "displayName": "New skin cell behaviour discovered at Ludlow University",
+    "language": "en-GB",
+    "path": "/news/new-skin-cell-behaviour-discovered-at-ludlow-university",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "342f53cc-dba8-4128-a329-c69bcdfc9171",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "4cfac33b-cfb8-4151-a0f4-8017f2d0b8c7",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "outstanding-engineering-awarded-to-ludlow-university-student",
+    "displayName": "Outstanding engineering awarded to Ludlow University student",
+    "language": "en-GB",
+    "path": "/news/outstanding-engineering-awarded-to-ludlow-university-student",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "7ec81098-f2a8-4385-8d44-d459c5967826",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "03f0c18e-919b-4bac-bb4d-a9368e016ea9",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "phd-student-awarded-prestigious-research-fellowship",
+    "displayName": "PhD Student awarded prestigious research fellowship",
+    "language": "en-GB",
+    "path": "/news/phd-student-awarded-prestigious-research-fellowship",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8ef9601c-79c5-431d-9b50-15ab8665723c",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c2b2b127-6493-4a00-8cc7-e4cfe17776ef",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "professor-hannah-lee-wins-prestigious-award-in-human-rights-law",
+    "displayName": "Professor Hannah Lee wins prestigious award in human rights law",
+    "language": "en-GB",
+    "path": "/news/professor-hannah-lee-wins-prestigious-award-in-human-rights-law",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9f90da5f-fce8-408b-b2ec-874c75fe4e5d",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a93ef634-d6ac-4cb9-b39b-07c85cdec1d7",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "sh23-news-article",
+    "displayName": "sh23 News article",
+    "language": "en-GB",
+    "path": "/news/sh23-news-article",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a4262f0f-2dc2-4a89-acf2-feb5187219fc",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8601d019-2405-4ce7-9ebb-9242b95e8a16",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "sh23-news-article-2",
+    "displayName": "sh23 news article 2",
+    "language": "en-GB",
+    "path": "/news/sh23-news-article-2",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "66ba9efa-b395-4fa5-8582-0de2cb636a3b",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "faa712d4-9c7c-42cd-b7ff-09e34a87cc8d",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "skynet-grant-awarded-to-ludlow-university-for-artificial-intelligence-research",
+    "displayName": "Skynet Grant awarded to Ludlow University for artificial intelligence research",
+    "language": "en-GB",
+    "path": "/news/skynet-grant-awarded-to-ludlow-university-for-artificial-intelligence-research",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5c346384-9658-4953-8887-cc46fde43933",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "4027a186-89ae-44c1-b965-bd39a5cdaa61",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "social-care-in-the-community-ludlow-universitys-mission",
+    "displayName": "Social care in the community - Ludlow University's mission",
+    "language": "en-GB",
+    "path": "/news/social-care-in-the-community-ludlow-universitys-mission",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "7816ee81-563a-4ea5-b310-fa6b356ccf39",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ebc5a2b4-544e-40b6-90ef-0dca53d3e48d",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "the-results-are-in-ludlow-university-graduates-are-in-high-demand",
+    "displayName": "The results are in - Ludlow University graduates are in high demand",
+    "language": "en-GB",
+    "path": "/news/the-results-are-in-ludlow-university-graduates-are-in-high-demand",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6da558a1-0c77-4646-a53a-bb061acd92fc",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "51cf7c1c-ee33-4ce1-bfd5-2c8b440dadb2",
+    "parentId": "24ca1e87-46ca-552d-8b1e-7b5773cedc0a",
+    "projectId": "universityDemo",
+    "slug": "twenty-minutes-a-day-helps-keep-anxiety-at-bay",
+    "displayName": "Twenty minutes a day helps keep anxiety at bay",
+    "language": "en-GB",
+    "path": "/news/twenty-minutes-a-day-helps-keep-anxiety-at-bay",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5c07f065-8236-4f02-9f4a-c0cdb094249e",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2a153cd9-9a8b-4834-8307-9f7df9dbfb50",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "postgraduate-study",
+    "displayName": "Postgraduate study",
+    "language": "en-GB",
+    "path": "/postgraduate-study",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "c7a3c578-bbe5-47ec-abe3-f0573a631b36",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "00dc44c6-8f04-40ec-ab79-8ad86cc4d0a7",
+    "parentId": "2a153cd9-9a8b-4834-8307-9f7df9dbfb50",
+    "projectId": "universityDemo",
+    "slug": "flexible-study-options",
+    "displayName": "Flexible study options",
+    "language": "en-GB",
+    "path": "/postgraduate-study/flexible-study-options",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "dab34f22-043f-4387-9247-7a02c88582ca",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e681aeda-78ec-43cf-adc3-125e65d3149b",
+    "parentId": "2a153cd9-9a8b-4834-8307-9f7df9dbfb50",
+    "projectId": "universityDemo",
+    "slug": "funding-and-scholarships",
+    "displayName": "Funding and scholarships",
+    "language": "en-GB",
+    "path": "/postgraduate-study/funding-and-scholarships",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "89ee0017-85c3-47d6-9e29-d5700a32bc39",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "eb3b2bf1-943b-48b3-9a13-c881d2d9b30e",
+    "parentId": "2a153cd9-9a8b-4834-8307-9f7df9dbfb50",
+    "projectId": "universityDemo",
+    "slug": "personal-support",
+    "displayName": "Personal support",
+    "language": "en-GB",
+    "path": "/postgraduate-study/personal-support",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "fb2d1a3c-860d-46cc-8bb4-74820ea3a601",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ef58c16c-428e-4056-b316-fe0998554277",
+    "parentId": "2a153cd9-9a8b-4834-8307-9f7df9dbfb50",
+    "projectId": "universityDemo",
+    "slug": "professional-development",
+    "displayName": "Professional development",
+    "language": "en-GB",
+    "path": "/postgraduate-study/professional-development",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "316b5e17-49dd-4063-9d2f-58c3bb938018",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "5ca9503b-146a-43e5-90e8-48964fa5d587",
+    "parentId": "2a153cd9-9a8b-4834-8307-9f7df9dbfb50",
+    "projectId": "universityDemo",
+    "slug": "research-led-teaching",
+    "displayName": "Research-led teaching",
+    "language": "en-GB",
+    "path": "/postgraduate-study/research-led-teaching",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2cc6ed25-ff0f-4c05-980a-f9edd9d34f3c",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7495b78f-fe8f-49c5-9e53-b22ea54769f3",
+    "parentId": "2a153cd9-9a8b-4834-8307-9f7df9dbfb50",
+    "projectId": "universityDemo",
+    "slug": "specialist-facilities",
+    "displayName": "Specialist facilities",
+    "language": "en-GB",
+    "path": "/postgraduate-study/specialist-facilities",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a46c8e09-9b8f-4ec8-8813-00afaea62ba7",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "eb978731-d865-496f-9858-af34f22d27ba",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "privacy",
+    "displayName": "Privacy",
+    "language": "en-GB",
+    "path": "/privacy",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "29b9a8ee-ba15-4a4e-b9de-e2e48daa7f36",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "055c527d-68cf-4130-9445-5d60a55433e0",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "profile",
+    "displayName": "profile",
+    "language": "en-GB",
+    "path": "/profile",
+    "childCount": 3,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "7c9c4021-6caf-408f-a6ca-f4c80531ebae",
+    "parentId": "055c527d-68cf-4130-9445-5d60a55433e0",
+    "projectId": "universityDemo",
+    "slug": "external",
+    "displayName": "external",
+    "language": "en-GB",
+    "path": "/profile/external",
+    "childCount": 1,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "f740fcb9-4ef1-49c7-8649-9a767b0a8fc8",
+    "parentId": "7c9c4021-6caf-408f-a6ca-f4c80531ebae",
+    "projectId": "universityDemo",
+    "slug": "celeste",
+    "displayName": "Celeste",
+    "language": "en-GB",
+    "path": "/profile/external/celeste",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "08589f6b-545e-4924-9574-8af7b291101a",
+        "language": "en-GB",
+        "contentTypeId": "personExternal",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "parentId": "055c527d-68cf-4130-9445-5d60a55433e0",
+    "projectId": "universityDemo",
+    "slug": "staff",
+    "displayName": "staff",
+    "language": "en-GB",
+    "path": "/profile/staff",
+    "childCount": 30,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "3f8df2a7-1364-488d-8b5b-b73418c9ab79",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "aisha",
+    "displayName": "Aisha",
+    "language": "en-GB",
+    "path": "/profile/staff/aisha",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "28b20588-b415-4ebb-b388-0d24bc47fd63",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d3fe5be6-9bb0-4184-8248-be8fb3b411fe",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "amrit",
+    "displayName": "Amrit",
+    "language": "en-GB",
+    "path": "/profile/staff/amrit",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4902c3c2-9fb1-4571-94ce-07ff34e13e90",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "26541a1c-1511-4427-a3d1-af0bff6bcdeb",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "ava",
+    "displayName": "Ava",
+    "language": "en-GB",
+    "path": "/profile/staff/ava",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3024bd16-f0b7-40a5-9490-9e9d6d76d7c0",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "5b51f244-3fe7-4d65-bb56-7187bfb6b78c",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "colin",
+    "displayName": "Colin",
+    "language": "en-GB",
+    "path": "/profile/staff/colin",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "253d2143-5ac9-45f9-b44f-2569b0554560",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "656f71a4-d7bc-4b81-a09b-87ee294a00ae",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "david",
+    "displayName": "David",
+    "language": "en-GB",
+    "path": "/profile/staff/david",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2975740f-1286-4a0b-8504-129b1c68a972",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8faefa18-e7df-46c3-abee-550dcf9e0eab",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "elisabeth",
+    "displayName": "Elisabeth",
+    "language": "en-GB",
+    "path": "/profile/staff/elisabeth",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "57bbac1d-be6a-4bff-a280-77f1cd2cbd88",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2c43089d-21c8-4b5a-bdb8-375d5a629234",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "elizabeth",
+    "displayName": "Elizabeth",
+    "language": "en-GB",
+    "path": "/profile/staff/elizabeth",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0c588f90-f67b-4fd2-a2e5-ef68d53bbdba",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e40b4d2d-92f7-4ef1-baaf-c060269a3833",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "emma",
+    "displayName": "Emma",
+    "language": "en-GB",
+    "path": "/profile/staff/emma",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "985d99d4-0946-4866-b166-a4587d0c8d3e",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7a41ace9-2657-4223-abb5-37aae6eadc04",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "fatima",
+    "displayName": "Fatima",
+    "language": "en-GB",
+    "path": "/profile/staff/fatima",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "ea90b38b-908a-4f41-bbf7-55239ef5c5d4",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0fe1cce4-2434-4fea-ae54-cb54a1d38982",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "hannah",
+    "displayName": "Hannah",
+    "language": "en-GB",
+    "path": "/profile/staff/hannah",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "25c58c05-71b7-4e4e-baa9-8429b5edda8a",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "715b610b-e78b-4773-b00a-0c003b72d154",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "jai",
+    "displayName": "Jai",
+    "language": "en-GB",
+    "path": "/profile/staff/jai",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "58b5014d-98b4-4bb9-ba03-b5ebbd3a6d7f",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ef9a3ade-8f8f-4ab9-ad86-9eb4a1358b25",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "james",
+    "displayName": "James",
+    "language": "en-GB",
+    "path": "/profile/staff/james",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "62fe99ea-3ba9-4439-a973-5de4cbde3175",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2f07d718-3ac9-4d9e-997e-011e3e6cc0dd",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "junaid",
+    "displayName": "Junaid",
+    "language": "en-GB",
+    "path": "/profile/staff/junaid",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6273d2bb-ca29-4660-aa80-a29b73b903e7",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7d78c1e2-8342-4cef-8d04-7702b585791c",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "lin",
+    "displayName": "Lin",
+    "language": "en-GB",
+    "path": "/profile/staff/lin",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3fad8fd2-ae41-448a-a664-e71a708de276",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "255207e2-9a19-47cb-98ab-a9d70c148a39",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "maria",
+    "displayName": "Maria",
+    "language": "en-GB",
+    "path": "/profile/staff/maria",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "7616682f-958d-416b-97fd-7db54ff8c5ce",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "44aaf842-c924-4b95-9ea0-e1cd82ec29cd",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "meagan",
+    "displayName": "Meagan",
+    "language": "en-GB",
+    "path": "/profile/staff/meagan",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "1c6a242e-1bea-4d37-9cea-28c7ace4c913",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1b826646-350d-4013-b8a3-d63cc2272116",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "michael",
+    "displayName": "Michael",
+    "language": "en-GB",
+    "path": "/profile/staff/michael",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "f721b84a-1ede-46e7-9085-fbeee68bb362",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "27075c81-f541-4840-81c9-72d0edb264f1",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "minh",
+    "displayName": "Minh",
+    "language": "en-GB",
+    "path": "/profile/staff/minh",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "70cf7ab3-91a1-407c-bb66-45f4cf4c4f0f",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d3b54147-8a45-4efc-b284-edabbb478440",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "miriam",
+    "displayName": "Miriam",
+    "language": "en-GB",
+    "path": "/profile/staff/miriam",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "882b7405-260e-4e39-9c8e-653dc8cd6bfd",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7b707753-b851-4256-80ac-7e5ed985d7a3",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "olivia",
+    "displayName": "Olivia",
+    "language": "en-GB",
+    "path": "/profile/staff/olivia",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d54c0d6e-a308-4c3c-81ec-5bf96149ac18",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e6889ee2-a8b1-413e-a578-281c69715a86",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "omar",
+    "displayName": "Omar",
+    "language": "en-GB",
+    "path": "/profile/staff/omar",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "5f5959cf-bf6f-43e2-b90d-974eb19e20ab",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c3640ffc-942a-49d3-965d-39175ce1152a",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "oskar",
+    "displayName": "Oskar",
+    "language": "en-GB",
+    "path": "/profile/staff/oskar",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "51afa6e6-be43-4afe-900c-9399070e3bc9",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a4da8c9d-66f8-4270-8ef2-2c61b6f57646",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "penelope",
+    "displayName": "Penelope",
+    "language": "en-GB",
+    "path": "/profile/staff/penelope",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "740e22e2-700a-4694-8ec8-4d552bc07c6c",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "53c24823-c77a-46ab-b66d-caa467d498d3",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "rachel",
+    "displayName": "Rachel",
+    "language": "en-GB",
+    "path": "/profile/staff/rachel",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "17535fbc-6a12-4ac0-a27a-2f1fbde17380",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "13ebda26-bac5-4855-bf07-1d2cea148e3a",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "samuel",
+    "displayName": "Samuel",
+    "language": "en-GB",
+    "path": "/profile/staff/samuel",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e8640366-26fc-4828-8b8c-2162b60ce0fc",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b9c55ee9-a0b8-42b9-9a4d-72d7b6ddeee9",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "sarah",
+    "displayName": "Sarah",
+    "language": "en-GB",
+    "path": "/profile/staff/sarah",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d0c01096-901e-4758-ba9f-24a01ede4e65",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1fbc4214-28e4-45b2-894b-429c45f3b451",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "siti",
+    "displayName": "Siti",
+    "language": "en-GB",
+    "path": "/profile/staff/siti",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "b25b0d9c-00f1-40d1-a0bc-9714cdc38ad1",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8f41c0c4-2cc7-41de-917f-652ef2964830",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "teja",
+    "displayName": "Teja",
+    "language": "en-GB",
+    "path": "/profile/staff/teja",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "efc7688c-512e-4742-b012-edef125eb272",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a514c00b-2f31-4796-93e3-f11961400b02",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "william",
+    "displayName": "William",
+    "language": "en-GB",
+    "path": "/profile/staff/william",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "f9c7c4c7-6a33-4a8a-9f35-9e2c00153a22",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a2f13b74-2095-4c0f-a2e2-26c378c9016e",
+    "parentId": "ae25dd55-f4e3-49fe-b18e-0bf31f6e71d3",
+    "projectId": "universityDemo",
+    "slug": "yuri",
+    "displayName": "Yuri",
+    "language": "en-GB",
+    "path": "/profile/staff/yuri",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "bdc76ce7-11d5-4019-b1dc-ad04058fdf6d",
+        "language": "en-GB",
+        "contentTypeId": "personStaff",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "parentId": "055c527d-68cf-4130-9445-5d60a55433e0",
+    "projectId": "universityDemo",
+    "slug": "student",
+    "displayName": "student",
+    "language": "en-GB",
+    "path": "/profile/student",
+    "childCount": 27,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "358590c3-01b9-4d0f-98e6-03f19db84251",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "abigail",
+    "displayName": "Abigail",
+    "language": "en-GB",
+    "path": "/profile/student/abigail",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c8fd45c6-052c-4881-8bca-e75ffbfc23f4",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "529a9d43-affb-4c35-be31-371969a56054",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "aisha",
+    "displayName": "Aisha",
+    "language": "en-GB",
+    "path": "/profile/student/aisha",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "44ed4912-69e4-4b46-9043-ae7041f7bcfe",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6b6a43f1-f5ef-4718-9d1c-59f1edf5df25",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "alexander",
+    "displayName": "Alexander",
+    "language": "en-GB",
+    "path": "/profile/student/alexander",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "38f305d1-b02d-469d-a8a6-2b4f3328efef",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "74b3d14f-ebd5-491b-aa3f-426fc9ab6917",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "amina",
+    "displayName": "Amina",
+    "language": "en-GB",
+    "path": "/profile/student/amina",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "03844d90-fb6a-4255-889f-ccc419c5781a",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0a2b46c3-eaab-4428-a739-82858223327c",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "aria",
+    "displayName": "Aria",
+    "language": "en-GB",
+    "path": "/profile/student/aria",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6ce41ed1-18a6-4878-8462-9380ccfc6909",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e44f8a05-682d-44e9-894c-12d12a864c07",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "benjamin",
+    "displayName": "Benjamin",
+    "language": "en-GB",
+    "path": "/profile/student/benjamin",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "1a577bad-3a6a-4efb-b6c3-f702efa4eebd",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1fd3db5a-2fdc-41a2-9397-e3d7ca5a663a",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "brandon",
+    "displayName": "Brandon",
+    "language": "en-GB",
+    "path": "/profile/student/brandon",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "f0c4f310-734e-4911-bfe1-6664242f815b",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d0097a6f-a1b5-4a14-bf73-ef573c4bf0c7",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "chris",
+    "displayName": "Chris",
+    "language": "en-GB",
+    "path": "/profile/student/chris",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c831602d-30ef-43ce-82db-11bf0130ce2b",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "63b8974f-fb24-4aea-9aa7-b3f40c365693",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "dylan",
+    "displayName": "Dylan",
+    "language": "en-GB",
+    "path": "/profile/student/dylan",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c1f8eae5-aba9-47c7-bdbd-1dc0af5a0333",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "753907df-1706-42d0-99a6-1dfb7ed1fcd2",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "elijah",
+    "displayName": "Elijah",
+    "language": "en-GB",
+    "path": "/profile/student/elijah",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "112e243c-0788-4270-9b5f-46f9574cb78c",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ffbf58c0-3db3-47ff-9886-46e2315c269f",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "elizabeth",
+    "displayName": "Elizabeth",
+    "language": "en-GB",
+    "path": "/profile/student/elizabeth",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a59d6ddc-24d3-498d-becf-97bc1b79e0c0",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d8cba728-2986-4841-936c-55156bfe1732",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "elle",
+    "displayName": "Elle",
+    "language": "en-GB",
+    "path": "/profile/student/elle",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2ee04010-c5a7-4547-bed3-0e2ff63e3a42",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "19ac5805-eeb6-4b3d-9b13-10bfd7ccffff",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "emily",
+    "displayName": "Emily",
+    "language": "en-GB",
+    "path": "/profile/student/emily",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "7dc06be2-dd69-4b49-8316-bd62f82c6c7f",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "4f81e59a-7256-4d25-a601-040d58e44419",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "ethan",
+    "displayName": "Ethan",
+    "language": "en-GB",
+    "path": "/profile/student/ethan",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c2aa4bc4-a719-49f3-a6e1-31a3fc0914bb",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ae7cf067-1e6c-4a57-9253-39705e9d2368",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "evelyn",
+    "displayName": "Evelyn",
+    "language": "en-GB",
+    "path": "/profile/student/evelyn",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c5229b42-7fac-4605-88fc-5f199fbcb25c",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d9dbcc27-9344-49b2-905b-088ed61932b7",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "farhan",
+    "displayName": "Farhan",
+    "language": "en-GB",
+    "path": "/profile/student/farhan",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "77e43731-995e-46df-9f24-1b89814f7302",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c7e9ed18-4802-4962-82b1-324727b05439",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "fatou",
+    "displayName": "Fatou",
+    "language": "en-GB",
+    "path": "/profile/student/fatou",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "0359c28d-49af-46f6-82dd-2cf386b64fd2",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "9a730348-a790-477b-ab3c-678803f995b0",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "gerard",
+    "displayName": "Gerard",
+    "language": "en-GB",
+    "path": "/profile/student/gerard",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6da5d977-38b9-461f-a098-fc3b8a7d20b9",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "ff3074cd-a91a-4282-b4d9-c4fe0b401c5a",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "grace",
+    "displayName": "Grace",
+    "language": "en-GB",
+    "path": "/profile/student/grace",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c297d1a2-927a-4589-9765-24904edd51de",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d2ba89ab-8a01-4db7-8edd-8132e11377c4",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "nathan",
+    "displayName": "Nathan",
+    "language": "en-GB",
+    "path": "/profile/student/nathan",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d306efd5-074e-4e37-b5ee-8fd0eecd2bde",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2ffd0431-9340-467b-9ecc-561667c3075b",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "olivia",
+    "displayName": "Olivia",
+    "language": "en-GB",
+    "path": "/profile/student/olivia",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "dd185082-aa1d-4ee1-8419-aabb0f3f104c",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1d8929c5-2ccd-43c5-83a7-24284c4e5ed6",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "omar",
+    "displayName": "Omar",
+    "language": "en-GB",
+    "path": "/profile/student/omar",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "28398e28-eb63-48d6-b0ca-7ff45655cc38",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b74f2ad6-4496-486d-b1da-da9e5824af3d",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "penny",
+    "displayName": "Penny",
+    "language": "en-GB",
+    "path": "/profile/student/penny",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3e54d490-dccd-4e48-8ca9-3e387ed36091",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8397fe2d-924c-41a5-be4f-0ff45c6849c1",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "rachel",
+    "displayName": "Rachel",
+    "language": "en-GB",
+    "path": "/profile/student/rachel",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "de17d1c7-6234-4860-ab3c-d5df6013d4bd",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d3bb4ff7-7e10-4b90-8bac-52bd97932ee5",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "sam",
+    "displayName": "Sam",
+    "language": "en-GB",
+    "path": "/profile/student/sam",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4ad46156-c6c2-4e8c-80b8-6f3d4eb424ea",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8f55dabe-40f2-44fe-a4de-b4a33761fb80",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "samantha",
+    "displayName": "Samantha",
+    "language": "en-GB",
+    "path": "/profile/student/samantha",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "307a8c13-a0ea-426c-8e60-bd7dc9d804ea",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "403ad61e-dcdb-49bb-8ef1-d40d99a71866",
+    "parentId": "da45981b-2d29-43e0-a852-d86a92fd0ec1",
+    "projectId": "universityDemo",
+    "slug": "samira",
+    "displayName": "Samira",
+    "language": "en-GB",
+    "path": "/profile/student/samira",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "055d4d16-003d-432d-a7e6-51b381cedcba",
+        "language": "en-GB",
+        "contentTypeId": "personStudent",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6e04fa41-df92-4710-b84d-962ebc02b754",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "search",
+    "displayName": "search",
+    "language": "en-GB",
+    "path": "/search",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d53251e9-2eaf-431b-baa8-33bb36a89eed",
+        "language": "en-GB",
+        "contentTypeId": "searchPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "student-life",
+    "displayName": "Student Life",
+    "language": "en-GB",
+    "path": "/student-life",
+    "childCount": 7,
+    "entry": {
+      "sys": {
+        "id": "129444a8-6356-49fe-b6d3-04a98216e37a",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "be5d5c3b-0530-40bd-be0d-a12b34d83f97",
+    "parentId": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "projectId": "universityDemo",
+    "slug": "accommodation",
+    "displayName": "Accommodation",
+    "language": "en-GB",
+    "path": "/student-life/accommodation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "20536f34-4a8d-44df-8124-101e2bdaa246",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "03b6f403-c848-44da-bfaa-4bbb36cef88a",
+    "parentId": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "projectId": "universityDemo",
+    "slug": "balance-wellbeing-and-support",
+    "displayName": "Balance, wellbeing and support",
+    "language": "en-GB",
+    "path": "/student-life/balance-wellbeing-and-support",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "ee15334f-dcb1-495a-b72f-ae7781844c73",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8e3216a7-e00b-4f9b-bb49-4774a84db50a",
+    "parentId": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "projectId": "universityDemo",
+    "slug": "campus-life",
+    "displayName": "Campus life",
+    "language": "en-GB",
+    "path": "/student-life/campus-life",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "65a0ad8b-0676-41e9-abcf-3fe6d033b748",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "baf2d2cc-4ed2-4070-af16-cf80927a6d1a",
+    "parentId": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "projectId": "universityDemo",
+    "slug": "getting-involved",
+    "displayName": "Getting involved",
+    "language": "en-GB",
+    "path": "/student-life/getting-involved",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "401a14b0-f96c-4b4b-a088-01b516607cea",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0511f2a3-3d16-4916-ac5c-00cb017d85ff",
+    "parentId": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "projectId": "universityDemo",
+    "slug": "sport-and-fitness",
+    "displayName": "Sport and fitness",
+    "language": "en-GB",
+    "path": "/student-life/sport-and-fitness",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a3cda1cb-5843-4fd3-bcbe-9489cd1113b3",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b3c160e8-b027-4f8f-b46d-dd73dcb8060a",
+    "parentId": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "projectId": "universityDemo",
+    "slug": "students-union",
+    "displayName": "Students' Union",
+    "language": "en-GB",
+    "path": "/student-life/students-union",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8dbbaacd-f2aa-477f-b546-cbf0460aab71",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f6aebc33-a492-4aae-817c-7d784164c616",
+    "parentId": "323ffa4f-26df-45a7-b8c3-4e0868754250",
+    "projectId": "universityDemo",
+    "slug": "sustainability-and-volunteering",
+    "displayName": "Sustainability and volunteering",
+    "language": "en-GB",
+    "path": "/student-life/sustainability-and-volunteering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8e54363d-61bd-4257-b405-5f46495ee6a5",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "512f7a89-df6a-4fc3-b3ad-958394194c6e",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "student-stories",
+    "displayName": "Student stories",
+    "language": "en-GB",
+    "path": "/student-stories",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "f13f354f-55ad-40b5-a299-fff9d77ae4fa",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "18fdee81-d4d4-4432-aa12-2a9842050326",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "study-here",
+    "displayName": "Study here",
+    "language": "en-GB",
+    "path": "/study-here",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "97bb7de6-e70a-468c-863f-bc3282ace226",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "subject-areas",
+    "displayName": "subject-areas",
+    "language": "en-GB",
+    "path": "/subject-areas",
+    "childCount": 8,
+    "isCanonical": false,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "d2b8f239-da7d-427c-bbf5-7fd508542e5c",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "biological-sciences",
+    "displayName": "Biological Sciences",
+    "language": "en-GB",
+    "path": "/subject-areas/biological-sciences",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "1197123e-c735-4acc-a784-6a80ad6e45de",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "45d7a864-5768-431f-9c9e-4b87f25d3a0c",
+    "parentId": "d2b8f239-da7d-427c-bbf5-7fd508542e5c",
+    "projectId": "universityDemo",
+    "slug": "biology",
+    "displayName": "Biology",
+    "language": "en-GB",
+    "path": "/subject-areas/biological-sciences/biology",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d9d0b508-9035-442f-8ec6-f228d314fdc3",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e3ca0496-78ef-4857-adb2-6faa4eecc6ee",
+    "parentId": "d2b8f239-da7d-427c-bbf5-7fd508542e5c",
+    "projectId": "universityDemo",
+    "slug": "biomedical-sciences",
+    "displayName": "Biomedical Sciences",
+    "language": "en-GB",
+    "path": "/subject-areas/biological-sciences/biomedical-sciences",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "74e84a95-4254-40d1-8e81-eaa7d31e9ab9",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "d2e8a99e-99d8-4b96-a858-fb33920e7898",
+    "parentId": "d2b8f239-da7d-427c-bbf5-7fd508542e5c",
+    "projectId": "universityDemo",
+    "slug": "environmental-biology",
+    "displayName": "Environmental Biology",
+    "language": "en-GB",
+    "path": "/subject-areas/biological-sciences/environmental-biology",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "f01381a9-39ac-405f-8f2e-0bcc680741b4",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "56b5db63-516a-4b93-a681-f4c7bdd0e28a",
+    "parentId": "d2b8f239-da7d-427c-bbf5-7fd508542e5c",
+    "projectId": "universityDemo",
+    "slug": "genetics",
+    "displayName": "Genetics",
+    "language": "en-GB",
+    "path": "/subject-areas/biological-sciences/genetics",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6ac72ef3-700f-411a-bf6d-04290f836ebf",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "186b4df7-f559-412d-8167-af1e98921cdf",
+    "parentId": "d2b8f239-da7d-427c-bbf5-7fd508542e5c",
+    "projectId": "universityDemo",
+    "slug": "life-sciences",
+    "displayName": "Life Sciences",
+    "language": "en-GB",
+    "path": "/subject-areas/biological-sciences/life-sciences",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "2c9c9bfe-3d00-452e-8c46-4626cb2ac777",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8a7d2bb1-fc10-4f88-8875-6147605a348e",
+    "parentId": "d2b8f239-da7d-427c-bbf5-7fd508542e5c",
+    "projectId": "universityDemo",
+    "slug": "microbiology",
+    "displayName": "Microbiology",
+    "language": "en-GB",
+    "path": "/subject-areas/biological-sciences/microbiology",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "90f5c25a-02b6-4918-84f4-1061e7b9426f",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c3f3c634-70a7-4dc9-a3ec-32f726378de7",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "business-and-law",
+    "displayName": "Business and Law",
+    "language": "en-GB",
+    "path": "/subject-areas/business-and-law",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "741242d5-741a-464a-831e-91cc590653b9",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "9a801496-a20e-41a6-b0f1-5b99466d3583",
+    "parentId": "c3f3c634-70a7-4dc9-a3ec-32f726378de7",
+    "projectId": "universityDemo",
+    "slug": "accountancy",
+    "displayName": "Accountancy",
+    "language": "en-GB",
+    "path": "/subject-areas/business-and-law/accountancy",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8dc5171b-d2e4-48c5-9bf2-fda8fbb796e9",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "727e94f8-1e43-4400-b3dd-46fcbe9bffc1",
+    "parentId": "c3f3c634-70a7-4dc9-a3ec-32f726378de7",
+    "projectId": "universityDemo",
+    "slug": "business-studies",
+    "displayName": "Business Studies",
+    "language": "en-GB",
+    "path": "/subject-areas/business-and-law/business-studies",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "dd8e5496-8c2b-48f5-a70c-f249fb73215d",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "662713b4-0a64-403e-9bb0-99503fcacc1c",
+    "parentId": "c3f3c634-70a7-4dc9-a3ec-32f726378de7",
+    "projectId": "universityDemo",
+    "slug": "entrepreneurship-and-innovation",
+    "displayName": "Entrepreneurship and Innovation",
+    "language": "en-GB",
+    "path": "/subject-areas/business-and-law/entrepreneurship-and-innovation",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "e5ff7324-9170-4ba2-8bfa-93fde9dc28f3",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "fd7f6d85-7a8d-459d-a14a-0da56a413a49",
+    "parentId": "c3f3c634-70a7-4dc9-a3ec-32f726378de7",
+    "projectId": "universityDemo",
+    "slug": "law",
+    "displayName": "Law",
+    "language": "en-GB",
+    "path": "/subject-areas/business-and-law/law",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "bc3523ae-df86-4e99-b8ba-9de27a2ecb9c",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b79aebba-cdac-4f09-aa61-7cf815268de2",
+    "parentId": "c3f3c634-70a7-4dc9-a3ec-32f726378de7",
+    "projectId": "universityDemo",
+    "slug": "management",
+    "displayName": "Management",
+    "language": "en-GB",
+    "path": "/subject-areas/business-and-law/management",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8b830181-19d7-4a83-8a96-ec6dfa38d54c",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "21822d8d-b3a2-4bd2-8ef8-7509800aea8a",
+    "parentId": "c3f3c634-70a7-4dc9-a3ec-32f726378de7",
+    "projectId": "universityDemo",
+    "slug": "marketing",
+    "displayName": "Marketing",
+    "language": "en-GB",
+    "path": "/subject-areas/business-and-law/marketing",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "d63479db-d043-4402-9360-63c3e0218aba",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "053edc59-6d76-46c4-8eb0-41bc9882dff8",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "computing",
+    "displayName": "Computing",
+    "language": "en-GB",
+    "path": "/subject-areas/computing",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "0a0b0494-35f1-46ea-b706-a11eb0eaee9b",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2bd4bcca-883a-4e1a-b2d4-bcd1c1b61815",
+    "parentId": "053edc59-6d76-46c4-8eb0-41bc9882dff8",
+    "projectId": "universityDemo",
+    "slug": "artificial-intelligence",
+    "displayName": "Artificial Intelligence",
+    "language": "en-GB",
+    "path": "/subject-areas/computing/artificial-intelligence",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c2e6ed5d-a996-408c-9cc0-d6b612926a4f",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7f6f01a5-bca9-4d7b-9307-7f1f4ecfd9f2",
+    "parentId": "053edc59-6d76-46c4-8eb0-41bc9882dff8",
+    "projectId": "universityDemo",
+    "slug": "computer-science",
+    "displayName": "Computer Science",
+    "language": "en-GB",
+    "path": "/subject-areas/computing/computer-science",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "97952b63-9e1b-475c-a795-e25b084c0d1f",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f3e69269-6bb2-4c60-bebf-e7aee6a1c8cd",
+    "parentId": "053edc59-6d76-46c4-8eb0-41bc9882dff8",
+    "projectId": "universityDemo",
+    "slug": "cybersecurity-and-digital-forensics",
+    "displayName": "Cybersecurity and Digital Forensics",
+    "language": "en-GB",
+    "path": "/subject-areas/computing/cybersecurity-and-digital-forensics",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "15ead154-450d-4017-9292-563367017452",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "60378155-e23b-4c55-b0e5-c7a5edfbef44",
+    "parentId": "053edc59-6d76-46c4-8eb0-41bc9882dff8",
+    "projectId": "universityDemo",
+    "slug": "data-science",
+    "displayName": "Data Science",
+    "language": "en-GB",
+    "path": "/subject-areas/computing/data-science",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9f620a50-3d99-4e0a-94ff-a8dfae5c80a4",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6cfd88b6-ea35-40b9-b9d8-c9e0858c4e89",
+    "parentId": "053edc59-6d76-46c4-8eb0-41bc9882dff8",
+    "projectId": "universityDemo",
+    "slug": "game-design",
+    "displayName": "Game Design",
+    "language": "en-GB",
+    "path": "/subject-areas/computing/game-design",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8e08b04f-7238-42f3-96f7-c8478ffc96b7",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "b8fcf0c9-6cbe-4256-93bc-c345ac60414e",
+    "parentId": "053edc59-6d76-46c4-8eb0-41bc9882dff8",
+    "projectId": "universityDemo",
+    "slug": "software-engineering",
+    "displayName": "Software Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/computing/software-engineering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9c2ae9e5-72d0-4e06-8cea-5fb6f1bd6c28",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "engineering",
+    "displayName": "Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering",
+    "childCount": 8,
+    "entry": {
+      "sys": {
+        "id": "f3dfb427-8f96-453e-852e-9060f0e8b7e1",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "53f68653-9301-490f-939c-9a9905637fe7",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "aerospace-engineering",
+    "displayName": "Aerospace Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/aerospace-engineering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "ab556dc6-eca9-47dd-84f5-ac9adf4a4a3e",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f6def4a6-69b8-49c5-af6c-0e601edaf5f6",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "automotive-engineering",
+    "displayName": "Automotive Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/automotive-engineering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "b256e9b7-de3f-4729-96ef-0d6bb39a15be",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "47e1141e-a12b-450b-8e92-de87c92be885",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "central-content",
+    "displayName": "central-content",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/central-content",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "66ba9efa-b395-4fa5-8582-0de2cb636a3b",
+        "language": "en-GB",
+        "contentTypeId": "news",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": false,
+    "version": {
+      "versionNo": "2.0"
+    },
+    "includeInMenu": false
+  },
+  {
+    "id": "5085b36c-8b58-4cc7-a293-7a8159315a30",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "civil-and-structural-engineering",
+    "displayName": "Civil and Structural Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/civil-and-structural-engineering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "525209fe-c983-4f66-b638-4105ffa7a7d1",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8d1876c8-0b73-4605-ae47-37a388ff6efc",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "electrical-and-electronic-engineering",
+    "displayName": "Electrical and Electronic Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/electrical-and-electronic-engineering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "7fe4049d-39e3-4f8a-b4e2-ed6ab0174f8a",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f0905e89-3d57-43aa-80ac-d21801cab0c7",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "energy-and-environmental-engineering",
+    "displayName": "Energy and Environmental Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/energy-and-environmental-engineering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "cdbc9aab-e405-4f3b-ae13-22852750190f",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a797f499-7979-46cc-a70a-04c72b5b18cc",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "mechanical-engineering",
+    "displayName": "Mechanical Engineering",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/mechanical-engineering",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9af5d83a-ed87-4a38-b797-b695ccb858b5",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "4e90f3a5-5f92-42f2-9a9e-723bd1f474ca",
+    "parentId": "c8ccead2-2ea1-4c85-aeab-43d600b2b4af",
+    "projectId": "universityDemo",
+    "slug": "sh23-content-page",
+    "displayName": "sh23 content page",
+    "language": "en-GB",
+    "path": "/subject-areas/engineering/sh23-content-page",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "28634901-17da-44e5-953d-458bafbb80d1",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "1b1b47d7-1fa3-4148-b814-e9e4337885ea",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "geography-and-environmental-sciences",
+    "displayName": "Geography and Environmental Sciences",
+    "language": "en-GB",
+    "path": "/subject-areas/geography-and-environmental-sciences",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "45d483b5-d757-46d9-afc2-10ac68c53635",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "93ae56b5-03ff-47f6-94dd-af34c947ab9b",
+    "parentId": "1b1b47d7-1fa3-4148-b814-e9e4337885ea",
+    "projectId": "universityDemo",
+    "slug": "climate-change-and-natural-hazards",
+    "displayName": "Climate Change and Natural Hazards",
+    "language": "en-GB",
+    "path": "/subject-areas/geography-and-environmental-sciences/climate-change-and-natural-hazards",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "8091a4ee-0eba-4af2-9252-32d901f5c6b8",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "2215c841-2f50-43f4-aaac-e9a7f7dabe3e",
+    "parentId": "1b1b47d7-1fa3-4148-b814-e9e4337885ea",
+    "projectId": "universityDemo",
+    "slug": "conservation-and-ecology",
+    "displayName": "Conservation and Ecology",
+    "language": "en-GB",
+    "path": "/subject-areas/geography-and-environmental-sciences/conservation-and-ecology",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3ee27208-8a06-4555-a90d-356065a65ddb",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "3a12e5f0-dab3-4918-8a13-0e726afb07c4",
+    "parentId": "1b1b47d7-1fa3-4148-b814-e9e4337885ea",
+    "projectId": "universityDemo",
+    "slug": "environmental-management-and-sustainability",
+    "displayName": "Environmental Management and Sustainability",
+    "language": "en-GB",
+    "path": "/subject-areas/geography-and-environmental-sciences/environmental-management-and-sustainability",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "6943fc16-eccf-4449-b1bf-1f7bda640f87",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "99cb70e4-8ab6-4334-a709-b6882a50ff6a",
+    "parentId": "1b1b47d7-1fa3-4148-b814-e9e4337885ea",
+    "projectId": "universityDemo",
+    "slug": "environmental-science",
+    "displayName": "Environmental Science",
+    "language": "en-GB",
+    "path": "/subject-areas/geography-and-environmental-sciences/environmental-science",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "53c3a508-3ff7-489d-9610-7fe6adff5d82",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "27461736-28f1-42cd-a0ff-1ca63249cb40",
+    "parentId": "1b1b47d7-1fa3-4148-b814-e9e4337885ea",
+    "projectId": "universityDemo",
+    "slug": "geography",
+    "displayName": "Geography",
+    "language": "en-GB",
+    "path": "/subject-areas/geography-and-environmental-sciences/geography",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "1920f657-a2b4-498f-aeb1-c83737697ba0",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "570e38c8-7763-40f0-bc7b-35dec94dbb1b",
+    "parentId": "1b1b47d7-1fa3-4148-b814-e9e4337885ea",
+    "projectId": "universityDemo",
+    "slug": "human-geography-and-global-development",
+    "displayName": "Human Geography and Global Development",
+    "language": "en-GB",
+    "path": "/subject-areas/geography-and-environmental-sciences/human-geography-and-global-development",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4f145370-a922-4e9f-9d38-e548934ec8bb",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a8a389e5-df67-4a4c-9664-2e7386baeff0",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "health-and-social-care",
+    "displayName": "Health and Social Care",
+    "language": "en-GB",
+    "path": "/subject-areas/health-and-social-care",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "5cd5ed22-7b32-4a16-81c2-64e2cd081e1d",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8b7a0498-2dca-4545-9049-5441e9695c80",
+    "parentId": "a8a389e5-df67-4a4c-9664-2e7386baeff0",
+    "projectId": "universityDemo",
+    "slug": "counselling-and-mental-health",
+    "displayName": "Counselling and Mental Health",
+    "language": "en-GB",
+    "path": "/subject-areas/health-and-social-care/counselling-and-mental-health",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4c91e4fb-798b-412d-b65c-ed9663e3f16c",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "6ab5c1ca-0f3f-4164-bee8-9c24325b90d3",
+    "parentId": "a8a389e5-df67-4a4c-9664-2e7386baeff0",
+    "projectId": "universityDemo",
+    "slug": "food-sciences",
+    "displayName": "Food Sciences",
+    "language": "en-GB",
+    "path": "/subject-areas/health-and-social-care/food-sciences",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "4c6d1aec-20bd-4ae2-958f-fa070d33c099",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "7d35b06f-fc71-438d-8683-627187c075e9",
+    "parentId": "a8a389e5-df67-4a4c-9664-2e7386baeff0",
+    "projectId": "universityDemo",
+    "slug": "occupational-therapy",
+    "displayName": "Occupational Therapy",
+    "language": "en-GB",
+    "path": "/subject-areas/health-and-social-care/occupational-therapy",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "796f234f-6ff3-4efa-9f92-60643ec5954e",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "72393718-5efc-44c4-87d5-9f377fc4b587",
+    "parentId": "a8a389e5-df67-4a4c-9664-2e7386baeff0",
+    "projectId": "universityDemo",
+    "slug": "physiotherapy",
+    "displayName": "Physiotherapy",
+    "language": "en-GB",
+    "path": "/subject-areas/health-and-social-care/physiotherapy",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "3af017ee-fa7e-4082-a8ac-872afb41a84c",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "c27e1e19-4a1a-4bbd-badb-df033b2f6175",
+    "parentId": "a8a389e5-df67-4a4c-9664-2e7386baeff0",
+    "projectId": "universityDemo",
+    "slug": "public-health-and-wellbeing",
+    "displayName": "Public Health and Wellbeing",
+    "language": "en-GB",
+    "path": "/subject-areas/health-and-social-care/public-health-and-wellbeing",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9facd11d-0bcf-4055-b1e2-dab4e152e265",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "9fa8975d-41f7-4221-8d9d-68243c2e38ad",
+    "parentId": "a8a389e5-df67-4a4c-9664-2e7386baeff0",
+    "projectId": "universityDemo",
+    "slug": "social-work",
+    "displayName": "Social Work",
+    "language": "en-GB",
+    "path": "/subject-areas/health-and-social-care/social-work",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "fba3e01d-01ac-4298-8fdf-99fda63e6e92",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0cce935f-c72a-472e-a4f8-bf4e93f97f32",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "humanities",
+    "displayName": "Humanities",
+    "language": "en-GB",
+    "path": "/subject-areas/humanities",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "002882f5-d49f-41e8-8012-72d1136d2032",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "0b5bcbe7-c0d2-411a-83ad-d7e138955f08",
+    "parentId": "0cce935f-c72a-472e-a4f8-bf4e93f97f32",
+    "projectId": "universityDemo",
+    "slug": "cultural-studies",
+    "displayName": "Cultural Studies",
+    "language": "en-GB",
+    "path": "/subject-areas/humanities/cultural-studies",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "eef8ddbe-d301-44ae-8cae-d746dce54246",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "38177e74-e837-4a7a-a374-fa83ba4a13df",
+    "parentId": "0cce935f-c72a-472e-a4f8-bf4e93f97f32",
+    "projectId": "universityDemo",
+    "slug": "english",
+    "displayName": "English",
+    "language": "en-GB",
+    "path": "/subject-areas/humanities/english",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c902bea4-a5fc-46b2-86f6-cf3d558a0aab",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "843278f0-663d-4677-9792-1cd280d2212e",
+    "parentId": "0cce935f-c72a-472e-a4f8-bf4e93f97f32",
+    "projectId": "universityDemo",
+    "slug": "film-studies",
+    "displayName": "Film Studies",
+    "language": "en-GB",
+    "path": "/subject-areas/humanities/film-studies",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "52db129d-5a7a-4b08-a327-080a86e3d091",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8ed23cb2-1e0f-4655-823e-0797530498fa",
+    "parentId": "0cce935f-c72a-472e-a4f8-bf4e93f97f32",
+    "projectId": "universityDemo",
+    "slug": "history",
+    "displayName": "History",
+    "language": "en-GB",
+    "path": "/subject-areas/humanities/history",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "019803cb-7e9c-4dda-8fb0-c0347ce52985",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "3340c30d-5f9f-4465-9399-1142305ad536",
+    "parentId": "0cce935f-c72a-472e-a4f8-bf4e93f97f32",
+    "projectId": "universityDemo",
+    "slug": "music",
+    "displayName": "Music",
+    "language": "en-GB",
+    "path": "/subject-areas/humanities/music",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "83dea541-4c2c-4b6a-92e5-39ebbf07987c",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "387a2d8b-85a9-491d-b848-9c7b7a153725",
+    "parentId": "0cce935f-c72a-472e-a4f8-bf4e93f97f32",
+    "projectId": "universityDemo",
+    "slug": "philosophy",
+    "displayName": "Philosophy",
+    "language": "en-GB",
+    "path": "/subject-areas/humanities/philosophy",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c67a4ae9-90a0-4fef-835d-61f86b7d91f2",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f548aa41-b2b3-49d8-a0ce-757e540e9fbd",
+    "parentId": "132ace9c-1a54-4b2f-9c93-5ecf2aab323c",
+    "projectId": "universityDemo",
+    "slug": "the-arts",
+    "displayName": "The Arts",
+    "language": "en-GB",
+    "path": "/subject-areas/the-arts",
+    "childCount": 6,
+    "entry": {
+      "sys": {
+        "id": "c95773fe-46c6-400c-8efc-bdd32f0dc9b5",
+        "language": "en-GB",
+        "contentTypeId": "subjectArea",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "f4d545b4-c6aa-44ae-b172-502d20533511",
+    "parentId": "f548aa41-b2b3-49d8-a0ce-757e540e9fbd",
+    "projectId": "universityDemo",
+    "slug": "creative-writing",
+    "displayName": "Creative Writing",
+    "language": "en-GB",
+    "path": "/subject-areas/the-arts/creative-writing",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "dcd731de-f6cb-4b34-8a10-3d2343f8cdd6",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "06907e8f-ec51-4cc4-9358-ebe1e7be0fea",
+    "parentId": "f548aa41-b2b3-49d8-a0ce-757e540e9fbd",
+    "projectId": "universityDemo",
+    "slug": "design-and-visual-communication",
+    "displayName": "Design and Visual Communication",
+    "language": "en-GB",
+    "path": "/subject-areas/the-arts/design-and-visual-communication",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "76bbda78-17a1-451b-9049-ca15fa971a34",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e2714360-53a1-4349-89ed-ae040224d1fd",
+    "parentId": "f548aa41-b2b3-49d8-a0ce-757e540e9fbd",
+    "projectId": "universityDemo",
+    "slug": "film-media-and-digital-arts",
+    "displayName": "Film, Media and Digital Arts",
+    "language": "en-GB",
+    "path": "/subject-areas/the-arts/film-media-and-digital-arts",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "810c581c-34e8-4605-a0ce-70ea45e27d52",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "479f07fd-d7c2-418a-b6fc-7a558aa64fa4",
+    "parentId": "f548aa41-b2b3-49d8-a0ce-757e540e9fbd",
+    "projectId": "universityDemo",
+    "slug": "fine-art",
+    "displayName": "Fine Art",
+    "language": "en-GB",
+    "path": "/subject-areas/the-arts/fine-art",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "c97ab640-2bfe-4ab0-9dda-2df9e62fbb93",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "cda7a221-5567-4b40-8b3c-2a5914871690",
+    "parentId": "f548aa41-b2b3-49d8-a0ce-757e540e9fbd",
+    "projectId": "universityDemo",
+    "slug": "interdisciplinary-projects",
+    "displayName": "Interdisciplinary Projects",
+    "language": "en-GB",
+    "path": "/subject-areas/the-arts/interdisciplinary-projects",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "a6377d23-d868-4132-82ac-8eb70ea720b5",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "e2ac3bd3-7c77-4631-b379-c04bab695487",
+    "parentId": "f548aa41-b2b3-49d8-a0ce-757e540e9fbd",
+    "projectId": "universityDemo",
+    "slug": "theatre-and-performance",
+    "displayName": "Theatre and Performance",
+    "language": "en-GB",
+    "path": "/subject-areas/the-arts/theatre-and-performance",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "17d26c41-8bb7-4045-9ff7-59ca13ddf71c",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "89f7ea0a-ea7e-4c1c-ba3d-0a59d453227c",
+    "parentId": "ed18076b-80c0-4b87-ad74-b00e7fb9a348",
+    "projectId": "universityDemo",
+    "slug": "undergraduate-study",
+    "displayName": "Undergraduate study",
+    "language": "en-GB",
+    "path": "/undergraduate-study",
+    "childCount": 3,
+    "entry": {
+      "sys": {
+        "id": "1a4a3934-08cc-4483-a052-3ad990107749",
+        "language": "en-GB",
+        "contentTypeId": "landingPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "a0399721-2189-4a56-ba11-da9c275148d5",
+    "parentId": "89f7ea0a-ea7e-4c1c-ba3d-0a59d453227c",
+    "projectId": "universityDemo",
+    "slug": "careers-and-placements",
+    "displayName": "Careers and placements",
+    "language": "en-GB",
+    "path": "/undergraduate-study/careers-and-placements",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "9eaf13cf-d2b2-4c8e-95a6-9ea97176f39d",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "8602b80b-32c1-4ac6-856c-ec0d2a792e24",
+    "parentId": "89f7ea0a-ea7e-4c1c-ba3d-0a59d453227c",
+    "projectId": "universityDemo",
+    "slug": "open-day-booking-form",
+    "displayName": "Open Day Booking Form",
+    "language": "en-GB",
+    "path": "/undergraduate-study/open-day-booking-form",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "78f402d3-fc3d-429d-a32b-5d8cd0548bf6",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  },
+  {
+    "id": "5936f509-56f0-42f5-a365-b1f9a6cb2be7",
+    "parentId": "89f7ea0a-ea7e-4c1c-ba3d-0a59d453227c",
+    "projectId": "universityDemo",
+    "slug": "personal-support",
+    "displayName": "Personal support",
+    "language": "en-GB",
+    "path": "/undergraduate-study/personal-support",
+    "childCount": 0,
+    "entry": {
+      "sys": {
+        "id": "b9691ce1-6025-4ad8-8289-4dd1bfe9adeb",
+        "language": "en-GB",
+        "contentTypeId": "contentPage",
+        "dataFormat": "entry"
+      }
+    },
+    "isCanonical": true,
+    "version": {
+      "versionNo": "1.0"
+    },
+    "includeInMenu": true
+  }
+]
+

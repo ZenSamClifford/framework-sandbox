@@ -1,0 +1,19 @@
+HTTP/1.1 500 Internal Server Error
+Content-Length: 32341
+Content-Type: text/html; charset=utf-8
+Date: Fri, 04 Sep 2026 10:57:31 GMT
+expose-raw-errors: True
+x-is-iis-fallback: false
+request-handler-metrics: routeInfoFetch: 1020 ms (nodeLookup: 606ms, getRouteInfoFetch: 413ms), generalRequestFetch: 37 ms, fallbackRequest 0 ms
+request-handler-debug-data: {"nodeInfo":{"id":"b36fcb8a-5817-444e-b3f5-d361ba041ae6","entryId":"5ba49eef-cff1-46b7-9767-1665f19257c2","path":"/accessibility"},"routeType":"Block","uri":"http://localhost:3000/","blockVersionInfo":{"projectUuid":"00000000-0000-0000-0000-000000000000","blockId":"sandbox","blockVersionId":"432245b3-59f0-4dba-b7e9-f92a6bb32d14","baseUri":"https://v3-main-sandbox-universitydemo-uol-block-lon-blue.blocks.contensis.com/","branch":"main","enableFullUriRouting":false,"pushed":"2026-08-13T09:08:07","staticPaths":["/static"],"versionNo":3},"endpointError":"Failed to invoke block  endpoint with http method GET","endpointErrorCurl":"curl -k -I 'http://localhost:3000/'","appConfiguration":{"blockClusterId":"hq","blockAddressSuffix":"blocks.contensis.com"}}
+x-alias: uol
+x-project-api-id: universityDemo
+x-node-id: b36fcb8a-5817-444e-b3f5-d361ba041ae6
+x-entry-id: 5ba49eef-cff1-46b7-9767-1665f19257c2
+x-block-id: sandbox
+x-version-no: 3
+Accept: */*
+Host: localhost:5001
+User-Agent: curl/8.7.1
+x-debug: true
+

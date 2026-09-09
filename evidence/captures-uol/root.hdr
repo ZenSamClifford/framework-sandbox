@@ -1,0 +1,54 @@
+HTTP/2 301 
+content-length: 0
+date: Fri, 04 Sep 2026 10:53:19 GMT
+location: /
+set-cookie: x-block-config=block-sandbox-versionno%3D3; path=/; secure
+accept: */*
+host: request-handler.services.contensis.com
+user-agent: curl/8.7.1
+accept-encoding: gzip
+x-debug: true
+x-block-request: pass
+x-orig-host: staging-universitydemo-uol.cloud.contensis.com
+x-requires-alias: true
+x-requires-entry-id: true
+x-requires-node-id: true
+x-requires-block-id: true
+x-requires-project-api-id: true
+x-ssl: true
+x-forwarded-for: 86.162.222.130, 10.65.50.134
+x-forwarded-for: 10.65.50.136
+x-requires-depends: true
+x-internal-host: staging-universitydemo-uol.cloud.contensis.com
+use-modern-cache-logic: true
+delivery-project: 
+x-authcache-get-key: skip
+x-authcache-get-key-stage: 8
+x-varnish: 8949189
+contensis-classic-version: 17.2.1.60
+x-site-type: staging
+x-block-config: block-versionstatus=released
+x-proxy-config: proxy-versionstatus=published
+x-renderer-config: renderer-versionstatus=published
+x-entry-versionstatus: published
+x-node-versionstatus: published
+x-iis-hostname: iis-live-universitydemo-uol.cloud.contensis.com
+x-loadbalancer-vip: 10.65.50.132
+x-project-uuid: 32a6a346-7893-a183-ee33-4199e73a0282
+x-forwarded-proto: https
+alt-svc: h3=":443";ma=60;
+x-origin-server: backend-coordinator
+x-host: staging-universitydemo-uol.cloud.contensis.com
+x-grace: 72h
+x-backend-ttl: 3600.000
+x-varnish: 8949188
+x-varnish-authentication: skip
+x-age: 0
+cache-control: no-cache, no-store
+pragma: no-cache
+x-server-name: z-uol-CACHE1
+strict-transport-security: max-age=15768000
+x-robots-tag: noindex
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+

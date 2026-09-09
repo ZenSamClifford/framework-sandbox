@@ -1,0 +1,5 @@
+Captured Fri  4 Sep 2026 10:42:09 UTC
+Target: https://preview-prs.cloud.contensis.com (real contensis-svc-request-handler, pod request-handler-v1-0-465, dc hq2)
+Paths: / (200, empty, IisFallback), /drew (404 IisFallback), /home (404 IisFallback)
+All fell through to IIS: preview-prs root serves no Contensis project (delivery-project header empty), so no node/block route was resolved.
+reactStarter site view could not be reached anonymously - no project-scoped preview hostname resolved.

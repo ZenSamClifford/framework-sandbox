@@ -1,0 +1,13 @@
+[04/09 11:55:02] [WARN] [fetch] non-retriable 404: Not Found https://api.github.com/repos/contensis/request-handler-localdevelopment/releases
+
+[04/09 11:55:02] [ERROR] CLI Error: Unable to get releases
+
+  Error: Unable to get releases
+    at GitHubCliModuleProvider.FindLatestRelease (/snapshot/cli/packages/contensis-cli/dist/providers/GitHubCliModuleProvider.js:65:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async RequestHandlerFactory.CheckUpdate (/snapshot/cli/packages/contensis-cli/dist/factories/RequestHandlerFactory.js:131:21)
+    at async RequestHandlerFactory.Create (/snapshot/cli/packages/contensis-cli/dist/factories/RequestHandlerFactory.js:77:7)
+    at async ContensisDev.ExecRequestHandler (/snapshot/cli/packages/contensis-cli/dist/services/ContensisDevService.js:348:28)
+    at async Command.<anonymous> (/snapshot/cli/packages/contensis-cli/dist/commands/dev.js:67:5)
+    at async Command.parseAsync (/snapshot/cli/node_modules/commander/lib/command.js:1092:5)
+

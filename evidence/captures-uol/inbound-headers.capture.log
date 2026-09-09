@@ -1,0 +1,40 @@
+{
+  "method": "GET",
+  "path": "/",
+  "headers": {
+    "Host": "localhost:3000",
+    "User-Agent": "curl/8.7.1",
+    "Accept": "*/*"
+  }
+}
+{
+  "method": "GET",
+  "path": "/",
+  "headers": {
+    "Accept": "*/*",
+    "User-Agent": "curl/8.7.1",
+    "x-node-id": "b36fcb8a-5817-444e-b3f5-d361ba041ae6",
+    "x-entry-id": "5ba49eef-cff1-46b7-9767-1665f19257c2",
+    "Host": "localhost",
+    "traceparent": "00-14ffb0b3a3a18986d0c99d77b151f03e-9223e22531afa435-00",
+    "Content-Length": "0"
+  }
+}
+{
+  "method": "GET",
+  "path": "/",
+  "headers": {
+    "Accept": "*/*",
+    "User-Agent": "curl/8.7.1",
+    "x-requires-alias": "true",
+    "x-requires-project-api-id": "true",
+    "x-requires-entry-language": "true",
+    "x-requires-block-id": "true",
+    "x-requires-version-no": "true",
+    "x-node-id": "b36fcb8a-5817-444e-b3f5-d361ba041ae6",
+    "x-entry-id": "5ba49eef-cff1-46b7-9767-1665f19257c2",
+    "Host": "localhost",
+    "traceparent": "00-1a84b8dfe2682d5a0c1dd2a1181f782c-47136d1d85f4f0a0-00",
+    "Content-Length": "0"
+  }
+}

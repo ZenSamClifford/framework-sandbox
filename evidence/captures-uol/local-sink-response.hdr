@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Length: 30
+Content-Type: text/html; charset=utf-8
+Date: Fri, 04 Sep 2026 10:57:59 GMT
+Server: BaseHTTP/0.6
+Server: Python/3.9.6
+x-is-iis-fallback: false
+request-handler-metrics: routeInfoFetch: 928 ms (nodeLookup: 539ms, getRouteInfoFetch: 389ms), generalRequestFetch: 17 ms, fallbackRequest 0 ms
+x-version-no: 3
+

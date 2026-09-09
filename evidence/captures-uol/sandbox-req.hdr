@@ -1,0 +1,120 @@
+HTTP/2 301 
+content-length: 0
+date: Fri, 04 Sep 2026 10:54:28 GMT
+location: /accessibility
+set-cookie: x-block-config=block-sandbox-versionno%3D3; path=/; secure
+accept: */*
+host: request-handler.services.contensis.com
+user-agent: curl/8.7.1
+accept-encoding: gzip
+x-debug: true
+x-block-request: pass
+x-orig-host: staging-universitydemo-uol.cloud.contensis.com
+x-requires-alias: true
+x-requires-entry-id: true
+x-requires-node-id: true
+x-requires-block-id: true
+x-requires-project-api-id: true
+x-ssl: true
+x-forwarded-for: 86.162.222.130, 10.65.50.134
+x-forwarded-for: 10.65.50.136
+x-requires-depends: true
+x-alias: uol
+x-internal-host: staging-universitydemo-uol.cloud.contensis.com
+use-modern-cache-logic: true
+delivery-project: 
+x-authcache-get-key: skip
+x-authcache-get-key-stage: 8
+x-varnish: 8851368
+contensis-classic-version: 17.2.1.60
+x-site-type: staging
+x-block-config: block-versionstatus=released
+x-proxy-config: proxy-versionstatus=published
+x-renderer-config: renderer-versionstatus=published
+x-entry-versionstatus: published
+x-node-versionstatus: published
+x-iis-hostname: iis-live-universitydemo-uol.cloud.contensis.com
+x-loadbalancer-vip: 10.65.50.132
+x-project-uuid: 32a6a346-7893-a183-ee33-4199e73a0282
+x-project-api-id: universityDemo
+x-forwarded-proto: https
+alt-svc: h3=":443";ma=60;
+x-origin-server: backend-coordinator
+x-host: staging-universitydemo-uol.cloud.contensis.com
+x-grace: 72h
+x-backend-ttl: 3600.000
+x-varnish: 5767079 8851368
+x-varnish-authentication: skip
+x-age: 12
+cache-control: no-cache, no-store
+pragma: no-cache
+x-server-name: z-uol-CACHE1
+strict-transport-security: max-age=15768000
+x-robots-tag: noindex
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+date: Fri, 04 Sep 2026 10:54:29 GMT
+x-contensis-viewer-groups: 
+surrogate-control: max-age=3600
+x-is-iis-fallback: false
+request-handler-metrics: routeInfoFetch: 72 ms (nodeLookup: 2ms, getRouteInfoFetch: 69ms), generalRequestFetch: 456 ms, fallbackRequest 0 ms
+request-handler-debug-data: {"nodeInfo":{"id":"b36fcb8a-5817-444e-b3f5-d361ba041ae6","entryId":"5ba49eef-cff1-46b7-9767-1665f19257c2","path":"/accessibility"},"routeType":"Block","uri":"https://10.65.12.152/accessibility","blockVersionInfo":{"projectUuid":"32a6a346-7893-a183-ee33-4199e73a0282","blockId":"sandbox","blockVersionId":"432245b3-59f0-4dba-b7e9-f92a6bb32d14","baseUri":"https://v3-main-sandbox-universitydemo-uol-block-lon-blue.blocks.contensis.com","branch":"main","enableFullUriRouting":true,"pushed":"2026-08-13T09:08:07.987856Z","staticPaths":["/static"],"versionNo":3},"appConfiguration":{"blockClusterId":"block-lon-blue","blockClusterIngressIp":"10.65.12.152","blockAddressSuffix":"blocks.contensis.com","aliasesWithApiRoutes":["nlgpsf"],"servicePod":"request-handler-v1-0-465-68d58797dd-dlxv8","dataCenter":"london","nodesDeliveryHost":"new-nodes-delivery-api-contensis-lon.services.contensis.com","publishingApiHost":"publishing-api-contensis-lon.services.contensis.com","isLocalRequestHandler":false}}
+x-alias: uol
+x-project-api-id: universityDemo
+x-node-id: b36fcb8a-5817-444e-b3f5-d361ba041ae6
+x-entry-id: 5ba49eef-cff1-46b7-9767-1665f19257c2
+x-entry-language: en-GB
+x-block-id: sandbox
+x-version-no: 3
+request-handler-surrogate-key: sandbox-app (1nCmiA), f6462d6b-a201-4be6-b473-45cfcb41f7e2_b36fcb8a-5817-444e-b3f5-d361ba041ae6 (5nuQXQ), f6462d6b-a201-4be6-b473-45cfcb41f7e2_ed18076b-80c0-4b87-ad74-b00e7fb9a348 (l/5kag), uol_universitydemo_block-sandbox_main (D384ag), uol_universitydemo_block-sandbox (7TQhVA), uol_universitydemo_renderer-sandbox_published (2mMxxw)
+accept: */*
+host: request-handler.services.contensis.com
+user-agent: curl/8.7.1
+accept-encoding: gzip
+cookie: x-block-config=block-sandbox-versionno%3D3
+x-debug: true
+x-block-request: pass
+x-orig-host: staging-universitydemo-uol.cloud.contensis.com
+x-ssl: true
+x-forwarded-for: 86.162.222.130, 10.65.50.134
+x-forwarded-for: 10.65.50.136
+x-requires-depends: true
+x-internal-host: staging-universitydemo-uol.cloud.contensis.com
+use-modern-cache-logic: true
+delivery-project: 
+x-authcache-get-key: skip
+x-authcache-get-key-stage: 8
+x-varnish: 8915706
+contensis-classic-version: 17.2.1.60
+x-site-type: staging
+x-block-config: block-versionstatus=released
+x-proxy-config: proxy-versionstatus=published
+x-renderer-config: renderer-versionstatus=published
+x-entry-versionstatus: published
+x-node-versionstatus: published
+x-iis-hostname: iis-live-universitydemo-uol.cloud.contensis.com
+x-loadbalancer-vip: 10.65.50.132
+x-project-uuid: 32a6a346-7893-a183-ee33-4199e73a0282
+x-forwarded-proto: https
+alt-svc: h3=":443";ma=60;
+x-origin-server: backend-coordinator
+x-host: staging-universitydemo-uol.cloud.contensis.com
+x-grace: 72h
+x-backend-ttl: 3600.000
+vary: Accept-Encoding
+x-varnish: 6656133 8915706
+x-varnish-authentication: skip
+x-age: 11
+cache-control: no-cache, no-store
+pragma: no-cache
+accept-ranges: bytes
+content-length: 111599
+x-server-name: z-uol-CACHE1
+strict-transport-security: max-age=15768000
+x-robots-tag: noindex
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+

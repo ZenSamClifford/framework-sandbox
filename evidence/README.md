@@ -1,0 +1,57 @@
+# Evidence
+
+Raw captures behind the claims in `../.knowledge/` and
+`../packages/routing/.knowledge/`. Every file here was captured on **2026-09-04**
+during spike zero, against a live Contensis environment and a locally run Request
+Handler. They are kept verbatim so the findings stay checkable rather than having to
+be taken on trust.
+
+These were originally produced as scratch output during spike zero, in a working
+directory that was never committed anywhere. They are committed here because that
+made them one `rm` away from gone.
+
+## Do not tidy these files
+
+Two of them carry a `.capture.log` extension despite looking like JSON. That is
+deliberate, and it is the same reason
+`packages/routing/src/fixtures/inboundHeaders.capture.log` is named the way it is:
+neither file is a JSON document, so naming it `.json` makes every formatter and
+parser choke on it. `vp check --fix` runs over staged files via the `pre-commit`
+hook, so a misnamed file breaks a commit rather than just looking untidy.
+
+The root `.gitignore` ignores `*.log`, with an `!evidence/**/*.log` un-ignore to
+keep these tracked.
+
+## One redaction
+
+`devrequests-success.capture.log` is verbatim apart from a single line, where the .NET
+host printed its own working directory as an absolute path on the machine that captured
+it. That line is now `Content root path: [redacted local path]`. It supported none of the
+findings below, and the original path referred to a scratch directory that no longer
+exists. Every other file here is byte-identical to what was captured.
+
+## What each file proves
+
+| File                                                       | Original name              | What it is evidence for                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `captures-uol/inbound-headers.capture.log`                 | `inbound-headers.json`     | The header contract. Three requests as received by a sink on port 3000 behind the local handler. Shows `GET /accessibility` arriving as `GET /` with `x-node-id` and `x-entry-id` set and nothing else. This is the file the routing package's fixture was cut from. Concatenated JSON objects, not an array. |
+| `captures-uol/nodes.capture.log`                           | `nodes.json`               | The `uol` / `universityDemo` site view to depth 3, used to pick known-good fixture ids. CLI console output followed by a JSON array, so not parseable as JSON.                                                                                                                                                |
+| `captures-uol/local-accessibility.{hdr,body}`              | same                       | `GET /accessibility` through the locally run handler against the real block image.                                                                                                                                                                                                                            |
+| `captures-uol/local-sink-response.hdr`                     | same                       | What the sink returned, for comparison with the block.                                                                                                                                                                                                                                                        |
+| `captures-uol/root.{hdr,body}`, `root-followed.{hdr,body}` | same                       | The staging root, before and after following the `?block-sandbox-versionno=3` 301. Shows the version pin being stripped and persisted as a cookie.                                                                                                                                                            |
+| `captures-uol/sandbox.{hdr,body}`, `sandbox-req.hdr`       | same                       | The deployed block with `x-debug: true` and the `x-requires-*` echoes. Source for `routeType: Block`, `enableFullUriRouting: true`, `staticPaths: ["/static"]`, and the absence of `nodeId` / `entryId` query params post-cutoff.                                                                             |
+| `devrequests-success.capture.log`                          | `devrequests2.log`         | The successful handler run. The primary proof that `GET http://localhost:5001/accessibility` forwards to the block as `GET http://localhost:3000/`, so the friendly path is lost in local dev.                                                                                                                |
+| `devrequests-github404.capture.log`                        | `devrequests.log`          | `contensis dev requests` failing to fetch its own binary: `GitHubCliModuleProvider.FindLatestRelease` calls the GitHub API unauthenticated against a private repo and gets a 404.                                                                                                                             |
+| `devrequests-port5000.capture.log`                         | `devrequests-port5000.log` | The macOS AirPlay Receiver collision on port 5000, with the .NET bind failure.                                                                                                                                                                                                                                |
+| `header-sink.py`                                           | same                       | The instrument that produced the header contract. A 14-line HTTP server on port 3000 that dumps method, path and headers as JSON.                                                                                                                                                                             |
+| `prs-capture-notes.txt`                                    | `live-capture-notes.txt`   | Why the earlier `prs` captures were worthless: `preview-prs` root serves no Contensis project, so everything fell through to IIS. Those captures are not carried over.                                                                                                                                        |
+
+## Reproducing
+
+```bash
+python3 evidence/header-sink.py &
+contensis dev requests sandbox http://localhost:3000 --args --port=5001
+curl -s localhost:5001/accessibility
+```
+
+The `--port=5001` is not optional on macOS: see `../.knowledge/contensis-test-environments.md`.

@@ -1,0 +1,434 @@
+- Launching request handler for local development
+[04/09 11:56:35] [WARN] [fetch] non-retriable 404: Not Found https://api.github.com/repos/contensis/request-handler-localdevelopment/releases
+
+Error: Unable to get releases
+    at GitHubCliModuleProvider.FindLatestRelease (/snapshot/cli/packages/contensis-cli/dist/providers/GitHubCliModuleProvider.js:65:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async RequestHandlerFactory.CheckUpdate (/snapshot/cli/packages/contensis-cli/dist/factories/RequestHandlerFactory.js:131:21) {
+  [cause]: {
+    message: 'Not Found',
+    documentation_url: 'https://docs.github.com/rest/releases/releases#list-releases',
+    status: '404'
+  }
+}
+✔ Launching request handler for local development
+[04/09 11:56:36] [HELP] If you see a firewall popup requesting network access, it is safe to approve
+
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:5001
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: [redacted local path]
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1004.1609ms
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.7092ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1009.1602ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1032.6154ms
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1007.1885ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.6725ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1007.6749ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.7084ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1009.8761ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1005.8501ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.8670ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.6078ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1337.9940ms
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.8779ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1007.5858ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.1818ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1003.6944ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1006.8893ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.8242ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1005.6422ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1006.2472ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1005.5077ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1006.7128ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1005.2244ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.5919ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.8752ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1006.3323ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1003.0311ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1070.9947ms
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1007.8696ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1006.1427ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1007.1620ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1018.3257ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1006.4480ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.4375ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1005.9327ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.1887ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1004.7202ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1007.1654ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/ - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET https://preview-universitydemo-uol.cloud.contensis.com/
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/ - 500 32357 text/html;+charset=utf-8 1008.5442ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/accessibility - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET http://localhost:3000/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET http://localhost:3000/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[104]
+      HTTP request failed after 3.491ms
+      System.Net.Http.HttpRequestException: Connection refused (localhost:3000)
+       ---> System.Net.Sockets.SocketException (61): Connection refused
+         at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+         at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+         at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+         at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+         at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[104]
+      HTTP request failed after 10.2514ms
+      System.Net.Http.HttpRequestException: Connection refused (localhost:3000)
+       ---> System.Net.Sockets.SocketException (61): Connection refused
+         at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+         at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+         at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+         at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+         at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+         at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+fail: Zengenti.Contensis.RequestHandler.Application.Services.EndpointRequestService[0]
+      Failed to invoke block  endpoint http://localhost:3000/ with http method GET. The equivalent curl command in PowerShell is: curl -k -I 'http://localhost:3000/'
+      System.Net.Http.HttpRequestException: Connection refused (localhost:3000)
+       ---> System.Net.Sockets.SocketException (61): Connection refused
+         at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+         at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+         at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+         --- End of inner exception stack trace ---
+         at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+         at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+         at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+         at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+         at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+         at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+         at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+         at Zengenti.Contensis.RequestHandler.Application.Services.EndpointRequestService.Invoke(HttpMethod httpMethod, Stream content, Dictionary`2 headers, RouteInfo routeInfo, Int32 currentDepth, CancellationToken cancellationToken) in /home/runner/work/request-handler-localdevelopment/request-handler-localdevelopment/src/Zengenti.Contensis.RequestHandler.Application/Services/EndpointRequestService.cs:line 110
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/accessibility - 500 32341 text/html;+charset=utf-8 1071.4730ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/accessibility - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET http://localhost:3000/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET http://localhost:3000/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[101]
+      Received HTTP response headers after 2.6827ms - 200
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[101]
+      End processing HTTP request after 9.2802ms - 200
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/accessibility - 200 30 text/html;+charset=utf-8 946.5150ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5001/accessibility - - -
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[100]
+      Start processing HTTP request GET http://localhost:3000/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[100]
+      Sending HTTP request GET http://localhost:3000/
+info: System.Net.Http.HttpClient.no-auto-redirect.ClientHandler[101]
+      Received HTTP response headers after 1.1067ms - 200
+info: System.Net.Http.HttpClient.no-auto-redirect.LogicalHandler[101]
+      End processing HTTP request after 1.2172ms - 200
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/accessibility - 200 30 text/html;+charset=utf-8 968.5850ms
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[04/09 11:58:22] [OK] Request handler exited with code 0
+
+[04/09 11:58:22] [WARN] received SIGTERM
+

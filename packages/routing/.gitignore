@@ -1,0 +1,10 @@
+node_modules
+dist
+*.local
+.DS_Store
+
+# The captured request fixture is deliberately `.log`, not `.json`: it is
+# concatenated JSON objects rather than a JSON document, so the extension keeps
+# formatters and parsers off it. Both this repo's root .gitignore and the
+# vite:library scaffold ignore `*.log`, so it has to be un-ignored explicitly.
+!src/fixtures/*.capture.log

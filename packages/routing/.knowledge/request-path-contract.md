@@ -95,8 +95,13 @@ post-cutoff.
 ## A 404 is not free
 
 A 404 from the block triggers an upstream IIS fallback round trip that may serve IIS
-content in place of our page. `routing-design.md` treats the 404-versus-200 choice as a
-deliberate routing decision rather than a server default.
+content in place of our page.
+
+**But the app is rarely the one deciding.** A path with no node never reaches the block:
+the handler resolves, finds nothing, and the request goes to IIS and then to a cached 404
+page without the block being involved. Confirmed on a deployed block,
+`evidence/captures-prs/block-404-routing.capture.log`. So do not serve a 200 shell to
+avoid a 404, which only produces a soft 404; see `routing-design.md`, corrected.
 
 `/favicon.ico` is the only path special-cased to skip node lookup. `robots.txt` and
 `ads.txt` resolve only via a site view node, a declared static path, or a separate

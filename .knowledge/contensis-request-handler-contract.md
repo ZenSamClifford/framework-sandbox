@@ -143,7 +143,9 @@ Version-config query params and `previewSecurityToken` are stripped by a 301 and
 
 ### 404s
 
-**Confirmed:** a 404 from the block triggers an **IIS fallback round-trip**, which may serve IIS content in its place. If the app 404s for unknown routes, expect a second upstream request. Excluded from the handler entirely: `/pingz`, `/healthz`, `/infoz`, `/livez`, `/api/preview-toolbar/blocks`.
+**Confirmed:** a 404 from the block triggers an **IIS fallback round-trip**, which may serve IIS content in its place. If the app 404s for unknown routes, expect a second upstream request.
+
+**Confirmed 2026-09-10, and it narrows the above considerably:** a path with **no node never reaches the block**. The handler resolves first, and on a miss the request goes to IIS and then to a cached 404 page with `nodeInfo: null`, `routeType: "IisFallback"` and `blockVersionInfo: null`. The block is only asked about paths that already resolved. So the app is not the one deciding a missing page's 404, and should not serve a 200 to avoid one. `evidence/captures-prs/block-404-routing.capture.log`. Excluded from the handler entirely: `/pingz`, `/healthz`, `/infoz`, `/livez`, `/api/preview-toolbar/blocks`.
 
 ## Running a handler locally
 

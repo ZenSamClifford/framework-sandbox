@@ -108,10 +108,10 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
         // Fall through to the 404 below.
       }
     }
-    // A miss under the static path is a genuine 404, not a page route. Serving the
-    // shell here would answer a hashed JS or CSS request with 200 text/html, which
-    // fails the module load in the browser with nothing to diagnose from. The
-    // IIS-fallback cost noted below is worth paying to keep asset misses legible.
+    // A miss under the static path is a genuine 404, not a page route. Static paths
+    // skip node lookup, so this really is ours to answer. Serving the shell would
+    // answer a hashed JS or CSS request with 200 text/html, failing the module load
+    // in the browser with nothing to diagnose from.
     fail(res, 404, "Not found");
     return;
   }
@@ -125,9 +125,14 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
   // Wiring routing in also ends this image's zero-runtime-dependency property:
   // the runtime stage will then need a `deps` stage or a bundled server.
   //
-  // Until then every path serves the shell with a 200. The app cannot signal
-  // not-found, and a 404 from a block costs an IIS fallback round-trip, so 200 is
-  // the safer default for a starter. Revisit when a node lookup can actually fail.
+  // Until then every path serves the shell with a 200. That is right today for a
+  // reason worth being precise about: a path with no node never reaches the block,
+  // so everything arriving here has already resolved. 404s belong to the platform,
+  // which goes block -> Classic Contensis -> a cached 404 page on its own.
+  //
+  // It is NOT because a 404 is expensive and 200 is safer. Once routing fetches the
+  // node, a fetch that fails should 404 and let that chain run; serving the shell
+  // instead would be a soft 404. See .knowledge/contensis-block-runtime.md.
   try {
     await serveFile(join(distDir, "index.html"), "no-cache", res);
   } catch {

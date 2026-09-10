@@ -111,21 +111,45 @@ const within = relative(distDir, candidate);
 if (within.startsWith("..") || within.startsWith(sep) || within === "") return null;
 ```
 
-## Deciding 404, and why the answer differs by path
+## 404s are the platform's job, not the app's
 
-A 404 from a block triggers an **IIS fallback round-trip**, which may serve IIS content in
-place of the block's response. So a 404 is never free. See the contract, and
-`packages/routing/.knowledge/routing-design.md` under "Decide 404 deliberately".
+**A path with no node never reaches the block.** Confirmed against our own deployed block
+(`evidence/captures-prs/block-404-routing.capture.log`):
 
-What this repo chose, which is a decision rather than something the handler dictates:
+| Request               | `routeType`   | Who answered                            |
+| --------------------- | ------------- | --------------------------------------- |
+| `/`                   | `Block`       | the block, 1039 bytes, our shell        |
+| `/does-not-exist-xyz` | none emitted  | the platform, 32852 bytes, its 404 page |
+| `/some/sub/path`      | `IisFallback` | IIS, with `nodeInfo: null`              |
 
-| Request                 | Response           | Why                                                                                                                                                                  |
-| ----------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A page route            | 200 with the shell | The app cannot yet tell a missing page from a real one, and 200 avoids the fallback. Revisit once a node fetch exists and can genuinely fail.                        |
-| A miss under `/static/` | 404                | Answering a hashed JS or CSS request with `200 text/html` fails the module load in the browser with nothing to diagnose from. Legibility is worth the fallback here. |
+On the missing paths there is no `request-handler-debug-data` and `blockVersionInfo` is
+`null`. The handler resolved no node, so the request never became a block route at all.
+The chain is **Block, then Classic Contensis, then a simple 404 page from cache**, and it
+runs whether or not the block exists.
 
-Do not let the page-route decision leak into asset paths by accident, which is what a
-plain "serve the shell for anything not found" fallback does.
+So an app cannot decide a 404 for a missing page, because it is never asked about one. A
+framework should not try to own this, and should **not** manufacture a 200 to avoid it:
+returning a shell where the platform would have served a 404 is a soft 404, which defeats
+the chain, misreports to crawlers, and caches "this page exists".
+
+Where a block-originated 404 genuinely can happen:
+
+- **A resolved node whose content the app then cannot render** — the node fetch fails, or
+  the entry is gone. This is the real decision point, and it only exists once routing does
+  the fetch. The node already resolved, so this means something is inconsistent rather
+  than missing; 404 and let the chain run.
+- **A request under a declared static path**, which skips node lookup and goes straight to
+  the block. A miss there should 404 rather than serve HTML: answering a hashed JS request
+  with `200 text/html` fails the module load with nothing to diagnose from.
+
+What this repo's server does today: 404 for a miss under `/static/`, and the shell for
+everything else. The second is correct only because everything else that arrives has
+already resolved to a node, **not** because a 404 is being avoided as expensive. Revisit
+the moment a node fetch exists that can fail.
+
+An earlier note in `packages/routing/.knowledge/routing-design.md` framed this as a free
+choice between "404 and accept the round-trip" and "200 with a not-found page, keeping
+control". That framing overstated the app's role, and is corrected there.
 
 ## Two things that change per deployment
 

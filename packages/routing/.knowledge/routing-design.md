@@ -130,16 +130,26 @@ reason.
 
 ## Decide 404 deliberately
 
-A 404 from the block triggers an upstream IIS fallback round-trip that may serve IIS
-content in place of our page. Two defensible answers when node resolution fails:
+**Corrected 2026-09-10 against a deployed block.** This section used to present two
+defensible answers "when node resolution fails". Node resolution does not fail in the app:
+it happens in the handler, and a path with no node never reaches the block. Verified on
+`prs` / `tim`: a missing path comes back with no debug data, `nodeInfo: null`,
+`routeType: "IisFallback"` and the platform's own 404 page. The chain is Block, then
+Classic Contensis, then a cached 404 page, and it does not involve us.
+`evidence/captures-prs/block-404-routing.capture.log`.
 
-1. **404 with our own body,** accepting the round-trip and the risk of IIS content.
-2. **200 with a not-found page,** keeping control of the response.
+So the choice is narrower than described, and option 2 is worse than it looked:
 
-This is a routing decision, not an nginx default. The Dockerised spike took option 2 by
-accident, through a plain SPA `try_files` fallback, which means the app returns 200 for every
-path and can never signal "not found": a missing page becomes an empty shell. Whichever answer
-we land on should be chosen, not inherited from a server config.
+- **Do not serve a 200 shell for a page we cannot render.** That is a soft 404. It defeats
+  the platform chain, misreports to crawlers, and caches "this page exists". The old
+  framing treated the IIS round-trip as a cost to dodge; it is the designed behaviour.
+- **The real decision point is a node that resolved but whose content we cannot render** —
+  the fetch fails, or the entry is gone. 404 and let the chain run.
+- The Dockerised spike's blanket `try_files` 200 was still wrong, for the reason given
+  above rather than the one originally given.
+
+Full evidence and the static-path exception are in
+`.knowledge/contensis-block-runtime.md`.
 
 ## Free with routing
 

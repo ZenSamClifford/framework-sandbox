@@ -1,0 +1,39 @@
+# Who answers a 404, tested against the deployed website block on prs / tim v2.
+# Captured 2026-09-10. All requests carry `x-debug: true`.
+
+$ GET /
+HTTP/2 200
+request-handler-debug-data: {"nodeInfo":{"id":"97ad4a16-...","entryId":"c615ce7b-...","path":"/"},
+                             "routeType":"Block","uri":"https://10.129.10.152/",
+                             "blockVersionInfo":{...,"enableFullUriRouting":true,
+                                                 "staticPaths":["/static"],"versionNo":2}}
+x-block-request: pass
+  -> 1039 bytes, our shell. The block was routed to.
+
+$ GET /does-not-exist-xyz
+HTTP/2 404
+  (no request-handler-debug-data header at all, no x-block-request)
+  -> 32852 bytes, "404 page not found". The platform's page, not ours.
+
+$ GET /deep/path/that/is/not/a/node
+HTTP/2 404
+  -> 32872 bytes, same platform page.
+
+$ GET /some/sub/path
+HTTP/2 404
+request-handler-debug-data: {"nodeInfo":null,"routeType":"IisFallback",
+                             "uri":"https://10.129.45.132/some/sub/path",
+                             "blockVersionInfo":null,"endpointError":"404",
+                             "endpointErrorCurl":"curl -k -I 'https:..."}
+  -> routeType is IisFallback and nodeInfo is null. No node resolved, so the request
+     was never a block route. blockVersionInfo is null: the block was not involved.
+
+$ GET /_5j8wRw_7c0df438-11fd-43ac-90b7-91f42e83defd/static/definitely-not-here.js
+HTTP/2 404
+  -> 14 bytes, "404 Not Found". Our server's body is "Not found\n" (10 bytes), so this
+     is not ours either.
+
+# Conclusion. A path with no node never reaches the block: the handler resolves, finds
+# nothing, and falls through to IIS and then the platform 404 page. The block is only
+# asked about paths that already resolved to a node. So an app cannot "decide" a 404 for
+# a missing page, because it is never asked about one.

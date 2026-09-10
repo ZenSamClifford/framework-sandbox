@@ -1,0 +1,16 @@
+# Live Contensis credentials live in apps/website/.env, and the image is public.
+**/.env
+**/.env.*
+!**/.env.example
+
+.git
+.github
+**/node_modules
+**/dist
+**/dist-ssr
+
+.claude
+.vite-hooks
+.vscode
+.DS_Store
+evidence

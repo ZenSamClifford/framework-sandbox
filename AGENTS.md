@@ -55,9 +55,13 @@ by the Vite+ `vp` CLI rather than by pnpm directly.
   identity. No network calls, no runtime dependencies, no credentials needed to test it.
   Step 1b (the node fetch) and everything after it are not built.
 - `packages/utils` is an untouched library scaffold from the starter.
-- `apps/website` is an untouched Vite+ vanilla-TS starter. It declares
-  `"routing": "workspace:*"` but does not import it yet. That dependency is the seam where
-  the SSR app will meet the routing package.
+- `apps/website` is the Vite+ vanilla-TS starter, deployed as a Contensis block. It
+  builds with `base: "/static/"`, and `server/index.ts` (a zero-dependency `node:http`
+  server) mounts `dist` at `/static` and serves the shell for everything else.
+  `docker/website.Dockerfile` and `.github/workflows/website-block.yml` build it and push
+  it to `prs` / `tim`. It declares `"routing": "workspace:*"` but does not import it yet;
+  the marked routing seam in `server/index.ts` is where the SSR app will meet the routing
+  package.
 
 ## Guidance
 

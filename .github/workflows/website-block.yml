@@ -1,0 +1,80 @@
+name: Website block
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/website/**"
+      - "packages/**"
+      - "docker/website.Dockerfile"
+      - ".dockerignore"
+      - ".node-version"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/website-block.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: website-block-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Not ghcr.io/${{ github.repository }}: that is ZenSamClifford/framework-sandbox and
+  # ghcr rejects uppercase in a repository path. zengenti/ui gets away with the
+  # expression only because its org is already lowercase.
+  IMAGE: ghcr.io/zensamclifford/framework-sandbox/website
+
+jobs:
+  deploy:
+    name: Build and deploy website block
+    # Deviation from the org-wide rule to use [self-hosted, linux]: this is a personal
+    # repo with no access to the Zengenti self-hosted runner pool.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # Replaces setup-node, pnpm setup and manual dependency caching.
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          cache: true
+
+      - run: vp install --frozen-lockfile
+      - run: vp check
+      - run: vp run -r test
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/website.Dockerfile
+          push: true
+          platforms: linux/amd64
+          tags: |
+            ${{ env.IMAGE }}:${{ github.ref_name }}-${{ github.run_number }}
+            ${{ env.IMAGE }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # `release: true` registers and releases the version. It does not make it live;
+      # that stays a manual CMS action.
+      - name: Push block to Contensis
+        uses: contensis/block-push@v1
+        with:
+          block-id: website
+          alias: prs
+          project-id: tim
+          client-id: ${{ secrets.CONTENSIS_CLIENT_ID }}
+          shared-secret: ${{ secrets.CONTENSIS_SHARED_SECRET }}
+          image-uri: ${{ env.IMAGE }}:${{ github.ref_name }}-${{ github.run_number }}
+          release: true

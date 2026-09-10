@@ -1,0 +1,16 @@
+# Block manifest.json, read out of the deployed CRB sandbox block image.
+# Captured 2026-09-10 against
+#   gitlab.zengenti.com:4567/university-of-leicester/sandbox/main/app:build-3
+# (read-only: the image is pulled and run locally, uol is never written to).
+
+$ docker run --rm --platform linux/amd64 --entrypoint sh <image> -c "ls -a /; ls -a /usr/src/app"
+/                : ... lib manifest.json media ...
+/usr/src/app     : .env dist node_modules package-lock.json package.json webpack
+
+$ ... -c "find / -name manifest.json -not -path \"*/node_modules/*\" -not -path /proc/*"
+/manifest.json
+
+$ ... -c "cat /manifest.json"
+{  
+  "enableFullUriRouting": true
+}

@@ -110,16 +110,29 @@ at `/`, which does not work behind the handler, so ours serves the build under
 - **`COPY --chown=vp:vp`**, since the image runs as the non-root `vp` user.
 - Use `vp build`, not `vp run build`. The package script prefixes `tsc -b`, which
   belongs in CI rather than in the image build.
-- `nginx.conf` must **not** be in `.dockerignore`, or the runtime-stage `COPY` fails
-  with "not found" even though the file is plainly there.
+- **Copy every workspace member's `package.json`** before `vp install`, so the install
+  layer caches independently of source changes.
+- `vp build` must run from the app directory, not the workspace root. Set
+  `WORKDIR /app/apps/website` before it, and copy from that path in the runtime stage.
+- **`manifest.json` is easy to lose** in a multi-stage build that only copies `dist`.
+  The runtime stage has to copy it explicitly, and it fails silently rather than loudly:
+  the defaults (port 3001, `/static`) match, so the block still serves and only
+  `enableFullUriRouting` is lost.
+- Anything the runtime stage copies must **not** be in `.dockerignore`, or the `COPY`
+  fails with "not found" even though the file is plainly there. `**/dist` is safe to
+  ignore only because the image builds `dist` itself.
+- `docker/website.Dockerfile` is the worked example. It has no `deps` stage at all,
+  because its server is `node:` builtins only; that ends the moment `packages/routing`
+  is imported into it.
 
 ## Ports
 
 Three numbers, none of them shared:
 
 - **Dev server**: pin `server.port` with `strictPort: true` so the handler target is
-  stable across runs rather than drifting. We used 3001. This is unrelated to the
-  block's declared port; pick any free one, just pin it.
+  stable across runs rather than drifting. `apps/website` uses 3000, deliberately not
+  the block's declared 3001, so the dev server and a locally run block image do not
+  collide. This is unrelated to the block's declared port; pick any free one, just pin it.
 - **Block-declared port** (3001 on the `sandbox` block): what the deployed container
   listens on inside the block runtime. Nothing connects it to the dev server port.
   Map it to a different host port when both run.

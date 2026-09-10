@@ -7,6 +7,7 @@ keywords:
     universityDemo,
     prs,
     reactStarter,
+    tim,
     sandbox block,
     contensis dev requests,
     airplay,
@@ -56,6 +57,21 @@ and `/en-gb/storybook-ui` is a live example of a bare non-entry node with a rend
 ref. `ui-storybook` is the only block with versions, pulled from
 `ghcr.io/zengenti/ui/ui-storybook` (`status: "external"`), so ghcr is the proven
 registry for prs.
+
+## `prs` / `tim` is where this repo's own block goes
+
+`tim` is a second project on the same `prs` alias, and it is where `apps/website` is
+pushed from CI (`.github/workflows/website-block.yml`). Verified 2026-09-10 with
+`contensis list blocks` and `contensis list renderers` against it: **both are empty**.
+
+Two things follow:
+
+- The block id `website` is unclaimed, so the first `contensis push block` creates it.
+- Nothing routes to it until a renderer is assigned in the CMS. As on `reactStarter`,
+  a pushed and released version alone gets you IIS fallback, not your block.
+
+Pushing here is safe for the same reason `reactStarter` is: `prs` is a sandbox alias,
+not a client environment.
 
 ## Known-good fixture ids
 

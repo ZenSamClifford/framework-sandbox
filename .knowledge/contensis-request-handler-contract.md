@@ -13,6 +13,7 @@ keywords:
     enableFullUriRouting,
     block,
     staticPaths,
+    manifest.json,
     dev requests,
     local development,
     preview,
@@ -99,6 +100,34 @@ Three things follow, all previously open:
 - **The prefix and the static path compose.** It is `/_{hash}_{blockVersionId}` _followed by_ `/static/...`, not one replacing the other. A `/static/`-based build therefore survives the rewrite. This was marked unverifiable in local dev; it is now verified from a deployed capture.
 - **`/static` is a real path the block serves,** not an alias the handler invents. The block's own emitted URLs contain it. So a bundler needs the files to land under `dist/static/` as well as emitting `/static/` URLs: `base: "/static/"` alone is not enough, it needs `build.outDir: "dist/static"` too (or a runtime server that mounts `dist` at `/static`).
 - The block links `href="/accessibility#main"` because it dispatched on the **request path**, not from a node fetch. See "What a real block actually does" below.
+
+### The block manifest
+
+**Confirmed** from the deployed CRB `sandbox` block image (2026-09-10,
+`evidence/captures-uol/block-manifest.capture.log`): a block declares config to Contensis
+through a **`manifest.json` at the image root**, and that image's entire manifest is:
+
+```json
+{
+  "enableFullUriRouting": true
+}
+```
+
+Three things this settles:
+
+- **Root, not `WORKDIR`.** That image's `WORKDIR` is `/usr/src/app` and holds no manifest;
+  the only one on the filesystem is `/manifest.json`. So a `WORKDIR`-relative copy is ruled
+  out, not merely unconfirmed.
+- **Keys are camelCase**, matching the field names `contensis get block --format json`
+  returns. `static_paths` is not a key any observed manifest uses.
+- **It is not the only config channel.** `port` and `staticPaths` are absent from this
+  manifest yet present in the block config, so they come from the push or the CMS. The
+  defaults cover both anyway: port 3001, and `/static` injected when no static path
+  survives.
+
+A missing manifest **fails quietly**. The defaults still serve the app; the only thing lost
+is `enableFullUriRouting`, and with it the friendly path. `contensis get block` is what
+tells you, not the running block.
 
 ### Root files
 

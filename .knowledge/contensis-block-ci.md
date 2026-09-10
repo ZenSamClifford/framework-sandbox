@@ -112,11 +112,28 @@ Two options, in order of preference:
 - **`github.repository` is unsafe in a ghcr image name** unless the org is lowercase.
   ghcr rejects uppercase in a repository path, so `ZenSamClifford/...` fails where
   `zengenti/...` works. Hardcode the lowercase path.
-- **`--repository-url` is prefixed, not used verbatim.** Passing
-  `${{ github.server_url }}/${{ github.repository }}.git` as `block-push` does yields
-  `https://github.com/https://github.com/Owner/repo.git` in the block's source metadata,
-  breaking the commit and comparison links in the CMS. Cosmetic, and present with the
-  official action too.
+- **`--repository-url` takes `owner/repo`, not a URL.** From the CLI image,
+  `dist/commands/push.js`:
+
+  ```js
+  repositoryUrl: {
+    $path: ["repositoryUrl", "CI_PROJECT_URL", "GITHUB_REPOSITORY"],
+    $formatting: (url, { GITHUB_ACTIONS }) => {
+      if (GITHUB_ACTIONS) url = `https://github.com/${url}`;
+      if (url && !url.endsWith(".git")) return `${url}.git`;
+      return url;
+    }
+  }
+  ```
+
+  So the CLI adds both the scheme and the `.git`. Passing a full URL, as `block-push`
+  does, yields `https://github.com/https://github.com/Owner/repo.git` and dead commit
+  links in the CMS. Cosmetic, but it is wrong in the official action too.
+
+  The same block shows `provider`, `branch` and `commit.id` all resolving from
+  `GITHUB_*` env vars unaided, so only the commit **message** genuinely has to be
+  passed: its fallback is `CI_COMMIT_MESSAGE`, which is GitLab-only.
+
 - **Zengenti self-hosted runners** (`runs-on: [self-hosted, linux]`) are the org rule,
   but a personal repo has no access to that pool and must use `ubuntu-latest`.
 

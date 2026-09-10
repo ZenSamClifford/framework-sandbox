@@ -92,6 +92,11 @@ jobs:
 
       # `--release` registers and releases the version. It does not make it live;
       # that stays a manual CMS action.
+      #
+      # `--repository-url` takes `owner/repo`, not a URL. Under GITHUB_ACTIONS the CLI
+      # prepends `https://github.com/` and appends `.git` itself (dist/commands/push.js),
+      # so passing a full URL as block-push does yields a doubled scheme and dead commit
+      # links in the CMS.
       - name: Push block to Contensis
         uses: contensis/cli-action@v1
         with:
@@ -104,7 +109,7 @@ jobs:
             ${{ env.IMAGE }}:${{ github.ref_name }}-${{ github.run_number }}
             ${{ github.ref_name }} --release
             --provider Github
-            --repository-url ${{ github.server_url }}/${{ github.repository }}.git
+            --repository-url ${{ github.repository }}
             --commit-id ${{ github.sha }}
             --commit-message "${{ steps.commit.outputs.message }}"
             --commit-datetime ${{ steps.commit.outputs.datetime }}

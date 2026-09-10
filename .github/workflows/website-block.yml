@@ -66,15 +66,47 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # `release: true` registers and releases the version. It does not make it live;
+      # contensis/block-push@v1 cannot be used here. It interpolates the raw commit
+      # message into the command string it hands to contensis/cli-action@v1, which
+      # ends in `eval contensis $CONTENSIS_COMMAND` with the variable unquoted. Any
+      # backtick, quote or newline in a commit message is therefore executed by the
+      # shell: run 34456294182 died on `sh: eval: line 6: syntax error: unterminated
+      # quoted string` after running the backticked words in its own commit message.
+      #
+      # So call cli-action directly and pass metadata that has been through a
+      # sanitiser. Worth raising upstream: a commit message is attacker-controlled
+      # input, and CONTENSIS_SHARED_SECRET is in that container's environment.
+      - name: Sanitise commit metadata
+        id: commit
+        env:
+          # Read via the environment, never interpolated into the script body.
+          SUBJECT: ${{ github.event.head_commit.message }}
+        run: |
+          # Subject line only, then strip everything a shell would interpret.
+          FIRST=${SUBJECT%%$'\n'*}
+          [ -n "$FIRST" ] || FIRST=$(git log -1 --pretty=%s)
+          echo "message=${FIRST//[\`\"\'$\\]/}" >> "$GITHUB_OUTPUT"
+          echo "datetime=$(git log -1 --pretty=%cI)" >> "$GITHUB_OUTPUT"
+          echo "author=$(git log -1 --pretty=%ae)" >> "$GITHUB_OUTPUT"
+          echo "committer=$(git log -1 --pretty=%ce)" >> "$GITHUB_OUTPUT"
+
+      # `--release` registers and releases the version. It does not make it live;
       # that stays a manual CMS action.
       - name: Push block to Contensis
-        uses: contensis/block-push@v1
+        uses: contensis/cli-action@v1
         with:
-          block-id: website
           alias: prs
           project-id: tim
           client-id: ${{ secrets.CONTENSIS_CLIENT_ID }}
           shared-secret: ${{ secrets.CONTENSIS_SHARED_SECRET }}
-          image-uri: ${{ env.IMAGE }}:${{ github.ref_name }}-${{ github.run_number }}
-          release: true
+          command: >-
+            push block website
+            ${{ env.IMAGE }}:${{ github.ref_name }}-${{ github.run_number }}
+            ${{ github.ref_name }} --release
+            --provider Github
+            --repository-url ${{ github.server_url }}/${{ github.repository }}.git
+            --commit-id ${{ github.sha }}
+            --commit-message "${{ steps.commit.outputs.message }}"
+            --commit-datetime ${{ steps.commit.outputs.datetime }}
+            --author-email ${{ steps.commit.outputs.author }}
+            --committer-email ${{ steps.commit.outputs.committer }}

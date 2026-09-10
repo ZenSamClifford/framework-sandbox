@@ -42,6 +42,23 @@ export type ResolveIdentityInput = {
 const GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /**
+ * The request headers this resolver reads, so a consumer can display or forward them
+ * without restating the list. Referenced at the call sites in `resolveIdentity` below,
+ * which is what stops the constant and the behaviour drifting apart.
+ *
+ * Only these two are set unconditionally in all three path shapes. The handler's
+ * request denylist and its `x-requires-*` response hints are facts about the handler
+ * rather than about this resolver, so they are deliberately not here. See
+ * `../.knowledge/request-path-contract.md`.
+ */
+export const IDENTITY_HEADERS = {
+  nodeId: "x-node-id",
+  entryId: "x-entry-id",
+} as const;
+
+export type IdentityHeaderName = (typeof IDENTITY_HEADERS)[keyof typeof IDENTITY_HEADERS];
+
+/**
  * Headers arrive lowercased from Node, but not from every runtime, and a repeated
  * header comes through as an array. Normalise both.
  */
@@ -95,9 +112,13 @@ export function resolveIdentity(input: ResolveIdentityInput): Resolution {
   // A base is required for relative URLs and is otherwise unused.
   const url = new URL(input.url, "http://placeholder");
 
-  const node = validGuid(readHeader(input.headers, "x-node-id"), "malformed-node-id", diagnostics);
+  const node = validGuid(
+    readHeader(input.headers, IDENTITY_HEADERS.nodeId),
+    "malformed-node-id",
+    diagnostics,
+  );
   const entry = validGuid(
-    readHeader(input.headers, "x-entry-id"),
+    readHeader(input.headers, IDENTITY_HEADERS.entryId),
     "malformed-entry-id",
     diagnostics,
   );

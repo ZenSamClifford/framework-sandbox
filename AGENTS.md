@@ -52,18 +52,28 @@ edits with no branch or PR against the parent context repository.
 A pnpm workspace (`apps/*`, `packages/*`, `tools/*`; `tools/` does not exist yet), driven
 by the Vite+ `vp` CLI rather than by pnpm directly.
 
-- `packages/routing` is the only real work in the repo. It implements **step 1a** of the
+- `packages/routing` is the core of the work in the repo. It implements **step 1a** of the
   routing design: a pure, network-free resolver from request headers to a node or path
   identity. No network calls, no runtime dependencies, no credentials needed to test it.
   Step 1b (the node fetch) and everything after it are not built.
 - `packages/utils` is an untouched library scaffold from the starter.
 - `apps/website` is the Vite+ vanilla-TS starter, deployed as a Contensis block. It
-  builds with `base: "/static/"`, and `server/index.ts` (a zero-dependency `node:http`
-  server) mounts `dist` at `/static` and serves the shell for everything else.
+  builds with `base: "/static/"`, and `server/index.ts` (a `node:http` server) mounts
+  `dist` at `/static` and serves the shell for everything else.
   `docker/website.Dockerfile` and `.github/workflows/website-block.yml` build it and push
-  it to `prs` / `tim`. It declares `"routing": "workspace:*"` but does not import it yet;
-  the marked routing seam in `server/index.ts` is where the SSR app will meet the routing
-  package.
+  it to `prs` / `tim`. The server calls `resolveIdentity` from `packages/routing` on every
+  page request and `server/panel.ts` renders the result, plus every routing-relevant
+  header, env value and manifest field, into the page below the starter content. Absent
+  values get a visible row on purpose: the local-versus-deployed divergence is the thing
+  being verified. The same data is embedded as a one-line
+  `<script id="routing-panel-data" type="application/json">` block, so a deployed check is
+  `curl | jq` rather than eyeballing. `src/routingPanel.ts` fills in the `window.Contensis*`
+  section, which only a handler-served page has.
+- The website image is no longer dependency-free. Node refuses to strip types from any
+  file under a real `node_modules` path, so the runtime stage ships the packed
+  `packages/routing` output plus the shim manifest in
+  `docker/routing-runtime-package.json` rather than the source. It is a copied dependency
+  rather than a bundled server so `CMD` still runs the file you can read in the repo.
 
 ## Guidance
 

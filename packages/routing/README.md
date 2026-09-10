@@ -4,12 +4,16 @@ Resolves the Contensis node/entry identity of an inbound request from the header
 locally run Request Handler puts on it.
 
 ```ts
-import { resolveIdentity } from "routing";
+import { IDENTITY_HEADERS, resolveIdentity } from "routing";
 
 const resolution = resolveIdentity({ headers, url });
 // resolution.identity  -> { kind, value, source }
 // resolution.entryId   -> string | undefined
 // resolution.diagnostics
+
+// The header names the resolver reads, so a consumer can display or forward them
+// without restating the list: { nodeId: "x-node-id", entryId: "x-entry-id" }.
+IDENTITY_HEADERS;
 ```
 
 ## Development

@@ -1,0 +1,9 @@
+{
+  "_comment": "Runtime manifest for the packed routing package inside the block image. The real packages/routing/package.json points exports at ./src/index.ts, because pack.exports.devExports keeps workspace consumers on source and moves the dist paths into publishConfig, which npm applies only on publish. Node refuses to strip types from any file under a real node_modules path, so the image cannot ship the source and needs the packed JavaScript plus this manifest. Keep it in step with publishConfig.exports in packages/routing/package.json; nothing enforces that, but a mismatch fails loudly at container start with ERR_MODULE_NOT_FOUND.",
+  "name": "routing",
+  "version": "0.0.0",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  }
+}

@@ -97,6 +97,9 @@ describe("header quirks", () => {
     expect(identity).toEqual({ kind: "id", value: A, source: "header" });
   });
 
+  // Reachable only from a Fetch-style runtime. `node:http` arrays `set-cookie` alone and
+  // joins every other repeated header with ", ", which lands in the malformed branch
+  // rather than here, so a unit test is the only cover this has.
   it("takes the first value of a repeated header", () => {
     const { identity } = resolveIdentity({
       headers: { "x-node-id": [A, C] },

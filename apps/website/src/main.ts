@@ -4,6 +4,7 @@ import iconsSprite from "./assets/icons.svg";
 import typescriptLogo from "./assets/typescript.svg";
 import viteLogo from "./assets/vite.svg";
 import { setupCounter } from "./counter.ts";
+import { fillRoutingPanelGlobals } from "./routingPanel.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <section id="center">
@@ -59,3 +60,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 `;
 
 setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+
+// The routing panel is injected by the block server outside #app, so overwriting #app
+// above does not disturb it. This module is deferred, so the handler's inline globals
+// script has already run by the time we read from it.
+fillRoutingPanelGlobals();

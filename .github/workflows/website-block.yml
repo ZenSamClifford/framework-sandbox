@@ -7,6 +7,8 @@ on:
       - "apps/website/**"
       - "packages/**"
       - "docker/website.Dockerfile"
+      # Matches neither packages/** nor the Dockerfile pattern, but the image needs it.
+      - "docker/routing-runtime-package.json"
       - ".dockerignore"
       - ".node-version"
       - "pnpm-lock.yaml"

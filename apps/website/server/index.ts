@@ -1,8 +1,12 @@
 import { createServer } from "node:http";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { createReadStream } from "node:fs";
-import { stat } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import { extname, join, relative, resolve, sep } from "node:path";
+
+import { resolveIdentity } from "routing";
+
+import { collectPanelData, injectPanel } from "./panel.ts";
 
 // Resolved from this file, not from the working directory: the container runs
 // `node server/index.ts` from /app, but local verification runs it from the repo root.
@@ -33,6 +37,21 @@ const contentTypeFor = (path: string) =>
   MIME_TYPES[extname(path).toLowerCase()] ?? "application/octet-stream";
 
 const port = Number(process.env.PORT ?? 3001);
+
+// In the image, dist is immutable for the life of the container, so the shell is read
+// once and kept. Outside it, `vp build` is expected to show up on the next refresh
+// without restarting the server, so it is re-read every time. This repo's own knowledge
+// base has block saturation as a live failure mode, which is why the deployed side does
+// not pay a disk read per request.
+const cacheShell = process.env.NODE_ENV === "production";
+let cachedShell: string | undefined;
+
+async function readShell(): Promise<string> {
+  if (cacheShell && cachedShell !== undefined) return cachedShell;
+  const shell = await readFile(join(distDir, "index.html"), "utf8");
+  if (cacheShell) cachedShell = shell;
+  return shell;
+}
 
 /**
  * Resolve a request path to a file inside dist, or null if it escapes.
@@ -116,28 +135,57 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
     return;
   }
 
-  // ROUTING SEAM. This is where resolveIdentity({ headers, url }) from
-  // `packages/routing` will go, once step 1b (the node fetch) exists: read
-  // x-node-id, fetch the node, and render for that identity. Do not dispatch on
-  // the path -- it is `/` in local dev, the friendly URL under
-  // enableFullUriRouting, and an endpoint path otherwise.
+  // ROUTING. resolveIdentity from `packages/routing` runs here, on the real inbound
+  // request, and its output is rendered into the page by ./panel.ts. Step 1b (the node
+  // fetch) still does not exist, so this resolves an identity and stops: no node, no
+  // entry, no content-type dispatch. Do not dispatch on the path -- it is `/` in local
+  // dev, the friendly URL under enableFullUriRouting, and an endpoint path otherwise.
   //
-  // Wiring routing in also ends this image's zero-runtime-dependency property:
-  // the runtime stage will then need a `deps` stage or a bundled server.
+  // Importing `routing` ended this image's zero-runtime-dependency property. The runtime
+  // stage now ships the packed package at node_modules/routing rather than bundling this
+  // server, so `node server/index.ts` still runs the file you can read. Node refuses to
+  // strip types from anything under a real node_modules path, which is why the image
+  // needs the packed JavaScript and cannot just copy the source across. See
+  // docker/routing-runtime-package.json.
   //
-  // Until then every path serves the shell with a 200. That is right today for a
-  // reason worth being precise about: a path with no node never reaches the block,
-  // so everything arriving here has already resolved. 404s belong to the platform,
-  // which goes block -> Classic Contensis -> a cached 404 page on its own.
+  // Every path still serves the shell with a 200. That is right today for a reason worth
+  // being precise about: a path with no node never reaches the block, so everything
+  // arriving here has already resolved. 404s belong to the platform, which goes block ->
+  // Classic Contensis -> a cached 404 page on its own.
   //
   // It is NOT because a 404 is expensive and 200 is safer. Once routing fetches the
   // node, a fetch that fails should 404 and let that chain run; serving the shell
   // instead would be a soft 404. See .knowledge/contensis-block-runtime.md.
+
+  // req.url goes in verbatim, path and query together, which is what ResolveIdentityInput
+  // documents. The resolver discards the query itself.
+  const resolution = resolveIdentity({ headers: req.headers, url: req.url ?? "/" });
+  if (resolution.diagnostics.length > 0) {
+    // The resolver has already dropped the malformed values, so this is the record
+    // rather than the handling. Something upstream sent an id that is not a GUID.
+    console.warn("routing diagnostics", resolution.diagnostics);
+  }
+
+  // The shell can no longer be streamed: the panel makes the body per-request, so
+  // content-length has to be recomputed. A stat-derived length is only correct for a
+  // verbatim file, and a string length would be wrong for any non-ASCII header value.
+  let shell: string;
   try {
-    await serveFile(join(distDir, "index.html"), "no-cache", res);
+    shell = await readShell();
   } catch {
     fail(res, 500, "dist/index.html is missing; the app was not built");
+    return;
   }
+
+  // The resolution is passed in rather than resolved a second time, so the panel cannot
+  // report a different answer from the one this server acted on.
+  const body = Buffer.from(injectPanel(shell, collectPanelData(req, resolution)), "utf8");
+  res.writeHead(200, {
+    "content-type": "text/html; charset=utf-8",
+    "content-length": body.byteLength,
+    "cache-control": "no-cache",
+  });
+  res.end(body);
 }
 
 server.listen(port, "0.0.0.0", () => {

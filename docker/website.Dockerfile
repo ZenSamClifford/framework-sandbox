@@ -18,6 +18,16 @@ COPY --chown=vp:vp packages/utils/package.json ./packages/utils/
 RUN vp install --frozen-lockfile
 
 COPY --chown=vp:vp . .
+
+# The server imports `routing`, so the runtime stage needs it as JavaScript. Native TS
+# stripping refuses any file under a real node_modules directory; pnpm's symlink is what
+# lets the import work locally, because Node resolves the realpath out to
+# packages/routing and so never sees the source as a dependency. That cannot be
+# recreated in the image, so pack the package and ship the output instead.
+# .dockerignore excludes **/dist, so this has to be built here rather than copied in.
+WORKDIR /app/packages/routing
+RUN vp pack
+
 # `vp build`, not `vp run build`: the script prefixes tsc, which belongs in CI.
 WORKDIR /app/apps/website
 RUN vp build
@@ -26,8 +36,10 @@ RUN vp build
 RUN cp "$(vp env which node | head -1)" /tmp/node
 
 # --- runtime stage: small, glibc, no vp ---
-# No deps stage: the server is node: builtins only, so the image needs no
-# node_modules at all. That ends when packages/routing is wired into the server.
+# One dependency now, not none: server/index.ts imports `routing`. It arrives as the
+# packed ESM output rather than as source, for the type-stripping reason above, and as a
+# copied dependency rather than a bundled server so that CMD still runs the file you can
+# read in the repo. See docker/routing-runtime-package.json.
 FROM debian:bookworm-slim AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
@@ -41,6 +53,14 @@ COPY --from=build /app/apps/website/server ./server
 # the location, and WORKDIR-relative is ruled out.
 # evidence/captures-uol/block-manifest.capture.log
 COPY --from=build /app/apps/website/manifest.json /manifest.json
+
+# The one runtime dependency. The shim manifest mirrors publishConfig.exports, which npm
+# would apply on publish but which nothing applies here.
+# The whole dist directory, not just index.mjs: `vp pack` emits one JS file today, but a
+# second chunk would still build clean here and then kill the container at startup on a
+# missing relative import, after CI had already registered the block version.
+COPY --from=build /app/packages/routing/dist ./node_modules/routing/dist
+COPY docker/routing-runtime-package.json ./node_modules/routing/package.json
 
 USER nobody
 EXPOSE 3001

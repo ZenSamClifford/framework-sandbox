@@ -137,7 +137,7 @@ tells you, not the running block.
 
 Server type arrives as `x-site-type`, which is **on the denylist**, so the block never sees it. Read preview state from the globals the handler injects into HTML before `</body>`: `window.ContensisProjectApiId`, `ContensisAlias`, `ContensisSso`, `ContensisEntryVersionStatus`, `ContensisEntryId`, `ContensisEntryLanguage`, `ContensisVersionNumber`.
 
-**Inferred, worth raising upstream:** `SetPreviewToolbar` reads `entryId` from the query string, which post-cutoff no longer exists, so `window.ContensisEntryId` is likely emitted empty on new blocks.
+**Confirmed 2026-09-10, was inferred:** `SetPreviewToolbar` reads `entryId` from the query string, which post-cutoff no longer exists, so `window.ContensisEntryId` is emitted **empty** on new blocks. Observed on the `website` block's first deployed response: `window.ContensisEntryId=""` alongside a populated `ContensisProjectApiId`, `ContensisAlias` and `ContensisEntryLanguage` (`evidence/captures-prs/website-block-staging.body`). Still worth raising upstream.
 
 Version-config query params and `previewSecurityToken` are stripped by a 301 and persisted as cookies (`previewSecurityToken` deliberately not HttpOnly, so the toolbar can read it).
 

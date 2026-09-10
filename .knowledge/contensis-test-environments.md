@@ -64,11 +64,16 @@ registry for prs.
 pushed from CI (`.github/workflows/website-block.yml`). Verified 2026-09-10 with
 `contensis list blocks` and `contensis list renderers` against it: **both are empty**.
 
-Two things follow:
+**As of the first push (2026-09-10) that is no longer the state.** `website` v1 is
+deployed and released from run `34457026009`, running in all three data centres, and a
+`website` renderer now holds the `*` catch-all. The renderer appeared with the push
+rather than being created by hand.
 
-- The block id `website` is unclaimed, so the first `contensis push block` creates it.
-- Nothing routes to it until a renderer is assigned in the CMS. As on `reactStarter`,
-  a pushed and released version alone gets you IIS fallback, not your block.
+Live and verified:
+
+- Staging: `https://staging-tim-prs.cloud.contensis.com?block-website-versionno=1`
+- The site view has a `/` node (`en-gb`, Home), so the catch-all reaches the block.
+- Captures in `../evidence/captures-prs/`.
 
 Pushing here is safe for the same reason `reactStarter` is: `prs` is a sandbox alias,
 not a client environment.

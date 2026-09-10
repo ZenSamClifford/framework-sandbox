@@ -52,7 +52,12 @@ eval contensis $CONTENSIS_COMMAND --output output.json
 An **unquoted variable passed to `eval`**. So every backtick, quote and newline in a
 commit message is interpreted by the shell. A conventional multi-line message with
 backticked identifiers, which is to say a normal message in this repo, is enough to break
-the push. The failing run logged output from its own backticked words before dying.
+the push.
+
+(The bare `17.2.1.53` in that run's log is **not** injection output, though it reads like
+it. `cli-action` runs `contensis get version` before the eval, and that is the CMS version,
+the same value the `contensis-classic-version` response header carries. The evidence for
+execution is the local reproduction below, not that line.)
 
 Reproduce it without CI:
 
@@ -99,11 +104,19 @@ Two options, in order of preference:
   live is a separate manual CMS action, or `--make-live`.
 - **A ghcr package is private by default**, so Contensis cannot pull it. A block push
   that succeeds but never runs is usually this.
-- **A block with no renderer receives nothing.** Pushing and releasing is not enough:
-  assign a renderer in the project, or content nodes fall through to IIS.
+- **A first push appears to create its own renderer.** `tim` had zero renderers before
+  the first `push block` and a `website` renderer with an `assignedContentTypes: *`
+  catch-all immediately after, so the block served the site view with no manual step.
+  Observed once, on a project with no renderers at all; do not assume it holds where a
+  renderer already claims the catch-all. Verify with `contensis list renderers`.
 - **`github.repository` is unsafe in a ghcr image name** unless the org is lowercase.
   ghcr rejects uppercase in a repository path, so `ZenSamClifford/...` fails where
   `zengenti/...` works. Hardcode the lowercase path.
+- **`--repository-url` is prefixed, not used verbatim.** Passing
+  `${{ github.server_url }}/${{ github.repository }}.git` as `block-push` does yields
+  `https://github.com/https://github.com/Owner/repo.git` in the block's source metadata,
+  breaking the commit and comparison links in the CMS. Cosmetic, and present with the
+  official action too.
 - **Zengenti self-hosted runners** (`runs-on: [self-hosted, linux]`) are the org rule,
   but a personal repo has no access to that pool and must use `ubuntu-latest`.
 

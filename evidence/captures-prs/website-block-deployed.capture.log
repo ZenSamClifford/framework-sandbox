@@ -1,0 +1,26 @@
+# The website block deployed to prs / tim, version 1, verified 2026-09-10.
+# Run 34457026009, commit 7a01513, image main-2.
+
+$ contensis get block website main 1 --format json   (excerpt)
+  "enableFullUriRouting": true      <- the manifest at the image root was read
+  "port": 3001, "staticPaths": []   <- neither declared; defaults apply
+  "image": { "status": "external", "tag": "main-2" }
+  "status": { "deployment": "deployed", "workflow": "released",
+              "running": { "hq": "available", "london": "available", "manchester": "available" } }
+
+$ curl -L https://staging-tim-prs.cloud.contensis.com/?block-website-versionno=1
+  200 text/html, 1039 bytes. Body in website-block-staging.body.
+
+# Asset URLs, all rewritten by the handler and all resolving:
+  200  /_5j8wRw_4fbfc795-553b-4ee4-8823-d68960be158e/static/assets/index-CgEoLifo.js
+  200  /_5j8wRw_4fbfc795-553b-4ee4-8823-d68960be158e/static/assets/index-CsUDhMuy.css
+  200  /_5j8wRw_4fbfc795-553b-4ee4-8823-d68960be158e/static/favicon.svg
+  200  /_5j8wRw_4fbfc795-553b-4ee4-8823-d68960be158e/static/assets/icons-L3ttVLT4.svg
+  404  /static/assets/index-CgEoLifo.js        <- unprefixed, as the contract predicts
+
+# The sprite reference INSIDE the built JS was rewritten too, which is what the
+# public/ -> src/assets move was for. Zero unrewritten /static sprite refs remain.
+
+# Also confirms an item the contract had marked inferred: on a post-cutoff block
+# the injected preview global is emitted empty.
+  window.ContensisEntryId=""

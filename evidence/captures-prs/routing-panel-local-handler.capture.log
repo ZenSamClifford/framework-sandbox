@@ -1,0 +1,942 @@
+# The routing panel behind the LOCALLY RUN Request Handler, on prs / tim.
+# Captured 2026-09-10, handler v1.0.1, block server from commit 14c065a.
+# Companion to routing-panel-deployed.capture.log: same instrument, same project, same
+# nodes, so the two files diff directly. That diff is the point of this file.
+
+$ contensis connect prs && contensis set project tim && contensis list blocks
+  website [main]: running        (version 6 at the time of capture)
+
+$ node apps/website/server/index.ts                      # block server on :3001
+$ contensis dev requests website http://localhost:3001 --args --port=5001
+
+# --- WHAT THE HANDLER SETS LOCALLY ---
+#
+# Of the fifteen headers observed on the deployed block, exactly ONE arrives locally.
+# These are hard absences, not values the panel withheld: every header below is on the
+# panel's own lists, so an absent one renders as null rather than falling into
+# otherHeaderNames.
+
+  header                       deployed                     local
+  ---------------------------- ---------------------------- ----------------------------
+  x-node-id                    set                          SET
+  x-entry-id                   set                          SET
+  traceparent                  W3C trace id                 SET
+  x-orig-host                  staging-tim-prs.cloud...     absent
+  x-node-versionstatus         published                    absent
+  x-entry-versionstatus        published                    absent
+  x-alias                      prs                          absent
+  delivery-project             "" (empty string)            absent (null, not "")
+  x-requires-alias             true                         absent
+  x-requires-project-api-id    true                         absent
+  x-requires-node-id           true                         absent
+  x-requires-entry-id          true                         absent
+  x-requires-block-id          true                         absent
+  x-forwarded-proto            https                        absent
+  use-modern-cache-logic       true                         absent
+  surrogate-key                true                         absent
+  x-block-request              pass                         absent
+
+  otherHeaderNames, local:    ["content-length"]
+  otherHeaderNames, deployed: ["content-length", "cookie", "x-forwarded-for",
+                               "x-geoip-country-code"]
+
+# The emptiness IS the finding. The handler adds only x-node-id, x-entry-id, traceparent
+# and content-length. Everything else on the deployed side is CDN and IIS layer, and none
+# of it exists locally.
+#
+# host differs too, and is worth noting for anyone building absolute URLs:
+#   local:    localhost
+#   deployed: v5-main-website-tim-prs-block-hq2-blue.blocks.contensis.com
+# so neither is the public hostname. Deployed, x-orig-host carries it. Locally, nothing
+# does.
+
+# --- THE PATH IS DROPPED, UNCONDITIONALLY ---
+
+$ curl http://localhost:5001/blogs/canvas
+  panel request.pathname : /            <- not /blogs/canvas
+  panel request.url      : /
+  resolution.identity    : kind=id value=c877264a-787f-4b0d-8045-1ec8ee2d3d4e source=header
+  resolution.entryId     : ebec630b-67ef-4ccb-ae5d-11679f4719eb
+
+$ curl http://localhost:5001/
+  resolution.identity    : kind=id value=97ad4a16-821a-4798-adcd-f17ce876538a source=header
+  resolution.entryId     : c615ce7b-de7b-440b-91c6-a471e5cb50a8
+
+# Both node ids match the CMS and match what the DEPLOYED block resolved for the same two
+# paths. So identity routing is faithful locally; the path is not. Deployed, the same
+# request arrives as pathname /blogs/canvas.
+#
+# NEW: the block's manifest.json has enableFullUriRouting: true, and the path is STILL
+# dropped locally. So the local divergence is unconditional, not a consequence of the flag
+# being read as false. The contract's "enableFullUriRouting is hardcoded false in the
+# override path" explains the mechanism, but the observable outcome does not depend on the
+# manifest at all.
+
+# --- CONTROL: no handler, straight to the block server ---
+
+$ curl http://localhost:3001/blogs/canvas
+  panel request.pathname : /blogs/canvas
+  resolution.identity    : kind=path value=/blogs/canvas source=path
+  otherHeaderNames       : []
+
+# The path survives and identity falls back to the path, which is what distinguishes
+# "the handler dropped it" from "the app lost it". host/user-agent/accept are curl's in
+# both cases, so the handler is not the source of those.
+
+# --- x-requires-* ARE CLIENT-SET, AND MY EARLIER ATTRIBUTION WAS WRONG ---
+#
+# routing-panel-deployed.capture.log finding 3 says five x-requires-* arrive on the
+# deployed block "without any client sending them", and the commit message for that file
+# attributed them to "the handler itself". The second half is wrong.
+#
+# Tested here by sending three of them explicitly through the local handler:
+#   - the block received exactly those three (value "true"); the other four stayed null
+#   - the handler emitted the matching RESPONSE headers: x-alias: prs,
+#     x-project-api-id: tim, x-node-id: c877264a-..., plus an unrequested x-version-no: 6
+#
+# So the documented behaviour is correct: they are client-set echo-request headers the
+# handler forwards. On the deployed block something upstream, most likely the CDN layer,
+# is what sends them. Not the handler, and not the app.
+# (This test was run in the same session; its raw output was not kept, unlike the panel
+# JSON below. The three-of-seven split and the response headers are as observed.)
+#
+# Also note packages/routing/src/fixtures/inboundHeaders.capture.log shows five
+# x-requires-* behind a local handler. That was a curl sending them by hand. It is not
+# evidence of the handler setting them, and it should not be read as such.
+
+# --- WHAT THIS RUN CANNOT SETTLE ---
+#
+# x-alias came back null locally, which is equally consistent with "denylisted" and with
+# "nothing sets it locally". So this file does NOT adjudicate the x-alias denylist dispute.
+# That rests on the deployed observation (x-alias: prs arrived) plus the source read of
+# DisallowedRequestHeaderMappings, both recorded in the deployed capture.
+
+# --- HANDLER CONSOLE ---
+#
+# The documented GitHub 404 still fires and is still non-fatal. The binary was already
+# pinned to v1.0.1 in ~/.contensis/cli-manifest.json on this machine, so no download was
+# attempted. Port 5000 was never tried: --port=5001 was passed prophylactically, so the
+# AirPlay collision is UNRETESTED here rather than reconfirmed.
+
+[WARN] [fetch] non-retriable 404: Not Found https://api.github.com/repos/contensis/request-handler-localdevelopment/releases
+Error: Unable to get releases
+    at GitHubCliModuleProvider.FindLatestRelease (...)
+    at async RequestHandlerFactory.CheckUpdate (...)
+> Launching request handler for local development
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:5001
+
+# Beyond that the log is only HttpClient proxy traces. The handler logs NOTHING about node
+# or renderer resolution, so there is no local trace of how /blogs/canvas became a node id.
+# The header the block receives is the only evidence that step ran, which is a good reason
+# to have an instrument in the block.
+
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5001/blogs/canvas - 200 17630 text/html;+charset=utf-8 563.9974ms
+
+$ the panel's own JSON, GET /blogs/canvas through the local handler
+{
+  "request": {
+    "method": "GET",
+    "url": "/",
+    "pathname": "/",
+    "search": "",
+    "httpVersion": "1.1"
+  },
+  "identityHeaders": [
+    {
+      "name": "x-node-id",
+      "value": "c877264a-787f-4b0d-8045-1ec8ee2d3d4e"
+    },
+    {
+      "name": "x-entry-id",
+      "value": "ebec630b-67ef-4ccb-ae5d-11679f4719eb"
+    }
+  ],
+  "observedHeaders": [
+    {
+      "name": "host",
+      "value": "localhost"
+    },
+    {
+      "name": "user-agent",
+      "value": "curl/8.7.1"
+    },
+    {
+      "name": "accept",
+      "value": "*/*"
+    },
+    {
+      "name": "accept-language",
+      "value": null
+    },
+    {
+      "name": "traceparent",
+      "value": "00-a81f9f211ba25bdbc32a0dfe87d89654-80b5a6640525d53c-00"
+    },
+    {
+      "name": "x-debug",
+      "value": null
+    },
+    {
+      "name": "x-alias",
+      "value": null
+    },
+    {
+      "name": "delivery-project",
+      "value": null
+    },
+    {
+      "name": "x-entry-versionstatus",
+      "value": null
+    },
+    {
+      "name": "x-node-versionstatus",
+      "value": null
+    },
+    {
+      "name": "x-orig-host",
+      "value": null
+    },
+    {
+      "name": "x-block-request",
+      "value": null
+    },
+    {
+      "name": "use-modern-cache-logic",
+      "value": null
+    },
+    {
+      "name": "surrogate-key",
+      "value": null
+    }
+  ],
+  "deniedHeaders": [
+    {
+      "name": "accept-encoding",
+      "value": null
+    },
+    {
+      "name": "x-site-type",
+      "value": null
+    },
+    {
+      "name": "x-project-api-id",
+      "value": null
+    },
+    {
+      "name": "x-project-uuid",
+      "value": null
+    },
+    {
+      "name": "x-block-config",
+      "value": null
+    },
+    {
+      "name": "x-proxy-config",
+      "value": null
+    },
+    {
+      "name": "x-renderer-config",
+      "value": null
+    },
+    {
+      "name": "x-iis-hostname",
+      "value": null
+    },
+    {
+      "name": "x-loadbalancer-vip",
+      "value": null
+    },
+    {
+      "name": "x-forwarded-proto",
+      "value": null
+    },
+    {
+      "name": "traceparent",
+      "value": "00-a81f9f211ba25bdbc32a0dfe87d89654-80b5a6640525d53c-00"
+    }
+  ],
+  "requiresHints": [
+    {
+      "name": "x-requires-alias",
+      "value": null
+    },
+    {
+      "name": "x-requires-project-api-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-node-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-entry-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-entry-language",
+      "value": null
+    },
+    {
+      "name": "x-requires-block-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-version-no",
+      "value": null
+    }
+  ],
+  "otherHeaderNames": [
+    "content-length"
+  ],
+  "config": {
+    "source": "environment variables and the block manifest",
+    "values": [
+      {
+        "name": "alias",
+        "value": null
+      },
+      {
+        "name": "ALIAS",
+        "value": null
+      },
+      {
+        "name": "CONTENSIS_ALIAS",
+        "value": null
+      },
+      {
+        "name": "projectId",
+        "value": null
+      },
+      {
+        "name": "projectApiId",
+        "value": null
+      },
+      {
+        "name": "PROJECT",
+        "value": null
+      },
+      {
+        "name": "CONTENSIS_PROJECT",
+        "value": null
+      },
+      {
+        "name": "PROJECT_API_ID",
+        "value": null
+      },
+      {
+        "name": "PORT",
+        "value": null
+      },
+      {
+        "name": "NODE_ENV",
+        "value": null
+      }
+    ],
+    "otherEnvNames": [
+      "AI_AGENT",
+      "CLAUDECODE",
+      "CLAUDE_CODE_CHILD_SESSION",
+      "CLAUDE_CODE_ENTRYPOINT",
+      "CLAUDE_CODE_EXECPATH",
+      "CLAUDE_CODE_MESSAGING_SOCKET",
+      "CLAUDE_CODE_SESSION_ID",
+      "CLAUDE_EFFORT",
+      "CLAUDE_PID",
+      "COLORTERM",
+      "COREPACK_ENABLE_AUTO_PIN",
+      "FPATH",
+      "GIT_EDITOR",
+      "HERDR_BIN_PATH",
+      "HERDR_ENV",
+      "HERDR_PANE_ID",
+      "HERDR_SOCKET_PATH",
+      "HERDR_TAB_ID",
+      "HERDR_WORKSPACE_ID",
+      "HOME",
+      "HOMEBREW_CELLAR",
+      "HOMEBREW_PREFIX",
+      "HOMEBREW_REPOSITORY",
+      "INFOPATH",
+      "LANG",
+      "LOGNAME",
+      "NVM_BIN",
+      "NVM_CD_FLAGS",
+      "NVM_DIR",
+      "NVM_INC",
+      "NoDefaultCurrentDirectoryInExePath",
+      "OLDPWD",
+      "OSLogRateLimit",
+      "PATH",
+      "PWD",
+      "SHELL",
+      "SHLVL",
+      "SSH_AUTH_SOCK",
+      "TERM",
+      "TMPDIR",
+      "USER",
+      "XPC_FLAGS",
+      "XPC_SERVICE_NAME",
+      "_",
+      "__CF_USER_TEXT_ENCODING"
+    ],
+    "manifest": {
+      "enableFullUriRouting": true
+    }
+  },
+  "resolution": {
+    "identity": {
+      "kind": "id",
+      "value": "c877264a-787f-4b0d-8045-1ec8ee2d3d4e",
+      "source": "header"
+    },
+    "entryId": "ebec630b-67ef-4ccb-ae5d-11679f4719eb",
+    "diagnostics": []
+  },
+  "notes": [
+    "The URL path is shown for comparison only and is never dispatched on. It is `/` under `contensis dev requests`, the friendly URL when enableFullUriRouting is on, and a declared endpoint path otherwise.",
+    "The query string is discarded by the resolver. ?nodeId and ?entryId are dead past the 2025-11-03 09:00 cutoff and are no longer injected at all.",
+    "Denied headers are the ones the handler strips, so they are expected to be absent behind a handler. Served directly, as under `node server/index.ts`, they arrive normally: it is a value on a handler-served page that means the denylist changed.",
+    "The x-requires-* headers are forwarded but carry no inbound value. They make the handler emit the corresponding response headers for the cache and CDN layer.",
+    "Alias, project and language come from the environment or the block manifest. They can never arrive on the request.",
+    "Preview state exists only client-side, in the window.Contensis* globals the handler injects. Absent below means this page was served directly rather than through a handler."
+  ]
+}
+
+$ the panel's own JSON, GET / through the local handler
+{
+  "request": {
+    "method": "GET",
+    "url": "/",
+    "pathname": "/",
+    "search": "",
+    "httpVersion": "1.1"
+  },
+  "identityHeaders": [
+    {
+      "name": "x-node-id",
+      "value": "97ad4a16-821a-4798-adcd-f17ce876538a"
+    },
+    {
+      "name": "x-entry-id",
+      "value": "c615ce7b-de7b-440b-91c6-a471e5cb50a8"
+    }
+  ],
+  "observedHeaders": [
+    {
+      "name": "host",
+      "value": "localhost"
+    },
+    {
+      "name": "user-agent",
+      "value": "curl/8.7.1"
+    },
+    {
+      "name": "accept",
+      "value": "*/*"
+    },
+    {
+      "name": "accept-language",
+      "value": null
+    },
+    {
+      "name": "traceparent",
+      "value": "00-1b545031d16e1accad20f521659ec550-b8179b75c08d7978-00"
+    },
+    {
+      "name": "x-debug",
+      "value": null
+    },
+    {
+      "name": "x-alias",
+      "value": null
+    },
+    {
+      "name": "delivery-project",
+      "value": null
+    },
+    {
+      "name": "x-entry-versionstatus",
+      "value": null
+    },
+    {
+      "name": "x-node-versionstatus",
+      "value": null
+    },
+    {
+      "name": "x-orig-host",
+      "value": null
+    },
+    {
+      "name": "x-block-request",
+      "value": null
+    },
+    {
+      "name": "use-modern-cache-logic",
+      "value": null
+    },
+    {
+      "name": "surrogate-key",
+      "value": null
+    }
+  ],
+  "deniedHeaders": [
+    {
+      "name": "accept-encoding",
+      "value": null
+    },
+    {
+      "name": "x-site-type",
+      "value": null
+    },
+    {
+      "name": "x-project-api-id",
+      "value": null
+    },
+    {
+      "name": "x-project-uuid",
+      "value": null
+    },
+    {
+      "name": "x-block-config",
+      "value": null
+    },
+    {
+      "name": "x-proxy-config",
+      "value": null
+    },
+    {
+      "name": "x-renderer-config",
+      "value": null
+    },
+    {
+      "name": "x-iis-hostname",
+      "value": null
+    },
+    {
+      "name": "x-loadbalancer-vip",
+      "value": null
+    },
+    {
+      "name": "x-forwarded-proto",
+      "value": null
+    },
+    {
+      "name": "traceparent",
+      "value": "00-1b545031d16e1accad20f521659ec550-b8179b75c08d7978-00"
+    }
+  ],
+  "requiresHints": [
+    {
+      "name": "x-requires-alias",
+      "value": null
+    },
+    {
+      "name": "x-requires-project-api-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-node-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-entry-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-entry-language",
+      "value": null
+    },
+    {
+      "name": "x-requires-block-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-version-no",
+      "value": null
+    }
+  ],
+  "otherHeaderNames": [
+    "content-length"
+  ],
+  "config": {
+    "source": "environment variables and the block manifest",
+    "values": [
+      {
+        "name": "alias",
+        "value": null
+      },
+      {
+        "name": "ALIAS",
+        "value": null
+      },
+      {
+        "name": "CONTENSIS_ALIAS",
+        "value": null
+      },
+      {
+        "name": "projectId",
+        "value": null
+      },
+      {
+        "name": "projectApiId",
+        "value": null
+      },
+      {
+        "name": "PROJECT",
+        "value": null
+      },
+      {
+        "name": "CONTENSIS_PROJECT",
+        "value": null
+      },
+      {
+        "name": "PROJECT_API_ID",
+        "value": null
+      },
+      {
+        "name": "PORT",
+        "value": null
+      },
+      {
+        "name": "NODE_ENV",
+        "value": null
+      }
+    ],
+    "otherEnvNames": [
+      "AI_AGENT",
+      "CLAUDECODE",
+      "CLAUDE_CODE_CHILD_SESSION",
+      "CLAUDE_CODE_ENTRYPOINT",
+      "CLAUDE_CODE_EXECPATH",
+      "CLAUDE_CODE_MESSAGING_SOCKET",
+      "CLAUDE_CODE_SESSION_ID",
+      "CLAUDE_EFFORT",
+      "CLAUDE_PID",
+      "COLORTERM",
+      "COREPACK_ENABLE_AUTO_PIN",
+      "FPATH",
+      "GIT_EDITOR",
+      "HERDR_BIN_PATH",
+      "HERDR_ENV",
+      "HERDR_PANE_ID",
+      "HERDR_SOCKET_PATH",
+      "HERDR_TAB_ID",
+      "HERDR_WORKSPACE_ID",
+      "HOME",
+      "HOMEBREW_CELLAR",
+      "HOMEBREW_PREFIX",
+      "HOMEBREW_REPOSITORY",
+      "INFOPATH",
+      "LANG",
+      "LOGNAME",
+      "NVM_BIN",
+      "NVM_CD_FLAGS",
+      "NVM_DIR",
+      "NVM_INC",
+      "NoDefaultCurrentDirectoryInExePath",
+      "OLDPWD",
+      "OSLogRateLimit",
+      "PATH",
+      "PWD",
+      "SHELL",
+      "SHLVL",
+      "SSH_AUTH_SOCK",
+      "TERM",
+      "TMPDIR",
+      "USER",
+      "XPC_FLAGS",
+      "XPC_SERVICE_NAME",
+      "_",
+      "__CF_USER_TEXT_ENCODING"
+    ],
+    "manifest": {
+      "enableFullUriRouting": true
+    }
+  },
+  "resolution": {
+    "identity": {
+      "kind": "id",
+      "value": "97ad4a16-821a-4798-adcd-f17ce876538a",
+      "source": "header"
+    },
+    "entryId": "c615ce7b-de7b-440b-91c6-a471e5cb50a8",
+    "diagnostics": []
+  },
+  "notes": [
+    "The URL path is shown for comparison only and is never dispatched on. It is `/` under `contensis dev requests`, the friendly URL when enableFullUriRouting is on, and a declared endpoint path otherwise.",
+    "The query string is discarded by the resolver. ?nodeId and ?entryId are dead past the 2025-11-03 09:00 cutoff and are no longer injected at all.",
+    "Denied headers are the ones the handler strips, so they are expected to be absent behind a handler. Served directly, as under `node server/index.ts`, they arrive normally: it is a value on a handler-served page that means the denylist changed.",
+    "The x-requires-* headers are forwarded but carry no inbound value. They make the handler emit the corresponding response headers for the cache and CDN layer.",
+    "Alias, project and language come from the environment or the block manifest. They can never arrive on the request.",
+    "Preview state exists only client-side, in the window.Contensis* globals the handler injects. Absent below means this page was served directly rather than through a handler."
+  ]
+}
+
+$ the control, GET /blogs/canvas straight to the block server on :3001, no handler
+{
+  "request": {
+    "method": "GET",
+    "url": "/blogs/canvas",
+    "pathname": "/blogs/canvas",
+    "search": "",
+    "httpVersion": "1.1"
+  },
+  "identityHeaders": [
+    {
+      "name": "x-node-id",
+      "value": null
+    },
+    {
+      "name": "x-entry-id",
+      "value": null
+    }
+  ],
+  "observedHeaders": [
+    {
+      "name": "host",
+      "value": "localhost:3001"
+    },
+    {
+      "name": "user-agent",
+      "value": "curl/8.7.1"
+    },
+    {
+      "name": "accept",
+      "value": "*/*"
+    },
+    {
+      "name": "accept-language",
+      "value": null
+    },
+    {
+      "name": "traceparent",
+      "value": null
+    },
+    {
+      "name": "x-debug",
+      "value": null
+    },
+    {
+      "name": "x-alias",
+      "value": null
+    },
+    {
+      "name": "delivery-project",
+      "value": null
+    },
+    {
+      "name": "x-entry-versionstatus",
+      "value": null
+    },
+    {
+      "name": "x-node-versionstatus",
+      "value": null
+    },
+    {
+      "name": "x-orig-host",
+      "value": null
+    },
+    {
+      "name": "x-block-request",
+      "value": null
+    },
+    {
+      "name": "use-modern-cache-logic",
+      "value": null
+    },
+    {
+      "name": "surrogate-key",
+      "value": null
+    }
+  ],
+  "deniedHeaders": [
+    {
+      "name": "accept-encoding",
+      "value": null
+    },
+    {
+      "name": "x-site-type",
+      "value": null
+    },
+    {
+      "name": "x-project-api-id",
+      "value": null
+    },
+    {
+      "name": "x-project-uuid",
+      "value": null
+    },
+    {
+      "name": "x-block-config",
+      "value": null
+    },
+    {
+      "name": "x-proxy-config",
+      "value": null
+    },
+    {
+      "name": "x-renderer-config",
+      "value": null
+    },
+    {
+      "name": "x-iis-hostname",
+      "value": null
+    },
+    {
+      "name": "x-loadbalancer-vip",
+      "value": null
+    },
+    {
+      "name": "x-forwarded-proto",
+      "value": null
+    },
+    {
+      "name": "traceparent",
+      "value": null
+    }
+  ],
+  "requiresHints": [
+    {
+      "name": "x-requires-alias",
+      "value": null
+    },
+    {
+      "name": "x-requires-project-api-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-node-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-entry-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-entry-language",
+      "value": null
+    },
+    {
+      "name": "x-requires-block-id",
+      "value": null
+    },
+    {
+      "name": "x-requires-version-no",
+      "value": null
+    }
+  ],
+  "otherHeaderNames": [],
+  "config": {
+    "source": "environment variables and the block manifest",
+    "values": [
+      {
+        "name": "alias",
+        "value": null
+      },
+      {
+        "name": "ALIAS",
+        "value": null
+      },
+      {
+        "name": "CONTENSIS_ALIAS",
+        "value": null
+      },
+      {
+        "name": "projectId",
+        "value": null
+      },
+      {
+        "name": "projectApiId",
+        "value": null
+      },
+      {
+        "name": "PROJECT",
+        "value": null
+      },
+      {
+        "name": "CONTENSIS_PROJECT",
+        "value": null
+      },
+      {
+        "name": "PROJECT_API_ID",
+        "value": null
+      },
+      {
+        "name": "PORT",
+        "value": null
+      },
+      {
+        "name": "NODE_ENV",
+        "value": null
+      }
+    ],
+    "otherEnvNames": [
+      "AI_AGENT",
+      "CLAUDECODE",
+      "CLAUDE_CODE_CHILD_SESSION",
+      "CLAUDE_CODE_ENTRYPOINT",
+      "CLAUDE_CODE_EXECPATH",
+      "CLAUDE_CODE_MESSAGING_SOCKET",
+      "CLAUDE_CODE_SESSION_ID",
+      "CLAUDE_EFFORT",
+      "CLAUDE_PID",
+      "COLORTERM",
+      "COREPACK_ENABLE_AUTO_PIN",
+      "FPATH",
+      "GIT_EDITOR",
+      "HERDR_BIN_PATH",
+      "HERDR_ENV",
+      "HERDR_PANE_ID",
+      "HERDR_SOCKET_PATH",
+      "HERDR_TAB_ID",
+      "HERDR_WORKSPACE_ID",
+      "HOME",
+      "HOMEBREW_CELLAR",
+      "HOMEBREW_PREFIX",
+      "HOMEBREW_REPOSITORY",
+      "INFOPATH",
+      "LANG",
+      "LOGNAME",
+      "NVM_BIN",
+      "NVM_CD_FLAGS",
+      "NVM_DIR",
+      "NVM_INC",
+      "NoDefaultCurrentDirectoryInExePath",
+      "OLDPWD",
+      "OSLogRateLimit",
+      "PATH",
+      "PWD",
+      "SHELL",
+      "SHLVL",
+      "SSH_AUTH_SOCK",
+      "TERM",
+      "TMPDIR",
+      "USER",
+      "XPC_FLAGS",
+      "XPC_SERVICE_NAME",
+      "_",
+      "__CF_USER_TEXT_ENCODING"
+    ],
+    "manifest": {
+      "enableFullUriRouting": true
+    }
+  },
+  "resolution": {
+    "identity": {
+      "kind": "path",
+      "value": "/blogs/canvas",
+      "source": "path"
+    },
+    "diagnostics": []
+  },
+  "notes": [
+    "The URL path is shown for comparison only and is never dispatched on. It is `/` under `contensis dev requests`, the friendly URL when enableFullUriRouting is on, and a declared endpoint path otherwise.",
+    "The query string is discarded by the resolver. ?nodeId and ?entryId are dead past the 2025-11-03 09:00 cutoff and are no longer injected at all.",
+    "Denied headers are the ones the handler strips, so they are expected to be absent behind a handler. Served directly, as under `node server/index.ts`, they arrive normally: it is a value on a handler-served page that means the denylist changed.",
+    "The x-requires-* headers are forwarded but carry no inbound value. They make the handler emit the corresponding response headers for the cache and CDN layer.",
+    "Alias, project and language come from the environment or the block manifest. They can never arrive on the request.",
+    "Preview state exists only client-side, in the window.Contensis* globals the handler injects. Absent below means this page was served directly rather than through a handler."
+  ]
+}

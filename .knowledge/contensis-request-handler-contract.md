@@ -77,12 +77,20 @@ So **do not treat the denylist as a contract in either direction.** Read identit
 
 Sending `x-requires-*` headers (`x-requires-alias`, `-project-api-id`, `-node-id`, `-entry-id`, `-entry-language`, `-block-id`, `-version-no`) makes the handler emit the corresponding values as **response** headers, for the cache and CDN layer.
 
-**Corrected 2026-09-10.** This section previously said they do not appear as request values and are not an app input. Five of the seven arrive inbound as the literal string `true` on a deployed block **without any client sending them**, set by the handler itself:
+**Amended 2026-09-10.** The description above is correct: they are client-set, and the handler forwards them and emits the matching response headers. Verified behind a local handler by sending three of the seven, which produced exactly those three at the block and the three corresponding response headers, plus an unrequested `x-version-no`.
+
+What is worth adding is that **a deployed block receives five of them without your app's client sending anything**, as the literal string `true`:
 
 - present: `x-requires-alias`, `x-requires-project-api-id`, `x-requires-node-id`, `x-requires-entry-id`, `x-requires-block-id`
 - absent: `x-requires-entry-language`, `x-requires-version-no`
 
-They still carry no useful value, since `true` is not the alias or the node id, so the practical advice is unchanged: they are not an app input. But a block that logs or forwards unknown headers will see them.
+Something upstream on the deployed path is requesting them, most likely the CDN layer for its own cache keys. **Not the handler**, and not the app: behind a local handler none of the seven arrive unless the client sends them, so they are absent locally and present deployed.
+
+An earlier version of this note attributed them to the handler itself. That was wrong, and the local run is what disproved it: `evidence/captures-prs/routing-panel-local-handler.capture.log`.
+
+They still carry no useful value, since `true` is not the alias or the node id, so the practical advice is unchanged: they are not an app input. But a block that logs or forwards unknown headers will see them deployed and not locally.
+
+Related trap: `packages/routing/src/fixtures/inboundHeaders.capture.log` shows five `x-requires-*` behind a local handler. That was a curl sending them by hand, and is not evidence of anything setting them automatically.
 
 ### Block runtime environment
 
@@ -231,13 +239,27 @@ Node and renderer resolution in local dev are **real**, hitting the live CMS ove
 
    Pinning a concrete version makes `downloadImmediately` false, so the failing GitHub call fires unawaited and no longer blocks startup. Side effect: the handler will no longer auto-update.
 
-### Three divergences from production
+### Four divergences from production
 
 - **The block override loses the path.** The override passes `endpointId: null` and discards the endpoint URI, so `baseUri.AbsolutePath` is `/`. There is a `// TODO: deal with endpoints` in that code. Confirmed live: a request a deployed block receives as `/accessibility` arrives locally as `/`. **An app that dispatches on the path will pass locally by accident and only break once deployed.**
 - **`enableFullUriRouting` is hardcoded false** in the override path, and server type always defaults to `preview`. Confirmed to be a real divergence, not a reporting artefact: the block version genuinely has the flag true. The local `blockVersionInfo` is partly synthesised, which its zeroed `projectUuid: 00000000-0000-0000-0000-000000000000` gives away.
 - **No cache keys emitted.** Local dev binds `NullCacheKeyService`. Only _observation_ needs a deployed block; the contract itself is readable in source, below.
 
+- **Almost none of the deployed request headers exist locally.** Measured 2026-09-10 with the same instrument against the same nodes: of the fifteen headers a deployed block receives, exactly **one** arrives locally.
+
+  | Set locally                              | Absent locally, present deployed                                                                                                                                                                      |
+  | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | `x-node-id`, `x-entry-id`, `traceparent` | `x-orig-host`, `x-node-versionstatus`, `x-entry-versionstatus`, `x-alias`, `delivery-project`, five `x-requires-*`, `x-forwarded-proto`, `use-modern-cache-logic`, `surrogate-key`, `x-block-request` |
+
+  The handler adds only `x-node-id`, `x-entry-id`, `traceparent` and `content-length`. Everything else is CDN and IIS layer that does not exist locally. `host` is `localhost` locally and the internal block host deployed, so **neither is the public hostname**: deployed, `x-orig-host` carries it, and locally nothing does.
+
+  Practical consequence: anything reading version status or the public hostname has no local equivalent and needs an env fallback plus a deployed check. Identity routing, by contrast, is faithful, and both node ids matched the CMS and the deployed block exactly. `evidence/captures-prs/routing-panel-local-handler.capture.log`.
+
 Also local-only: `block-versionstatus=live`, `proxy-versionstatus=published`, `renderer-versionstatus=published` and language `en-GB` are hardcoded defaults, where the real service takes them from headers. There is no IIS fallback on `/` (deliberate, so the root path can be debugged).
+
+One correction to the first bullet above, from the same run: **the path is dropped even though the block's `manifest.json` sets `enableFullUriRouting: true`.** The hardcoded-false override explains the mechanism, but the observable outcome does not depend on the manifest at all, so do not expect setting the flag to change local behaviour.
+
+The handler also **logs nothing about node or renderer resolution**. The only local evidence that step ran is the header the block receives, which is a good argument for keeping an instrument inside the block.
 
 ## Verifying against a live block
 

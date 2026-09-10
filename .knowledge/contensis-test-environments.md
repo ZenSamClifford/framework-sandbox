@@ -61,19 +61,32 @@ registry for prs.
 ## `prs` / `tim` is where this repo's own block goes
 
 `tim` is a second project on the same `prs` alias, and it is where `apps/website` is
-pushed from CI (`.github/workflows/website-block.yml`). Verified 2026-09-10 with
-`contensis list blocks` and `contensis list renderers` against it: **both are empty**.
-
-**As of the first push (2026-09-10) that is no longer the state.** `website` v1 is
-deployed and released from run `34457026009`, running in all three data centres, and a
-`website` renderer now holds the `*` catch-all. The renderer appeared with the push
+pushed from CI (`.github/workflows/website-block.yml`). It was empty before the first
+push; a `website` renderer now holds the `*` catch-all, and it appeared with the push
 rather than being created by hand.
 
-Live and verified:
+Live and verified, **current as of 2026-09-10**. The version number moves with every push
+to `main`, so read it rather than trusting a number written here:
 
-- Staging: `https://staging-tim-prs.cloud.contensis.com?block-website-versionno=1`
-- The site view has a `/` node (`en-gb`, Home), so the catch-all reaches the block.
-- Captures in `../evidence/captures-prs/`.
+```bash
+contensis get block website main --format json     # every version and its status
+```
+
+- Staging, substituting the version you want to pin:
+  `https://staging-tim-prs.cloud.contensis.com/?block-website-versionno=<n>`
+- At the time of writing the latest was **v6**. Earlier versions stay registered and
+  `deprecated` rather than being removed, so the list only grows.
+- Fetch with a cookie jar (`curl -L -c jar -b jar`): the version pin is stripped by a 301
+  and persisted as a cookie, so without it you land unversioned with an empty body.
+- The site view has a `/` node (`en-gb`, Home) and a `/blogs` subtree, so the catch-all
+  reaches the block on more than one node. Known-good ids for fixtures:
+  `/` is node `97ad4a16-821a-4798-adcd-f17ce876538a`, and `/blogs/canvas` is node
+  `c877264a-787f-4b0d-8045-1ec8ee2d3d4e` with entry `ebec630b-67ef-4ccb-ae5d-11679f4719eb`.
+  Not every `/blogs/*` path resolves: several return the platform's 404 and never reach
+  the block.
+- Captures in `../evidence/captures-prs/`, including the routing panel captured both
+  deployed and behind a local handler, which is the cheapest way to re-check the header
+  contract on any version.
 
 Pushing here is safe for the same reason `reactStarter` is: `prs` is a sandbox alias,
 not a client environment.
@@ -95,7 +108,13 @@ Both were hit on first run and both will hit every PS developer on a Mac.
 **1. Port 5000 collides with macOS AirPlay Receiver.** `ControlCenter` holds `*:5000`
 and the CLI never passes `--port`, so the handler dies on startup with
 `System.IO.IOException: Failed to bind to address http://[::]:5000: address already in use.`
-Captured in `../evidence/devrequests-port5000.capture.log`. Workaround:
+Captured in `../evidence/devrequests-port5000.capture.log`.
+
+A run on 2026-09-10 passed `--port=5001` from the outset and never attempted 5000, so that
+run **neither reconfirmed nor refuted** this. Treat it as true until someone tries the
+default again; the original capture stands.
+
+Workaround:
 
 ```bash
 contensis dev requests sandbox http://localhost:3000 --args --port=5001
@@ -124,10 +143,42 @@ it.
 `~/.contensis/cli-manifest.json.bak`. Restoring it returns the CLI to the
 broken-but-default state.
 
+## Running the handler against this repo's block
+
+The block server listens on 3001, so point the handler there rather than at the `vp dev`
+server on 3000. Verified working 2026-09-10:
+
+```bash
+cd apps/website && vp run build          # dist must exist; the server does not build it
+node apps/website/server/index.ts        # block server, 0.0.0.0:3001
+
+contensis connect prs && contensis set project tim
+contensis dev requests website http://localhost:3001 --args --port=5001
+
+curl -sS http://localhost:5001/blogs/canvas \
+  | sed -n 's/.*<script id="routing-panel-data" type="application\/json">\(.*\)<\/script>.*/\1/p' | jq .
+```
+
+The panel in `apps/website` reports what the block actually received, which is the only
+local evidence that node resolution ran at all: **the handler logs nothing about node or
+renderer resolution**, only HTTP proxy traces.
+
 ## Local dev is real, but it diverges
 
 Node and renderer resolution in local dev hit the live CMS over HTTPS rather than
-being stubbed, so fidelity is higher than you might assume. Three confirmed
+being stubbed, so fidelity is higher than you might assume. Four confirmed
 divergences matter, the first most of all: **the friendly path is lost**, so a request
 for `/accessibility` arrives at the block as `/`. Full detail in
 `contensis-request-handler-contract.md`.
+
+Two things measured 2026-09-10 that are worth knowing before you plan local work:
+
+- **Identity routing is faithful.** `x-node-id` and `x-entry-id` are set locally, and the
+  node ids matched both the CMS and the deployed block for the same two paths. So an app
+  that routes on identity behaves the same locally and deployed, which is the whole reason
+  the resolver reads headers rather than the path.
+- **Almost nothing else arrives.** Of the fifteen request headers a deployed block
+  receives, only `traceparent` also arrives locally. No `x-orig-host`, no
+  `x-node-versionstatus` or `x-entry-versionstatus`, no `x-alias`. Anything depending on
+  those needs an environment fallback locally and a deployed check before you trust it.
+  Comparison in `../evidence/captures-prs/routing-panel-local-handler.capture.log`.

@@ -218,9 +218,11 @@ for `gitlab.zengenti.com` is all the auth it needed. Full findings in
   framework that reads the headers and fetches the node would be _more_ correct locally
   than CRB is.
 - **The asset contract is fully settled**, and one earlier claim was wrong: the
-  `/_{hash}_{blockVersionId}/` rewrite **does** run in local dev. A Vite build needs
-  `base: "/static/"` **and** `build.outDir: "dist/static"`; unprefixed `/static/...`
-  404s through the handler. Proven end to end with a Dockerised spike one.
+  `/_{hash}_{blockVersionId}/` rewrite **does** run in local dev. `base: "/static/"` alone
+  is not enough: the files must also exist at that path, either via
+  `build.outDir: "dist/static"` or a server mounting `dist` at `/static`. Unprefixed
+  `/static/...` 404s through the handler. Proven end to end with a Dockerised spike one,
+  and since then deployed with the server-mount option.
 
 Also learned, from `docker image inspect`: a block image exposes `3001/tcp` and its
 entrypoint is `node dist/server/launcher.js --alias=$alias --projectId=$projectId
@@ -230,19 +232,32 @@ project from env, never from the request".
 **Done: spike one is Dockerised** (scratch work, not carried into this repo). A
 `Dockerfile` plus an `nginx.conf`, from
 https://viteplus.dev/guide/docker but serving under `/static`. Builds and works behind
-the local handler. **Not pushed** as a block version; that is a separate decision, and
-it is the only way to get the remaining deployed-side data (cache keys, endpoint-path
-dispatch, the real hash prefix).
+the local handler. Superseded by `docker/website.Dockerfile`, which drops nginx for a
+Node server so there is somewhere for routing to live.
+
+**Done: pushed as a block version.** `website` v1 and v2 are deployed and released on
+`prs` / `tim` from `.github/workflows/website-block.yml`, and the deployed-side questions
+that needed a real push are answered in `.knowledge/contensis-block-runtime.md` and
+`evidence/captures-prs/`: the manifest is read from the image root, the rewrite applies to
+a Vite build's literals including one referenced from inside the built JS, and the prefix
+carries the block version id so it changes on every push.
+
+**Still unobserved even after that push:** cache keys (nothing emits `surrogate-key` yet)
+and endpoint-path dispatch (`enableFullUriRouting` is on, so the friendly path arrives and
+the other branch never runs). Neither is blocked on a deployment; both are settled from
+source. Do not read "we have deployed" as "everything is now observed".
 
 **Done: routing step 1a**, in `packages/routing`. A pure, network-free resolver that turns
 the inbound headers into a node or path identity, with the real captures as fixtures. Step
 1b (the node fetch) is next, and the remaining steps are listed in
 `packages/routing/.knowledge/routing-design.md`.
 
-**The wiring point for the SSR app.** `apps/website` is still the untouched Vite+ starter.
-Its `package.json` already declares `"routing": "workspace:*"` but nothing imports it yet,
-so that dependency is the seam where the app and the routing package meet when the app
-gets built.
+**The wiring point for the SSR app.** `apps/website` is now a deployed block: a Vite build
+served by a small Node server, with a marked seam in `server/index.ts` where
+`resolveIdentity` will be called. Its `package.json` declares `"routing": "workspace:*"`
+but still nothing imports it. Wiring that up is the next TODO item, and it is also what
+ends the image's zero-dependency property, so the runtime stage will then need a `deps`
+stage or a bundled server.
 
 **Spike two: an islands proof on top of that route.** A statically rendered page with one hydrated island, to test whether selective hydration holds up against the Contensis packages.
 
@@ -255,11 +270,18 @@ What is left is not exploration we can perform. These are questions for Contensi
 - Is the discarded `originPath` return an intended removal or a live bug? Cheapest upstream fix if we want the friendly path passed through.
 - What is the intended post-cutoff channel, and why? No design doc for the 2025-11-03 migration was found. Worth pairing with the finding that **CRB does not read the headers at all**, so the migration left the production framework routing on a path that local dev then drops.
 - `contensis dev requests` cannot fetch its own binary: `GitHubCliModuleProvider.FindLatestRelease` calls the GitHub API unauthenticated against a private repo. Straightforward bug.
-- The preview toolbar reads `entryId` from the query string, which post-cutoff no longer exists, so `window.ContensisEntryId` is likely emitted empty on new blocks. Inferred from source.
+- **Answered 2026-09-10, keep for the report:** the preview toolbar reads `entryId` from the query string, which post-cutoff no longer exists. Confirmed on our own deployed block: `window.ContensisEntryId=""`. No longer inferred, and still a bug worth raising.
 - Minor: `traceparent` is on the request denylist yet the local sink received one. Most likely the .NET HttpClient adding its own. Harmless.
+
+Two more, found while deploying, both in the official GitHub actions rather than the
+handler. Detail and reproductions in `.knowledge/contensis-block-ci.md`:
+
+- **`contensis/cli-action@v1` runs `eval contensis $CONTENSIS_COMMAND` with the variable unquoted**, and `contensis/block-push@v1` feeds it the raw commit message. Any backtick, quote or newline in a commit message is executed by the shell. That is command injection from attacker-controlled input, with `CONTENSIS_SHARED_SECRET` in the same environment, and it also means a conventional multi-line commit message breaks the push outright.
+- **`block-push` passes a full URL to `--repository-url`**, which the CLI then prefixes again, so every block pushed with it records `https://github.com/https://github.com/owner/repo.git` and dead commit links.
 
 ## Test environments
 
+- **`prs` / `tim`** is where this repo's own block lives. `website` v2 is deployed, released and available, with a `website` renderer holding the `*` catch-all. Staging: `https://staging-tim-prs.cloud.contensis.com?block-website-versionno=2`.
 - **`prs` / `reactStarter`** is the sandbox for pushing test blocks (Sam, 2026-09-04).
 - **`uol` / `universityDemo`** is a live client environment. Read-only: delivery queries, `contensis get block`, and pulling the block image are fine. **Never push a block version there.**
 

@@ -95,7 +95,10 @@ base: "/static/",
 build: { outDir: "dist/static" },
 ```
 
-`base` alone is never sufficient. The reasoning, the evidence and the prefix-rewrite
+`base` alone is never sufficient: the files have to exist at the path being requested.
+`apps/website` takes the other option the contract allows, keeping the default `outDir`
+and letting `server/index.ts` mount `dist` at `/static`. That is the variant verified on a
+deployed block; both work. The reasoning, the evidence and the prefix-rewrite
 mechanics are in `contensis-request-handler-contract.md`; do not restate them here.
 
 ## Docker

@@ -2,6 +2,10 @@
 
 Currently a Vite+ monorepo. Using this as a place to explore routing and other frameworks specific tooling with use with Contensis CMS.
 
+`apps/website` is deployed as a Contensis block on `prs` / `tim`, built and pushed by
+`.github/workflows/website-block.yml` on every push to `main`. It is the reference for
+what a block has to do; `packages/routing` is not wired into it yet.
+
 ## Development
 
 - Check everything is ready:
@@ -37,8 +41,9 @@ raw captures were compiled into this repo to make them durable. Everything below
 its own; nothing needs the original scratch repo to make sense.
 
 - `EXPLORATION.md` is the living plan, the spike status and the open questions for Contensis.
-- `.knowledge/` holds the Request Handler contract, the Vite+ toolchain notes and the test
-  environment rules. Read the contract before writing any request handling or asset code.
+- `.knowledge/` holds the Request Handler contract, the block runtime and CI notes, the
+  Vite+ toolchain notes and the test environment rules. Read the contract before writing
+  any request handling or asset code, and the runtime notes before writing a block server.
 - `packages/routing/.knowledge/` holds the routing design and the resolver decisions.
 - `evidence/` holds the raw captures every claim rests on.
 

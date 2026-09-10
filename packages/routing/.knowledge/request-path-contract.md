@@ -29,7 +29,15 @@ need to check a claim, and update it rather than this file when a claim changes.
 ## The headers are the durable channel
 
 `x-node-id` and `x-entry-id` are set on every request, unconditionally, in every path
-shape. They are the only reliable identity input a block gets.
+shape. They are the only reliable identity input a block gets. The resolver exports the
+two names as `IDENTITY_HEADERS`, so a consumer displaying or forwarding them does not
+restate the list.
+
+**Confirmed on a deployed block, 2026-09-10.** `x-node-id` matched the handler's own
+`nodeInfo.id` on two different nodes on `prs` / `tim` v4, with the path arriving as the
+friendly URL rather than the `/` local dev gives. That is this document's central claim
+checked from both sides rather than from source alone:
+`../../../evidence/captures-prs/routing-panel-deployed.capture.log`.
 
 `?nodeId` and `?entryId` are legacy. `RouteInfoFactory.cs` carries a hardcoded cutoff
 of `2025-11-03 09:00`, after which both are explicitly nulled out and never appended to

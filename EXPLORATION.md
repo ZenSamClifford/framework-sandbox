@@ -57,7 +57,7 @@ Related, both confirmed: inbound `nodeId`/`entryId` params are stripped before i
 - Do not assume the path is ours to define. Confirmed from source: the rewritten path comes from CMS configuration (node → content type or renderer ref → renderer rules → endpoint → block endpoint path), so `/generic-page` would be a declared block endpoint rather than a route we invent. **But on `uol` no endpoint is configured at all** (`endpoints: []`, `endpointId: null`, full URI routing on), so the block simply receives the friendly path. Two viable shapes exist and only one is observed; the framework should not hardcode either assumption
 - Serve static assets from a declared static path (default `/static`) and tolerate a `/_{hash}_{blockVersionId}/` prefix rewrite applied inside served JS and CSS. Absolute asset paths outside a declared static path will not resolve, which is a direct constraint on Vite's `base` config
 - Take alias, project and language from block config or env, never from the request. Confirmed live: only `x-node-id` and `x-entry-id` reach the app; `x-requires-*` returns the rest as response headers for the cache layer, not as request input
-- Read preview state from the injected `window.Contensis*` globals, not from headers: `x-site-type` is on the handler's 22-entry request header denylist, so the block never sees it. Alias and project are on that denylist too, unless the block opts in with `x-requires-*`
+- Read preview state from the injected `window.Contensis*` globals, not from headers: `x-site-type` is on the handler's 22-entry request header denylist, so the block never sees it. **Corrected 2026-09-10:** this line used to say alias and project were on that denylist too. `x-project-api-id` and `x-project-uuid` are; `x-alias` is not, and it arrives (`x-alias: prs`, observed on the deployed block). Take alias and project from the environment anyway, which carries both casings, and note that two headers that _are_ on the list arrive regardless. See the corrected denylist section of the contract.
 - Expect a 404 from the app to trigger an IIS fallback round-trip upstream, which may serve IIS content in its place
 
 ### Local dev fidelity, and one gap that matters
@@ -158,7 +158,7 @@ Raw captures in `evidence/captures-uol/`.
 - **The endpoint-path branch is not exercised anywhere on this project.** The block declares `endpoints: []`, and both renderers return `endpointId: null` in their rules (`contensis get renderer sandbox --format json`). Combined with full URI routing, that means nothing here ever produces a `/generic-page`-style path. The `/drew → /generic-page` shape remains unobserved here, but it is **settled from source**: `RouteInfoFactory` sets `path = baseUri.AbsolutePath` unless `enableFullUriRouting`, in which case the friendly path wins. Observing it would only re-confirm a two-line branch.
 - `staticPaths: ["/static"]` in the debug data, while the block config declares `staticPaths: []`. That independently confirms the source finding that `/static` is injected as the default when a block declares none.
 - The block declares `port: 3001`
-- Asking for the echoes with `x-requires-node-id`, `x-requires-entry-id`, `x-requires-alias`, `x-requires-project-api-id`, `x-requires-entry-language`, `x-requires-block-id`, `x-requires-version-no` returns all of them as **response** headers (`x-node-id`, `x-entry-id`, `x-entry-language: en-GB`, `x-alias: uol`, `x-project-api-id: universityDemo`, `x-block-id: sandbox`, `x-version-no: 3`). These are for the cache and CDN layer, not inputs to the app.
+- Asking for the echoes with `x-requires-node-id`, `x-requires-entry-id`, `x-requires-alias`, `x-requires-project-api-id`, `x-requires-entry-language`, `x-requires-block-id`, `x-requires-version-no` returns all of them as **response** headers (`x-node-id`, `x-entry-id`, `x-entry-language: en-GB`, `x-alias: uol`, `x-project-api-id: universityDemo`, `x-block-id: sandbox`, `x-version-no: 3`). These are for the cache and CDN layer, not inputs to the app. **Corrected 2026-09-10:** five of the seven also arrive _inbound_ as the literal `true` on a deployed block with no client asking for them (`-alias`, `-project-api-id`, `-node-id`, `-entry-id`, `-block-id`), set by the handler itself. Still not useful input, since `true` is not the alias, but they are there.
 - The `?block-sandbox-versionno=3` pin is stripped by a 301 and persisted as a cookie, as the source said.
 
 ### Confirmed live, local dev
@@ -252,12 +252,34 @@ the inbound headers into a node or path identity, with the real captures as fixt
 1b (the node fetch) is next, and the remaining steps are listed in
 `packages/routing/.knowledge/routing-design.md`.
 
-**The wiring point for the SSR app.** `apps/website` is now a deployed block: a Vite build
-served by a small Node server, with a marked seam in `server/index.ts` where
-`resolveIdentity` will be called. Its `package.json` declares `"routing": "workspace:*"`
-but still nothing imports it. Wiring that up is the next TODO item, and it is also what
-ends the image's zero-dependency property, so the runtime stage will then need a `deps`
-stage or a bundled server.
+**Done: the SSR app's wiring point is wired.** `server/index.ts` calls `resolveIdentity`
+on every page request, and `server/panel.ts` renders the result plus every
+routing-relevant header, env value and manifest field into the page. Verified on `prs` /
+`tim` v4: the resolver's identity equals the handler's own `nodeInfo.id` on two different
+nodes, and the path arrives as the friendly URL rather than the `/` local dev delivers.
+That is the design's central claim, checked from both sides for the first time.
+
+The image's zero-dependency property ended, as predicted, but the answer was neither a
+`deps` stage nor a bundled server. Node refuses to strip types from any file under a real
+`node_modules` path, and pnpm's symlink resolving out to `packages/routing` is the only
+reason the import works locally, so the runtime stage ships the packed output plus a shim
+manifest (`docker/routing-runtime-package.json`). A copied dependency rather than a
+bundle, so `CMD` still runs the file you can read in the repo.
+
+The panel was built as the verification instrument and immediately paid for itself: five
+claims in `.knowledge/contensis-request-handler-contract.md` turned out to be wrong, and
+the block runtime environment was recorded for the first time. See
+`evidence/captures-prs/routing-panel-deployed.capture.log`.
+
+The most consequential of those is not about the denylist at all. **Version status arrives
+on the request** (`x-entry-versionstatus`, `x-node-versionstatus`), where the contract said
+preview state was client-side only. An SSR app needs it at fetch time, so a
+client-side-only reading would have meant fetching published content and then discovering
+the request was a preview. **`x-orig-host` carries the public hostname** too, which is the
+missing piece for absolute canonical URLs, since `Host` is rewritten to the internal block
+host. Both land squarely in steps 1b and 3 of the routing design and neither was known
+before wiring the panel up. `delivery-project`, by contrast, arrives empty and does not
+carry the project.
 
 **Spike two: an islands proof on top of that route.** A statically rendered page with one hydrated island, to test whether selective hydration holds up against the Contensis packages.
 
@@ -271,7 +293,11 @@ What is left is not exploration we can perform. These are questions for Contensi
 - What is the intended post-cutoff channel, and why? No design doc for the 2025-11-03 migration was found. Worth pairing with the finding that **CRB does not read the headers at all**, so the migration left the production framework routing on a path that local dev then drops.
 - `contensis dev requests` cannot fetch its own binary: `GitHubCliModuleProvider.FindLatestRelease` calls the GitHub API unauthenticated against a private repo. Straightforward bug.
 - **Answered 2026-09-10, keep for the report:** the preview toolbar reads `entryId` from the query string, which post-cutoff no longer exists. Confirmed on our own deployed block: `window.ContensisEntryId=""`. No longer inferred, and still a bug worth raising.
-- Minor: `traceparent` is on the request denylist yet the local sink received one. Most likely the .NET HttpClient adding its own. Harmless.
+- `traceparent` is on the request denylist yet both the local sink and the deployed block received one. Most likely the .NET HttpClient adding its own downstream of the mapping, and harmless. **But `x-forwarded-proto` also arrives on the deployed block despite being on the list**, and that has no such explanation. Worth asking whether the denylist is applied where it is documented to be applied.
+
+- Why is `delivery-project` empty on a host that unambiguously resolves a project? It was read as "no project resolved" in `evidence/prs-capture-notes.txt`, but it is empty on a working staging host too, so either the header is vestigial or it is not being populated as intended.
+- Is `x-requires-*` arriving inbound as `true`, unrequested, deliberate? Five of the seven do. Harmless, but it contradicts the documented "client opt-in" behaviour.
+- Is the inbound `surrogate-key: true` intentional? It shares a name with the response header a block emits to declare cache keys, which is an easy thing to conflate.
 
 Two more, found while deploying, both in the official GitHub actions rather than the
 handler. Detail and reproductions in `.knowledge/contensis-block-ci.md`:

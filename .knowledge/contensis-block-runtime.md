@@ -111,6 +111,68 @@ const within = relative(distDir, candidate);
 if (within.startsWith("..") || within.startsWith(sep) || within === "") return null;
 ```
 
+### Per-request content costs you the stream
+
+Serving a file verbatim can be a `stat` for `content-length` plus a `createReadStream`
+pipe. The moment anything is injected per request, that length is wrong and the response
+either truncates or hangs, which reads as a network fault rather than an app bug. Build
+the body, then measure the body:
+
+```ts
+const body = Buffer.from(injectPanel(shell, data), "utf8");
+res.writeHead(200, { "content-length": body.byteLength, ... });
+```
+
+`Buffer.byteLength`, not `String.length`: a single non-ASCII character in a header value
+being echoed makes them disagree. Worth an explicit check, since it passes every casual
+test:
+
+```bash
+curl -sS -D- -o/dev/null http://localhost:3001/ | grep -i content-length
+curl -sS http://localhost:3001/ | wc -c
+```
+
+`dist` is immutable for the life of the container, so read the shell once and keep it when
+`NODE_ENV === "production"`, and re-read it otherwise so a local rebuild shows up on the
+next refresh without a restart. Block saturation is a live failure mode here (see
+`solutions/integration-issues/contensis-block-url-504-saturation.md`), so a disk read per
+request on the deployed side is not free.
+
+### A workspace dependency must reach the image as JavaScript
+
+Node **refuses to strip types from any file under a real `node_modules` path**. A pnpm
+workspace import works locally in spite of that, and it is worth knowing why: Node resolves
+the symlink to its realpath, so `apps/website/node_modules/routing` becomes
+`packages/routing/src/index.ts`, which is not under `node_modules` and is therefore
+strippable. Verified on the pinned Node 24.21.0, not just a newer local one.
+
+That cannot be recreated in an image. Copying the package's **source** to
+`node_modules/routing/src/` fails at startup with
+`ERR_UNSUPPORTED_NODE_MODULES_TYPE_STRIPPING`, and copying nothing fails with
+`ERR_MODULE_NOT_FOUND`. So pack the package in the build stage and ship the output:
+
+```dockerfile
+WORKDIR /app/packages/routing
+RUN vp pack
+...
+COPY --from=build /app/packages/routing/dist ./node_modules/routing/dist
+COPY docker/routing-runtime-package.json ./node_modules/routing/package.json
+```
+
+Copy the whole `dist` directory, not the one entry file: a second emitted chunk would
+still build clean and then kill the container at startup on a missing relative import,
+after CI had already registered the block version.
+
+The shim manifest is needed because `pack.exports.devExports` points the real
+`package.json` at `./src` and moves the dist paths into `publishConfig`, which npm applies
+only on publish. Mirror `publishConfig.exports` including any subpaths; nothing enforces
+that, and a mismatch is an image-only failure, which is the exact class of bug this repo
+exists to avoid.
+
+Preferring this to bundling the server keeps `CMD ["node", "server/index.ts"]` honest: the
+image runs the file you can read, and a stack trace from a deployed block needs no
+sourcemap.
+
 ## 404s are the platform's job, not the app's
 
 **A path with no node never reaches the block.** Confirmed against our own deployed block

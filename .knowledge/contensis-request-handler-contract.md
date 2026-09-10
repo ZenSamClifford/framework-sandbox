@@ -57,11 +57,44 @@ Also confirmed: an `originPath` param is written in code but its return value is
 
 Always present (confirmed): `x-node-id`, `x-entry-id`.
 
-Everything inbound is forwarded **except** a 22-entry denylist in `RequestHeaderMappingService.DisallowedRequestHeaderMappings`. Notably denied: `Host`, `Accept-Encoding`, `x-site-type`, `x-alias`, `x-project-api-id`, `x-project-uuid`, `x-block-config`, `x-proxy-config`, `x-renderer-config`, `x-iis-hostname`, `x-loadbalancer-vip`, `traceparent`, `x-forwarded-proto`.
+Everything inbound is forwarded **except** a denylist in `RequestHeaderMappingService.DisallowedRequestHeaderMappings`. The list holds 23 literals with `version` twice, so **22 unique**, read from source:
 
-So **a block cannot read alias, project or site type from the request.** Take them from block config or env.
+`Host`, `Accept-Encoding`, `version`, `x-requires-depends`, `x-ssl`, `x-internal-host`, `use-app-servers`, `x-varnish-authentication`, `x-authcache-get-key`, `x-authcache-get-key-stage`, `x-varnish`, `contensis-classic-version`, `x-site-type`, `x-block-config`, `x-proxy-config`, `x-renderer-config`, `x-iis-hostname`, `x-loadbalancer-vip`, `x-project-uuid`, `x-project-api-id`, `branch`, `traceparent`, `x-forwarded-proto`.
 
-Sending `x-requires-*` headers (`x-requires-alias`, `-project-api-id`, `-node-id`, `-entry-id`, `-entry-language`, `-block-id`, `-version-no`) forwards those hint headers to the block and makes the handler emit the corresponding values as **response** headers, for the cache and CDN layer. Confirmed live: they do **not** appear as request values. They are not an app input.
+**Corrected 2026-09-10 against the deployed block, `prs` / `tim` v4.** An earlier version of this section listed `x-alias` as denied. It is not in the source list, and it does arrive: the block observed `x-alias: prs`. Two headers that _are_ on the list arrive anyway, so the list is not a reliable guarantee of absence either:
+
+| Header              | Documented | Actually observed at the block |
+| ------------------- | ---------- | ------------------------------ |
+| `x-alias`           | denied     | **arrives**, `prs`             |
+| `x-forwarded-proto` | denied     | **arrives**, `https`           |
+| `traceparent`       | denied     | **arrives**, a W3C trace id    |
+| `x-project-api-id`  | denied     | absent, as documented          |
+| `x-site-type`       | denied     | absent, as documented          |
+
+`traceparent` was already suspected of being the .NET `HttpClient` adding its own downstream of the mapping. `x-forwarded-proto` has no such explanation and is worth raising upstream. Evidence: `evidence/captures-prs/routing-panel-deployed.capture.log`.
+
+So **do not treat the denylist as a contract in either direction.** Read identity from `x-node-id` and `x-entry-id`, and take alias, project and language from config or env, not because the request cannot carry them but because that is the channel the platform actually guarantees. A block _can_ read its own alias and project from its environment: see **Block runtime environment** below.
+
+Sending `x-requires-*` headers (`x-requires-alias`, `-project-api-id`, `-node-id`, `-entry-id`, `-entry-language`, `-block-id`, `-version-no`) makes the handler emit the corresponding values as **response** headers, for the cache and CDN layer.
+
+**Corrected 2026-09-10.** This section previously said they do not appear as request values and are not an app input. Five of the seven arrive inbound as the literal string `true` on a deployed block **without any client sending them**, set by the handler itself:
+
+- present: `x-requires-alias`, `x-requires-project-api-id`, `x-requires-node-id`, `x-requires-entry-id`, `x-requires-block-id`
+- absent: `x-requires-entry-language`, `x-requires-version-no`
+
+They still carry no useful value, since `true` is not the alias or the node id, so the practical advice is unchanged: they are not an app input. But a block that logs or forwards unknown headers will see them.
+
+### Block runtime environment
+
+**New 2026-09-10, read off the deployed block.** Previously unrecorded, and the answer to "where do alias and project come from" now that the request turns out to be an unreliable source. The block runtime sets, in **both** casings:
+
+```
+alias=prs   ALIAS=prs   projectId=tim   PROJECT=tim   PROJECT_API_ID=tim
+```
+
+Both casings matter: `process.env` is case-sensitive on Linux, so code reading only `ALIAS` or only `alias` works by luck. Also set: `BLOCK_BRANCH_ID`, `BLOCK_VERSION_ID`, `BLOCK_VERSION_COMMIT_ID`, `BLOCK_VERSION_IMAGE_URL`, `DATA_CENTER`, `CONTENSIS_CLIENT_ID`, `HOSTNAME`, plus the usual Kubernetes service variables.
+
+Whether an access token is in that environment is **not** established by this capture: the panel that produced it drops any variable whose name matches `token|secret|key|password|credential` before rendering, precisely so a public block never prints one. So treat the list above as "the non-credential variables", not as the whole environment.
 
 ### The path
 
@@ -135,7 +168,26 @@ tells you, not the running block.
 
 ### Preview
 
-Server type arrives as `x-site-type`, which is **on the denylist**, so the block never sees it. Read preview state from the globals the handler injects into HTML before `</body>`: `window.ContensisProjectApiId`, `ContensisAlias`, `ContensisSso`, `ContensisEntryVersionStatus`, `ContensisEntryId`, `ContensisEntryLanguage`, `ContensisVersionNumber`.
+Server type arrives as `x-site-type`, which is **on the denylist** and confirmed absent, so the block never sees it. The handler injects these globals into HTML before `</body>`: `window.ContensisProjectApiId`, `ContensisAlias`, `ContensisSso`, `ContensisEntryVersionStatus`, `ContensisEntryId`, `ContensisEntryLanguage`, `ContensisVersionNumber`.
+
+**Corrected 2026-09-10: version status does not require the globals.** This section used to say preview state must be read from them. Two request headers carry it, both observed on the deployed block:
+
+| Header                  | Observed value |
+| ----------------------- | -------------- |
+| `x-entry-versionstatus` | `published`    |
+| `x-node-versionstatus`  | `published`    |
+
+That distinction is not cosmetic. An SSR app needs version status **at fetch time**, before any client global exists, or it fetches published content and only then discovers the request was a preview. A client-side-only reading forces either a second fetch or a hydration mismatch.
+
+Caveat before relying on it: this was captured on a staging host serving published content, so the value has only ever been seen as `published`. Confirm it flips to `draft` on a preview host with a preview cookie before building on it.
+
+Also newly observed and not previously documented anywhere:
+
+- **`x-orig-host` carries the public hostname** the visitor used, e.g. `staging-tim-prs.cloud.contensis.com`. `Host` is rewritten to the internal block host (`v5-main-website-tim-prs-block-hq2-blue.blocks.contensis.com`), so this is the only server-side source for absolute canonical URLs, sitemaps and `og:` tags. The alternative is hardcoding a public host per environment.
+- **`delivery-project` arrives empty**, on a host that unambiguously resolves a project. It does not carry the project api id. `evidence/prs-capture-notes.txt` reads an empty `delivery-project` as "no project resolved"; that reading is now doubtful, since it is empty here too.
+- `x-block-request: pass`, `use-modern-cache-logic: true`, and an **inbound** `surrogate-key: true`. That last one is a flag, not a cache key, and must not be confused with the `surrogate-key` response header a block is supposed to emit.
+
+Evidence for all of the above: `evidence/captures-prs/routing-panel-deployed.capture.log`.
 
 **Confirmed 2026-09-10, was inferred:** `SetPreviewToolbar` reads `entryId` from the query string, which post-cutoff no longer exists, so `window.ContensisEntryId` is emitted **empty** on new blocks. Observed on the `website` block's first deployed response: `window.ContensisEntryId=""` alongside a populated `ContensisProjectApiId`, `ContensisAlias` and `ContensisEntryLanguage` (`evidence/captures-prs/website-block-staging.body`). Still worth raising upstream.
 
@@ -196,16 +248,27 @@ curl -sS -L -D headers.txt -o body.html -H 'x-debug: true' \
   'https://staging-<project>-<alias>.cloud.contensis.com/<path>'
 ```
 
-To see exactly what a block receives locally, put a header-dumping server on the override port and read its output. That is how the header contract above was confirmed.
+To see exactly what a block receives locally, put a header-dumping server on the override port and read its output. That is how the header contract above was originally confirmed.
+
+**Cheaper now, and it works deployed as well as locally.** `apps/website` renders every routing-relevant property into the page it serves, and embeds the same data as a one-line JSON block, so re-checking this contract on any block version is two commands. Absent headers get a row of their own, which is the point: absence is the observation.
+
+```bash
+curl -sS -L -c jar -b jar -H 'x-debug: true' -D hdr.txt -o body.html \
+  'https://staging-<project>-<alias>.cloud.contensis.com/<path>?block-<block-id>-versionno=<n>'
+
+sed -n 's/.*<script id="routing-panel-data" type="application\/json">\(.*\)<\/script>.*/\1/p' body.html | jq .
+```
+
+The cookie jar is not optional: the version pin is stripped by a 301 and persisted as a cookie, so `-L` without `-c`/`-b` lands on the unversioned host with an empty body. Cross-check `resolution.identity.value` against `nodeInfo.id` in the `request-handler-debug-data` header; those agreeing is what makes the panel trustworthy as an instrument. Every correction dated 2026-09-10 in this document came out of that comparison.
 
 ## Checklist for a framework consuming this
 
 1. Read `x-node-id` / `x-entry-id` headers. Ignore `?nodeId`/`?entryId`, legacy and no longer emitted.
 2. Fetch the node from the Delivery API by id. Never derive canonical URLs from the request path or `location`.
 3. Do not assume the path. It is `/` in local dev, the friendly path under full URI routing, and an endpoint path otherwise.
-4. Take alias, project and language from config or env, never from the request.
+4. Take alias, project and language from config or env, never from the request. `x-alias` does in fact arrive, but the env is the guaranteed channel and it carries both casings (`alias` and `ALIAS`).
 5. Keep assets under a declared static path and tolerate the `/_{hash}_{blockVersionId}/` prefix rewrite.
-6. Read preview state from the injected `window.Contensis*` globals.
+6. Read version status from `x-entry-versionstatus` / `x-node-versionstatus`, server-side and in time for the fetch. Use the injected `window.Contensis*` globals only for what the headers do not carry.
 7. Remember a 404 costs an upstream IIS fallback round-trip.
 
 ## What a real block actually does

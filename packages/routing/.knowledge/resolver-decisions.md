@@ -93,6 +93,24 @@ pre-commit hook, so it would break commits rather than merely look wrong.
 that reads it. The package `.gitignore` un-ignores `!src/fixtures/*.capture.log`. The
 same convention is used in `../../../evidence/`.
 
+## `IDENTITY_HEADERS` is a record, consumed at the call sites
+
+The two header names the resolver reads are exported so a consumer can display or forward
+them without restating the list. It is a record rather than a bare array, and
+`resolveIdentity` reads `IDENTITY_HEADERS.nodeId` / `.entryId` instead of its own string
+literals, so the constant cannot drift from the behaviour. A constant the resolver does
+not itself use is a constant that goes stale, and no test can protect against that as
+cheaply as using it can.
+
+What deliberately did **not** come with it: the handler's request denylist, and the
+`x-requires-*` hint names. Both are facts about the handler, not about this resolver, and
+the resolver does not act on either. A consumer that wants to display them can hold its
+own list, which is what `apps/website/server/panel.ts` does. Keeping handler trivia out of
+a pure resolver is the same instinct as keeping the network out of it.
+
+That distinction earned itself quickly. The panel's denylist was wrong in three places
+when checked against a deployed block, and correcting it touched nothing in this package.
+
 ## Keep the package dependency-free
 
 There are **no runtime dependencies**, and step 1a makes no network calls, needs no

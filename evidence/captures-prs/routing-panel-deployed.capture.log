@@ -1,0 +1,358 @@
+# The routing panel on the deployed website block, prs / tim version 4.
+# Captured 2026-09-10. Commit 4662a69, image main-5, run 34474243628.
+# This is the first time resolveIdentity has run against a real inbound request.
+
+# THE CLAIM UNDER TEST: the resolver's identity equals the handler's own nodeInfo.id.
+
+$ contensis get block website main 4 --format json   (excerpt)
+  "enableFullUriRouting": true, "port": 3001, "staticPaths": []
+  "image": { "tag": "main-5" }
+  "status": { "deployment": "deployed", "workflow": "released",
+              "running": { "hq": "available", "london": "available", "manchester": "available" } }
+
+# Two different nodes, two different identities. `/blogs` and some blog paths 404 at the
+# platform, so the block is never asked about them, exactly as block-404-routing predicts.
+
+$ curl -L -c jar -b jar -H 'x-debug: true' 'https://staging-tim-prs.cloud.contensis.com<PATH>?block-website-versionno=4'
+
+  GET /               panel kind=id  pathname=/              id=97ad4a16-821a-4798-adcd-f17ce876538a
+                      handler nodeInfo.id                    97ad4a16-821a-4798-adcd-f17ce876538a   MATCH
+
+  GET /blogs/canvas   panel kind=id  pathname=/blogs/canvas  id=c877264a-787f-4b0d-8045-1ec8ee2d3d4e
+                      handler nodeInfo.id                    c877264a-787f-4b0d-8045-1ec8ee2d3d4e   MATCH
+
+  GET /blogs                                                 404, no debug header, not our body
+  GET /blogs/the-history-of-coffee                           404, same
+
+# pathname is the FRIENDLY URL here. Under `contensis dev requests` the same request
+# arrives as `/`. That contrast is the entire argument for routing on the header, and it
+# is why a path-dispatching app passes locally and fails deployed.
+
+# --- FINDINGS THE PANEL SURFACED, all contradicting current .knowledge claims ---
+
+# 1. x-alias IS forwarded to the block. Value observed: prs
+#    .knowledge/contensis-request-handler-contract.md:60 and EXPLORATION.md list it as
+#    denied. The handler source's DisallowedRequestHeaderMappings does not contain it.
+#    The conclusion "take alias from config" still stands on other grounds, but the
+#    stated reason is wrong.
+
+# 2. x-forwarded-proto and traceparent ARE forwarded despite being on the denylist.
+#    x-forwarded-proto: https
+#    traceparent: 00-e657779597c68f4664c5812be7d4c098-832d4085c2d1701e-00
+#    traceparent was already known to leak (the .NET HttpClient adds its own).
+#    x-forwarded-proto is new.
+
+# 3. The x-requires-* hints arrive INBOUND as "true" without the client sending them.
+#    Present: x-requires-alias, -project-api-id, -node-id, -entry-id, -block-id
+#    Absent:  x-requires-entry-language, -version-no
+#    The contract says these are a client opt-in that carries no inbound value. The
+#    handler sets five of them itself.
+
+# 4. The block runtime environment, previously unrecorded. Both casings are set:
+#    alias=prs  ALIAS=prs  projectId=tim  PROJECT=tim  PROJECT_API_ID=tim
+#    NODE_ENV=production
+#    plus BLOCK_BRANCH_ID, BLOCK_VERSION_ID, BLOCK_VERSION_COMMIT_ID,
+#    BLOCK_VERSION_IMAGE_URL, DATA_CENTER, CONTENSIS_CLIENT_ID, HOSTNAME and the
+#    Kubernetes service vars. A block CAN read its own alias and project from env.
+
+# 5. Other headers arriving, names only (the panel withholds their values):
+#    content-length, cookie, delivery-project, surrogate-key, use-modern-cache-logic,
+#    x-block-request, x-entry-versionstatus, x-forwarded-for, x-geoip-country-code,
+#    x-node-versionstatus, x-orig-host
+#    delivery-project, x-entry-versionstatus and x-node-versionstatus look
+#    routing-relevant and are not in any documented list. Values not yet captured.
+
+# 6. Confirmed as predicted: window.ContensisEntryId is emitted empty on a post-cutoff
+#    block, so the entry id must come from x-entry-id.
+#    ContensisProjectApiId=tim ContensisAlias=prs ContensisSso=false
+#    ContensisEntryVersionStatus=published ContensisEntryId=empty ("")
+#    ContensisEntryLanguage=en-GB ContensisVersionNumber=17.2.1.53
+#    The globals being filled also proves the client module loaded, i.e. the per-version
+#    asset prefix rewrite worked for this build.
+
+$ handler request-handler-debug-data for /blogs/canvas
+{
+  "nodeInfo": {
+    "id": "c877264a-787f-4b0d-8045-1ec8ee2d3d4e",
+    "entryId": "ebec630b-67ef-4ccb-ae5d-11679f4719eb",
+    "path": "/blogs/canvas"
+  },
+  "routeType": "Block",
+  "uri": "https://10.129.10.152/blogs/canvas",
+  "blockVersionInfo": {
+    "projectUuid": "7812da8e-49ed-99d9-7651-cb04538f4808",
+    "blockId": "website",
+    "blockVersionId": "5042cf13-aa66-45d7-b896-77b624928398",
+    "baseUri": "https://v4-main-website-tim-prs-block-hq2-blue.blocks.contensis.com",
+    "branch": "main",
+    "enableFullUriRouting": true,
+    "pushed": "2026-09-10T12:01:24.832403Z",
+    "staticPaths": [
+      "/static"
+    ],
+    "versionNo": 4
+  },
+  "appConfiguration": {
+    "blockClusterId": "block-hq2-blue",
+    "blockClusterIngressIp": "10.129.10.152",
+    "blockAddressSuffix": "blocks.contensis.com",
+    "aliasesWithApiRoutes": [
+      "nlgpsf"
+    ],
+    "servicePod": "request-handler-v1-0-465-674949687d-648gz",
+    "dataCenter": "hq2",
+    "nodesDeliveryHost": "new-nodes-delivery-api-contensis-hq2.services.contensis.com",
+    "publishingApiHost": "publishing-api-contensis-hq2.services.contensis.com",
+    "isLocalRequestHandler": false
+  }
+}
+
+$ the panel's own JSON block for /blogs/canvas, as extracted by sed
+  sed -n 's/.*<script id=\"routing-panel-data\" type=\"application\/json\">\(.*\)<\/script>.*/\1/p'
+
+{
+  "request": {
+    "method": "GET",
+    "url": "/blogs/canvas",
+    "pathname": "/blogs/canvas",
+    "search": "",
+    "httpVersion": "1.1"
+  },
+  "identityHeaders": [
+    {
+      "name": "x-node-id",
+      "value": "c877264a-787f-4b0d-8045-1ec8ee2d3d4e"
+    },
+    {
+      "name": "x-entry-id",
+      "value": "ebec630b-67ef-4ccb-ae5d-11679f4719eb"
+    }
+  ],
+  "observedHeaders": [
+    {
+      "name": "host",
+      "value": "v4-main-website-tim-prs-block-hq2-blue.blocks.contensis.com"
+    },
+    {
+      "name": "user-agent",
+      "value": "curl/8.7.1"
+    },
+    {
+      "name": "accept",
+      "value": "*/*"
+    },
+    {
+      "name": "accept-language",
+      "value": null
+    },
+    {
+      "name": "traceparent",
+      "value": "00-f3048f172d77dd23f8075bd98cc850f5-39b994ddd5dea30d-00"
+    },
+    {
+      "name": "x-debug",
+      "value": "true"
+    },
+    {
+      "name": "x-alias",
+      "value": "prs"
+    }
+  ],
+  "deniedHeaders": [
+    {
+      "name": "accept-encoding",
+      "value": null
+    },
+    {
+      "name": "x-site-type",
+      "value": null
+    },
+    {
+      "name": "x-project-api-id",
+      "value": null
+    },
+    {
+      "name": "x-project-uuid",
+      "value": null
+    },
+    {
+      "name": "x-block-config",
+      "value": null
+    },
+    {
+      "name": "x-proxy-config",
+      "value": null
+    },
+    {
+      "name": "x-renderer-config",
+      "value": null
+    },
+    {
+      "name": "x-iis-hostname",
+      "value": null
+    },
+    {
+      "name": "x-loadbalancer-vip",
+      "value": null
+    },
+    {
+      "name": "x-forwarded-proto",
+      "value": "https"
+    },
+    {
+      "name": "traceparent",
+      "value": "00-f3048f172d77dd23f8075bd98cc850f5-39b994ddd5dea30d-00"
+    }
+  ],
+  "requiresHints": [
+    {
+      "name": "x-requires-alias",
+      "value": "true"
+    },
+    {
+      "name": "x-requires-project-api-id",
+      "value": "true"
+    },
+    {
+      "name": "x-requires-node-id",
+      "value": "true"
+    },
+    {
+      "name": "x-requires-entry-id",
+      "value": "true"
+    },
+    {
+      "name": "x-requires-entry-language",
+      "value": null
+    },
+    {
+      "name": "x-requires-block-id",
+      "value": "true"
+    },
+    {
+      "name": "x-requires-version-no",
+      "value": null
+    }
+  ],
+  "otherHeaderNames": [
+    "content-length",
+    "cookie",
+    "delivery-project",
+    "surrogate-key",
+    "use-modern-cache-logic",
+    "x-block-request",
+    "x-entry-versionstatus",
+    "x-forwarded-for",
+    "x-geoip-country-code",
+    "x-node-versionstatus",
+    "x-orig-host"
+  ],
+  "config": {
+    "source": "environment variables and the block manifest",
+    "values": [
+      {
+        "name": "alias",
+        "value": "prs"
+      },
+      {
+        "name": "ALIAS",
+        "value": "prs"
+      },
+      {
+        "name": "CONTENSIS_ALIAS",
+        "value": null
+      },
+      {
+        "name": "projectId",
+        "value": "tim"
+      },
+      {
+        "name": "projectApiId",
+        "value": null
+      },
+      {
+        "name": "PROJECT",
+        "value": "tim"
+      },
+      {
+        "name": "CONTENSIS_PROJECT",
+        "value": null
+      },
+      {
+        "name": "PROJECT_API_ID",
+        "value": "tim"
+      },
+      {
+        "name": "PORT",
+        "value": null
+      },
+      {
+        "name": "NODE_ENV",
+        "value": "production"
+      }
+    ],
+    "otherEnvNames": [
+      "BLOCK_BRANCH_ID",
+      "BLOCK_VERSION_COMMIT_ID",
+      "BLOCK_VERSION_ID",
+      "BLOCK_VERSION_IMAGE_URL",
+      "CONTENSIS_CLIENT_ID",
+      "DATA_CENTER",
+      "HOME",
+      "HOSTNAME",
+      "KUBERNETES_PORT",
+      "KUBERNETES_PORT_443_TCP",
+      "KUBERNETES_PORT_443_TCP_ADDR",
+      "KUBERNETES_PORT_443_TCP_PORT",
+      "KUBERNETES_PORT_443_TCP_PROTO",
+      "KUBERNETES_SERVICE_HOST",
+      "KUBERNETES_SERVICE_PORT",
+      "KUBERNETES_SERVICE_PORT_HTTPS",
+      "PATH",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_PORT",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_PORT_8080_TCP",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_PORT_8080_TCP_ADDR",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_PORT_8080_TCP_PORT",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_PORT_8080_TCP_PROTO",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_SERVICE_HOST",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_SERVICE_PORT",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V2_SERVICE_PORT_HTTP",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_PORT",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_PORT_8080_TCP",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_PORT_8080_TCP_ADDR",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_PORT_8080_TCP_PORT",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_PORT_8080_TCP_PROTO",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_SERVICE_HOST",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_SERVICE_PORT",
+      "REACTSTARTER_UI_STORYBOOK_MAIN_V3_SERVICE_PORT_HTTP",
+      "TIM_WEBSITE_MAIN_V4_PORT",
+      "TIM_WEBSITE_MAIN_V4_PORT_3001_TCP",
+      "TIM_WEBSITE_MAIN_V4_PORT_3001_TCP_ADDR",
+      "TIM_WEBSITE_MAIN_V4_PORT_3001_TCP_PORT",
+      "TIM_WEBSITE_MAIN_V4_PORT_3001_TCP_PROTO",
+      "TIM_WEBSITE_MAIN_V4_SERVICE_HOST",
+      "TIM_WEBSITE_MAIN_V4_SERVICE_PORT",
+      "TIM_WEBSITE_MAIN_V4_SERVICE_PORT_HTTP"
+    ],
+    "manifest": {
+      "enableFullUriRouting": true
+    }
+  },
+  "resolution": {
+    "identity": {
+      "kind": "id",
+      "value": "c877264a-787f-4b0d-8045-1ec8ee2d3d4e",
+      "source": "header"
+    },
+    "entryId": "ebec630b-67ef-4ccb-ae5d-11679f4719eb",
+    "diagnostics": []
+  },
+  "notes": [
+    "The URL path is shown for comparison only and is never dispatched on. It is `/` under `contensis dev requests`, the friendly URL when enableFullUriRouting is on, and a declared endpoint path otherwise.",
+    "The query string is discarded by the resolver. ?nodeId and ?entryId are dead past the 2025-11-03 09:00 cutoff and are no longer injected at all.",
+    "Denied headers are the ones the handler strips, so they are expected to be absent behind a handler. Served directly, as under `node server/index.ts`, they arrive normally: it is a value on a handler-served page that means the denylist changed.",
+    "The x-requires-* headers are forwarded but carry no inbound value. They make the handler emit the corresponding response headers for the cache and CDN layer.",
+    "Alias, project and language come from the environment or the block manifest. They can never arrive on the request.",
+    "Preview state exists only client-side, in the window.Contensis* globals the handler injects. Absent below means this page was served directly rather than through a handler."
+  ]
+}

@@ -67,6 +67,13 @@ const IDENTITY = Object.values(IDENTITY_HEADERS);
 // DisallowedRequestHeaderMappings does not contain it, contrary to
 // .knowledge/contensis-request-handler-contract.md. Showing its value is what turns that
 // into evidence rather than a claim about source.
+//
+// The second group was found by this panel on the deployed block, showing up in
+// otherHeaderNames. None of them appear in any documented list, and they describe the
+// route, the project and the version status, so their values are worth having. Headers
+// describing the visitor rather than the route stay withheld: cookie, x-forwarded-for
+// and x-geoip-country-code are deliberately not here.
+// evidence/captures-prs/routing-panel-deployed.capture.log
 const OBSERVED = [
   "host",
   "user-agent",
@@ -75,6 +82,13 @@ const OBSERVED = [
   "traceparent",
   "x-debug",
   "x-alias",
+  "delivery-project",
+  "x-entry-versionstatus",
+  "x-node-versionstatus",
+  "x-orig-host",
+  "x-block-request",
+  "use-modern-cache-logic",
+  "surrogate-key",
 ];
 
 // The routing-relevant slice of RequestHeaderMappingService.DisallowedRequestHeaderMappings.
